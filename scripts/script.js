@@ -1,7 +1,15 @@
+let switchBox = document.querySelectorAll('.switch-box, .switch, .inner');
+
 document.querySelector(".left-click-trigger").addEventListener('click', ()=>{
-    document.querySelector(".button").classList.add("off");
+    document.querySelector("body").classList.add("off");
+    for (let elements of switchBox ){
+        elements.classList.add("off")
+    }
 });
 
 document.querySelector(".right-click-trigger").addEventListener('click', ()=>{
-    document.querySelector(".button").classList.remove("off");
+    document.querySelector("body").classList.remove("off");
+    for (let elements of switchBox ){
+        elements.classList.remove("off")
+    }
 });
