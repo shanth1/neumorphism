@@ -1,0 +1,17 @@
+@import "/common.blocks/header/header__lights.css";
+@import "/common.blocks/header/header__switchers.css";
+@import "/common.blocks/header/header_theme_dark.css";
+@import "/common.blocks/header/header_theme_light.css";
+
+.header {
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background: var(--bg-light); */
+    background: var(--bg-light);
+    /* position: relative; */
+    transition: var(--transition)
+}

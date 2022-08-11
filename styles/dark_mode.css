@@ -1,0 +1,63 @@
+.body.dark {
+    background: var(--bg-dark);
+}
+
+
+/* SWITCH */
+/* ------------------------------------------------------------------------------------------------ */
+
+
+.switch-box {
+    opacity: 1;
+    cursor: pointer;    
+    position: relative;
+    /* margin: auto; */
+    /* top: 0;
+    left: 0%; */
+    /* transform: translate(-50%, -50%); */
+    width: var(--switch-box-width);
+    height: var(--switch-box-height);
+    border-radius: calc(var(--switch-box-height)/2);
+    background: var(--gradient-dark-box);
+    box-shadow: var(--shadow-dark-box);
+}
+
+.switch-box .switch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--switch-width);
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--gradient-dark-box);
+    box-shadow: var(--shadow-dark-switch);
+}
+
+.switch-box .switch .inner {
+    position: absolute;
+    top: 0;
+    left: var(--switch-inner-shift);
+    width: calc(100% - var(--switch-inner-shift));
+    height: 100%;
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--inner-gradient-dark);
+    transition: var(--transition);
+
+}
+
+.switch-box.dark .icon-on {
+    left: 75%;
+    background: var(--icon-no-power);
+    box-shadow: var(--shadow-dark-icon-on);
+    transform: translate(-50%, -50%) rotate3d(0, 1, 0, 25deg);
+}
+
+.switch-box.dark .icon-off {
+    left: 25%;
+    background: var(--icon-off-bg-dark);
+    border-color: var(--icon-off-border-power);
+    box-shadow: var(--shadow-dark-icon-off-glow);
+    transform: translate(-50%, -50%);
+}
+/* ------------------------------------------------------------------------------------------------ */

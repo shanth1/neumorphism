@@ -1,0 +1,15 @@
+@import "/common.blocks/page/page__header.css";
+@import "/common.blocks/page/page__content.css";
+@import "/common.blocks/page/page__footer.css";
+
+.page {
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background: var(--bg-light); */
+    background: var(--bg-light);
+    /* position: relative; */
+    transition: var(--transition)
+}

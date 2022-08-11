@@ -1,0 +1,9 @@
+.switchers__icon-off {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    width: var(--icon-off-width);
+    height: var(--icon-off-height);
+    transition: var(--transition);
+    border-radius: 50%;
+}

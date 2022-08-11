@@ -1,0 +1,6 @@
+.switchers__icon-off_power {
+    transform: translate(calc((var(--icon-off-width)/2)*-1) , -50%);    
+    background: var(--icon-off-bg-dark);
+    border: var(--icon-off-border-power);
+    box-shadow: var(--shadow-dark-icon-off-glow);
+}

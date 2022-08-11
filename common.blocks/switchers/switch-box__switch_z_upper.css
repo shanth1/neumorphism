@@ -1,0 +1,13 @@
+.switch-box__switch_z_upper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--switch-width);
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--gradient-light-box);
+    box-shadow: var(--shadow-light-switch);
+    transition: var(--transition);
+    background-color: aqua;
+}

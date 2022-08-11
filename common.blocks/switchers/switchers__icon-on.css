@@ -1,0 +1,9 @@
+.switchers__icon-on{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    width: var(--icon-on-width);
+    height: var(--icon-on-height);
+    transition: var(--transition);
+    border-radius: calc(var(--icon-on-height)/2);
+}

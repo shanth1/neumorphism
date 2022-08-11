@@ -1,0 +1,5 @@
+.switchers__icon-on_power {
+    transform: translate(-50%, -50%);
+    background-color: var(--icon-on);
+    box-shadow: var(--shadow-light-icon-on-glow);
+}

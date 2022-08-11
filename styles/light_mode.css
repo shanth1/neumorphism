@@ -1,0 +1,103 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--bg-light);
+    /* position: relative; */
+    transition: var(--transition)
+}
+
+header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    background: white;
+}
+
+.lights-box {
+    width: 100px;
+    height: 100%;
+    background: pink;
+}
+
+main {
+    height: 2000px;
+    background: red;
+}
+
+
+/* SWITCH */
+/* ------------------------------------------------------------------------------------------------ */
+.switch-box::before {
+    content: "";
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--switch-box-height)/2);
+    background: var(--gradient-light-box);
+    box-shadow: var(--shadow-light-box);
+    transition: var(--transition);
+   
+}
+.switch-box.dark::before {
+    opacity: 0;
+}
+
+.switch-box .switch::before{
+    content: "";
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--gradient-light-box);
+    box-shadow: var(--shadow-light-switch);
+    transition: var(--transition);
+}
+.switch-box .switch.dark::before {
+    opacity: 0;
+}
+
+.switch-box .switch .inner::before {
+    content: "";
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--switch-box-height)/2);
+    background: var(--inner-gradient-light);
+    transition: var(--transition);
+}
+.switch-box .switch .inner.dark::before {
+    opacity: 0;
+}
+
+.inner .icon-on {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: var(--icon-on-width);
+    height: var(--icon-on-height);
+    border-radius: calc(var(--icon-on-height)/2);
+    background: var(--icon-on);
+    box-shadow: var(--shadow-light-icon-on-glow);
+    transition: var(--transition);
+}
+
+.inner .icon-off {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-45%, -50%) rotate3d(0, 1, 0, 25deg);    
+    width: var(--icon-off-width);
+    height: var(--icon-off-height);
+    border: var(--icon-off-border-no-power);
+    border-radius: 50%;
+    background: var(--icon-off-bg-light);
+    box-shadow: var(--shadow-light-icon-off);
+    transition: var(--transition);
+}
+/* ------------------------------------------------------------------------------------------------ */

@@ -1,0 +1,8 @@
+.switchers__icon-off_no-power {
+    transform: translate(-45%, -50%) rotate3d(0, 1, 0, 25deg); 
+    border: var(--icon-off-border-no-power);
+    background: var(--icon-off-bg-light);
+    box-shadow: var(--shadow-light-icon-off);
+
+}
+

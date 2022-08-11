@@ -1,0 +1,9 @@
+.switchers__trigger {
+    cursor: pointer;
+    position: absolute;
+    top: calc((100% - var(--switch-height))/2);
+    left: calc((100% - var(--switch-width))/2);
+    width: calc(var(--switch-width)/2);
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+}

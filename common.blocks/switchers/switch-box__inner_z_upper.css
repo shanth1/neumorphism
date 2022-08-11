@@ -1,0 +1,8 @@
+.switch-box__inner_z_upper {
+    position: absolute;
+    width: calc(100% - var(--switch-inner-shift));
+    height: 100%;
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--inner-gradient-light);
+    transition: var(--transition);
+}

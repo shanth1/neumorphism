@@ -1,0 +1,5 @@
+.switch-box_z_bottom{
+    /* z-index: -100; */
+    background: var(--gradient-dark-box);
+    box-shadow: var(--shadow-dark-box);
+}

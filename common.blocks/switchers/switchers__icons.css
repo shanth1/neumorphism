@@ -1,0 +1,9 @@
+.switchers__icons {
+    position: relative;
+    top: calc((var(--switch-box-height) - var(--switch-height))/2);
+    left: calc((var(--switch-box-width) - var(--switch-width))/2);
+    width: calc(var(--switch-width) - var(--switch-inner-shift));
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+    transition: var(--transition);
+}
