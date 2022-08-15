@@ -1,6 +1,6 @@
-@import "/common.blocks/page/page__header.css";
-@import "/common.blocks/page/page__content.css";
-@import "/common.blocks/page/page__footer.css";
+@import "/src/common.blocks/page/page__header.css";
+@import "/src/common.blocks/page/page__content.css";
+@import "/src/common.blocks/page/page__footer.css";
 
 .page {
     margin: 0;
