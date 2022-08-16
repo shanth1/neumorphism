@@ -354,6 +354,13 @@
 .content {
     height: 2000px;
     background: rgb(225, 167, 167);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background: var(--bg-light); */
+    /* position: relative; */
+    transition: var(--transition)
 }
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
