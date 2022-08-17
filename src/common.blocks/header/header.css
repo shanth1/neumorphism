@@ -4,14 +4,14 @@
 @import "/src/common.blocks/header/header_theme_light.css";
 
 .header {
+    width: 100%;
+    height: 80px;
     margin: 0;
     padding: 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* background: var(--bg-light); */
     background: var(--bg-light);
-    /* position: relative; */
     transition: var(--transition)
 }

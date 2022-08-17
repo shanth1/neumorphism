@@ -1,0 +1,18 @@
+.clock__hour{
+    position: absolute;
+    z-index: 1;
+    width:9px;
+    height:150px;
+    /* transition: 0.5s cubic-bezier(0.9, 0, 0, 1);
+    transform: rotate(360deg); */
+}
+
+.clock__hour::before{
+    content: '';
+    position: absolute;
+    width:9px;
+    height:75px;
+    background-color: #ffe;
+    border-radius: 6px 6px 0 0;
+}
+
