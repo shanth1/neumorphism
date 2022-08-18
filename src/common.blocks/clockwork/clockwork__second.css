@@ -1,11 +1,11 @@
-.clock__second{
+.clockwork__second{
     position: absolute;
     z-index: 3;
     width:2px;
     height:300px;
 }
 
-.clock__second::before{
+.clockwork__second::before{
     content: '';
     position: absolute;
     width: 2px;

@@ -1,4 +1,4 @@
-.clock__dateIndicator {
+.clockface__day-month {
     position: absolute;
     display: flex;
     justify-content: center;

@@ -1,0 +1,7 @@
+.clockface__number{
+    position: absolute;
+    top: 13px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    color: antiquewhite;
+}

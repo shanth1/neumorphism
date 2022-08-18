@@ -1,5 +1,8 @@
 @import "./common.blocks/switchers/swithers.css";
+
 @import "./common.blocks/clock/clock.css";
+@import "./common.blocks/clockface/clockface.css";
+@import "./common.blocks/clockwork/clockwork.css";
 
 
 @import "./common.blocks/page/page.css";

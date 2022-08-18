@@ -35,13 +35,25 @@
     </header> 
     <main class="content page__content">
         <div class="clock content__clock">
-            <div class="clock__hour"></div>
-            <div class="clock__minute"></div>
-            <div class="clock__second"></div>
+            <div class="clockface clock__clockface">
+                <!-- <div class="clockface__number"></div>
+                <div class="clockface__serif"></div> -->
+                <div class="clockface__indicators">
+                    <div class="clockface__day-week"></div>
+                    <div class="clockface__day-month"></div>
+                </div>
+            </div>
+            <div class="clockwork clock__clockwork"> 
+                <div class="clockwork__hour"></div>
+                <div class="clockwork__minute"></div>
+                <div class="clockwork__second"></div>
+            </div>
         </div>
     </main>
     <footer class="footer page__footer"></footer>
     <script src="./common.blocks/switchers/switchers.js"></script>
     <script src="./common.blocks/clock/clock.js"></script>
+    <script src="./common.blocks/clockface/clockface.js"></script>
+    <script src="./common.blocks/clockwork/clockwork.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-.clock__hour{
+.clockwork__hour{
     position: absolute;
     z-index: 1;
     width:9px;
@@ -7,7 +7,7 @@
     transform: rotate(360deg); */
 }
 
-.clock__hour::before{
+.clockwork__hour::before{
     content: '';
     position: absolute;
     width:9px;

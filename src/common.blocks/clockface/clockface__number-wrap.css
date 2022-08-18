@@ -1,0 +1,8 @@
+.clockface__number-wrap{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 10px;
+    height: 340px;
+}
