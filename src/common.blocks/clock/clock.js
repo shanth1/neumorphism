@@ -39,7 +39,17 @@ setInterval(() => {
 })
 
 console.log(date.getDate())
-console.log(date.getDay().toString())
+
+let days = [
+    'Sun',
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat'
+];
+console.log(days[date.getDay()])
 
 let indicators = []
 for (let i = 0; i < 60; i++) {
@@ -58,6 +68,11 @@ let dateIndicator = document.createElement('div')
 dateIndicator.className = 'clock__dateIndicator'
 dateIndicator.innerHTML = date.getDate()
 document.querySelector('.clock').append(dateIndicator)
+
+let weekDayIndicator = document.createElement('div')
+weekDayIndicator.className = 'clock__weekDayIndicator'
+weekDayIndicator.innerHTML = days[date.getDay()]
+document.querySelector('.clock').append(weekDayIndicator)
 
 
 
