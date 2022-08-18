@@ -2,15 +2,15 @@
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 10px;
-    /* height: 340px; */
-    /* background-color: bisque; */
-    background-image: url(./indicator.svg);
-    /* background-color: coral; */
-    background-clip: content-box;
-    background-position: 50% 0%;
-    background-size: 6px;
-    background-repeat: no-repeat;
+    width: 6px;
+    -webkit-mask-image: url(./indicator.svg);
+    mask-image: url(./indicator.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    background-color: bisque;
+
+    transition: 0.3s;
 }
 
 .clockface__serif::before{

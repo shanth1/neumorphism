@@ -6,7 +6,7 @@ for (let i = 0; i < 60; i++) {
 
     clockfaceSerifs.push(serif)
     if (i%5===0){
-        clockfaceSerifs[i].style.backgroundSize = `10px`
+        clockfaceSerifs[i].style.width = `10px`
     }
     clockfaceSerifs[i].style.height = '335px'
     clockfaceSerifs[i].style.rotate = `${i*6}deg`
@@ -47,6 +47,13 @@ let daysOfWeek = [
 
 let dayMonth = document.querySelector('.clockface__day-month')
 dayMonth.innerHTML = date.getDate()
-
 let dayWeek = document.querySelector('.clockface__day-week')
 dayWeek.innerHTML = daysOfWeek[date.getDay()]
+
+function setIndicators(){
+    dayMonth.innerHTML = date.getDate()
+    dayWeek.innerHTML = daysOfWeek[date.getDay()]
+}
+
+
+
