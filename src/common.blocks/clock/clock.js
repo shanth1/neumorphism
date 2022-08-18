@@ -39,6 +39,7 @@ setInterval(() => {
 })
 
 console.log(date.getDate())
+console.log(date.getDay().toString())
 
 let indicators = []
 for (let i = 0; i < 60; i++) {
@@ -53,7 +54,10 @@ for (let i = 0; i < 60; i++) {
     document.querySelector('.clock').append(indicators[i])
 }
 
-
+let dateIndicator = document.createElement('div')
+dateIndicator.className = 'clock__dateIndicator'
+dateIndicator.innerHTML = date.getDate()
+document.querySelector('.clock').append(dateIndicator)
 
 
 

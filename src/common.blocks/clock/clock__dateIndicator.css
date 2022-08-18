@@ -1,0 +1,13 @@
+.clock__dateIndicator {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    top: 70%;
+    left: 60%;
+    width: 35px;
+    height: 35px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}

@@ -3,7 +3,6 @@
 @import "./clock__second.css";
 @import "./clock_theme_light.css";
 @import "./clock__indicator.css";
-@import "./clock__indicator-curent.css";
 @import "./clock__dateIndicator.css";
 
 .clock {
