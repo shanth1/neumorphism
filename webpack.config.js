@@ -28,7 +28,7 @@ module.exports = {
             template: './src/index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'index[hash].css'
+            filename: 'index.[hash].css'
         })
     ]
 };
