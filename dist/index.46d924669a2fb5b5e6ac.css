@@ -79,16 +79,16 @@
 }
 
 
-/*!********************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box__inner_position_right.css ***!
-  \********************************************************************************************************************/
-.switch-box__inner_position_right{
+/*!*******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__inner_position_right.css ***!
+  \*******************************************************************************************************************/
+.switchers__inner_position_right{
     margin-left: var(--switch-inner-shift);
 }
-/*!**************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box__inner_z_bottom.css ***!
-  \**************************************************************************************************************/
-.switch-box__inner_z_bottom {
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__inner_z_bottom.css ***!
+  \*************************************************************************************************************/
+.switchers__inner_z_bottom {
     position: absolute;
     top: 0;
     width: calc(100% - var(--switch-inner-shift));
@@ -97,10 +97,10 @@
     background: var(--inner-gradient-dark);
     transition: var(--transition);
 }
-/*!*************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box__inner_z_upper.css ***!
-  \*************************************************************************************************************/
-.switch-box__inner_z_upper {
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__inner_z_upper.css ***!
+  \************************************************************************************************************/
+.switchers__inner_z_upper {
     position: absolute;
     width: calc(100% - var(--switch-inner-shift));
     height: 100%;
@@ -109,10 +109,10 @@
     transition: var(--transition);
 }
 
-/*!***************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box__switch_z_bottom.css ***!
-  \***************************************************************************************************************/
-.switch-box__switch_z_bottom {
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch_z_bottom.css ***!
+  \**************************************************************************************************************/
+.switchers__switch_z_bottom {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -125,10 +125,10 @@
     transition: var(--transition);
 }
 
-/*!**************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box__switch_z_upper.css ***!
-  \**************************************************************************************************************/
-.switch-box__switch_z_upper {
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch_z_upper.css ***!
+  \*************************************************************************************************************/
+.switchers__switch_z_upper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -142,30 +142,30 @@
     background-color: aqua;
 }
 
-/*!*********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box_theme_dark.css ***!
-  \*********************************************************************************************************/
-.switch-box_theme_dark{
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_theme_dark.css ***!
+  \********************************************************************************************************************/
+.switchers__switch-box_theme_dark{
     opacity: 0;
 }
-/*!**********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box_theme_light.css ***!
-  \**********************************************************************************************************/
-.switch-box_theme_light{
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_theme_light.css ***!
+  \*********************************************************************************************************************/
+.switchers__switch-box_theme_light{
     opacity: 1;
 }
-/*!*******************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box_z_bottom.css ***!
-  \*******************************************************************************************************/
-.switch-box_z_bottom{
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_z_bottom.css ***!
+  \******************************************************************************************************************/
+.switchers__switch-box_z_bottom{
     /* z-index: -100; */
     background: var(--gradient-dark-box);
     box-shadow: var(--shadow-dark-box);
 }
-/*!******************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switch-box_z_upper.css ***!
-  \******************************************************************************************************/
-.switch-box_z_upper {
+/*!*****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_z_upper.css ***!
+  \*****************************************************************************************************************/
+.switchers__switch-box_z_upper {
     /* z-index: 100; */
     background: var(--gradient-light-box);
     box-shadow: var(--shadow-light-box);
@@ -200,9 +200,9 @@
 .switchers__trigger_right {
     left: 50%;
 }
-/*!********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers_switch-box.css ***!
-  \********************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box.css ***!
+  \*********************************************************************************************************/
 .switchers__switch-box {
     position: absolute;
     width: var(--switch-box-width);

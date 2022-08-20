@@ -9,22 +9,22 @@
 @import "/src/common.blocks/switchers/switchers__icon-off_power.css";
 @import "/src/common.blocks/switchers/switchers__icon-off_no-power.css";
 
-@import "/src/common.blocks/switchers/switch-box__inner_position_right.css";
-@import "/src/common.blocks/switchers/switch-box__inner_z_bottom.css";
-@import "/src/common.blocks/switchers/switch-box__inner_z_upper.css";
+@import "/src/common.blocks/switchers/switchers__inner_position_right.css";
+@import "/src/common.blocks/switchers/switchers__inner_z_bottom.css";
+@import "/src/common.blocks/switchers/switchers__inner_z_upper.css";
 
-@import "/src/common.blocks/switchers/switch-box__switch_z_bottom.css";
-@import "/src/common.blocks/switchers/switch-box__switch_z_upper.css";
+@import "/src/common.blocks/switchers/switchers__switch_z_bottom.css";
+@import "/src/common.blocks/switchers/switchers__switch_z_upper.css";
 
-@import "/src/common.blocks/switchers/switch-box_theme_dark.css";
-@import "/src/common.blocks/switchers/switch-box_theme_light.css";
-@import "/src/common.blocks/switchers/switch-box_z_bottom.css";
-@import "/src/common.blocks/switchers/switch-box_z_upper.css";
+@import "/src/common.blocks/switchers/switchers__switch-box_theme_dark.css";
+@import "/src/common.blocks/switchers/switchers__switch-box_theme_light.css";
+@import "/src/common.blocks/switchers/switchers__switch-box_z_bottom.css";
+@import "/src/common.blocks/switchers/switchers__switch-box_z_upper.css";
 
 @import "/src/common.blocks/switchers/switchers__icons.css";
 @import "/src/common.blocks/switchers/switchers__trigger.css";
 @import "/src/common.blocks/switchers/switchers__trigger_right.css";
-@import "/src/common.blocks/switchers/switchers_switch-box.css";
+@import "/src/common.blocks/switchers/switchers__switch-box.css";
 
 
 /* Define vars for the root element */
