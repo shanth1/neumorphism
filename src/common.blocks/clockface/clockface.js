@@ -27,6 +27,47 @@ for (let i = 0; i < 60; i++) {
     document.querySelector('.clockface').append(wrap[i])
 }
 
+function clockFace(day){
+    wrap[day.getSeconds()].style.paddingTop = `6px`;
+    wrap[day.getMinutes()].firstChild.style.backgroundColor = 'red';
+
+    
+    if(day.getHours() >= 12){
+        wrap[(day.getHours() - hourCorrection)*5].childNodes[2].style.color = 'red';
+        // дублирование кода 
+        if (((day.getHours() - hourCorrection) * 5) === 0){
+            wrap[11 * 5].childNodes[2].style.color = 'bisque';
+        }else {
+            wrap[(day.getHours() - hourCorrection -1) * 5].childNodes[2].style.color = 'bisque';
+        }
+    }else{
+        wrap[day.getHours()*5].firstChild.style.color = 'red';
+        // Дублирование кода 
+        if ((day.getHours()) === 0){
+            wrap[11*5].firstChild.style.color = 'bisque';
+        }else {
+            wrap[(day.getHours()-1)*5].firstChild.style.color = 'bisque';
+        }
+    }
+
+    // Обратная стрелка
+    if (day.getMinutes()===0){
+        wrap[59].firstChild.style.backgroundColor = 'bisque';
+    }else{
+        wrap[day.getMinutes()-1].firstChild.style.backgroundColor = 'bisque';
+    }
+
+    if (day.getSeconds()===0){
+        wrap[59].style.paddingTop = `8px`;
+    }else{
+        wrap[day.getSeconds()-1].style.paddingTop = `8px`;
+    }
+    
+    if(hrVal + mnVal + scVal === 0){
+        setIndicators();
+    }
+}
+
 function createElement(className, tagName){
     let element = document.createElement(tagName)
     element.className = className
