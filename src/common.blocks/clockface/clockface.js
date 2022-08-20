@@ -37,8 +37,6 @@ function clockFace(day){
     wrap[day.getSeconds()].style.paddingTop = `6px`;
     wrap[day.getMinutes()].firstChild.style.backgroundColor = 'red';
 
-    console.log(getColor())
-
     wrap[Math.round(59*Math.random())].childNodes[1].style.backgroundColor = getColor()
 
     if(Math.round(10*Math.random())===5){
