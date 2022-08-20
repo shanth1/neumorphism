@@ -17,7 +17,6 @@ let mnDeg = date.getHours() * 360 + date.getMinutes() * deg
 let scDeg = date.getMinutes() * 360 + date.getSeconds() * deg
 
 //Дублирование кода
-console.log('установка без анимации')
 hour.style.transform = `rotate(${(hrDeg)+(mnVal/2)}deg)`;
 minute.style.transform = `rotate(${mnDeg}deg)`;
 second.style.transform = `rotate(${scDeg}deg)`;
@@ -31,7 +30,6 @@ function clockWork(day){
     mnVal = day.getMinutes()
     scVal = day.getSeconds()
 
-    console.log('установка с анимацией')
     hour.style = `transform: rotate(${(hrDeg)+(mnVal/2)}deg);  ${transition}`;
     minute.style = `transform: rotate(${mnDeg + scVal/10}deg); ${transition}`;
     second.style = `transform: rotate(${scDeg}deg);  ${transition}`;

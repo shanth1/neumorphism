@@ -27,10 +27,23 @@ for (let i = 0; i < 60; i++) {
     document.querySelector('.clockface').append(wrap[i])
 }
 
+function getColor(){
+    return 'hsl(' + 360*Math.random() + ', ' +
+            (25+70*Math.random()) + '%' + ', ' +
+            (85 + 10*Math.random()) + '%)'
+}
+
 function clockFace(day){
     wrap[day.getSeconds()].style.paddingTop = `6px`;
     wrap[day.getMinutes()].firstChild.style.backgroundColor = 'red';
 
+    console.log(getColor())
+
+    wrap[Math.round(59*Math.random())].childNodes[1].style.backgroundColor = getColor()
+
+    if(Math.round(10*Math.random())===5){
+        wrap[Math.round(59*Math.random())].childNodes[1].style.backgroundColor = 'red'
+    }
     
     if(day.getHours() >= 12){
         wrap[(day.getHours() - hourCorrection)*5].childNodes[2].style.color = 'red';
