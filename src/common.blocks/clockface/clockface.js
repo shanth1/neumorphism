@@ -1,38 +1,36 @@
-let clockfaceSerifs = []
+let wrap =[]
 for (let i = 0; i < 60; i++) {
-    let serif = document.createElement('div')
-    serif.className = 'clockface__serif'
+    let wrapElement = createElement('clockface__wrap', 'div')
+    let serif = createElement('clockface__serif', 'div')
+    let light = createElement('clockface__light', 'div')
+    
+    wrapElement.append(serif) //childNodes[0], firstChild
+    wrapElement.append(light) //childNodes[1]
 
-
-    clockfaceSerifs.push(serif)
+    wrap.push(wrapElement)
+    wrap[i].style.rotate = `${i*6}deg` 
+    
     if (i%5===0){
-        clockfaceSerifs[i].style.width = `10px`
+        wrap[i].firstChild.style.width = `10px`
+
+        let number = createElement('clockface__number', 'div')
+        wrapElement.append(number) //childNodes[2], lastChild
+        if(i===0){
+            number.innerHTML = 12
+        }else{
+            number.innerHTML = i/5
+        }
+        number.style.rotate=`${i/5*-30}deg`
     }
-    clockfaceSerifs[i].style.height = '335px'
-    clockfaceSerifs[i].style.rotate = `${i*6}deg`
-    document.querySelector('.clockface').append(clockfaceSerifs[i])
+
+    wrap[i].style.rotate = `${i*6}deg`
+    document.querySelector('.clockface').append(wrap[i])
 }
 
-let clockfaceNumbers = []
-for (let i = 0; i < 12; i++) {
-    let numberWrap = document.createElement('div')
-    numberWrap.className = 'clockface__number-wrap'
-
-    let number = document.createElement('div')
-    number.className = 'clockface__number'
-    if(i===0){
-        number.innerHTML = 12
-    }else{
-        number.innerHTML = i
-    }
-    number.style.rotate=`${i*-30}deg`
-    
-    numberWrap.append(number)
-
-    clockfaceNumbers.push(numberWrap)
-    clockfaceNumbers[i].style.height = '335px'
-    clockfaceNumbers[i].style.rotate = `${i*30}deg`
-    document.querySelector('.clockface').append(clockfaceNumbers[i])
+function createElement(className, tagName){
+    let element = document.createElement(tagName)
+    element.className = className
+    return element
 }
 
 let daysOfWeek = [

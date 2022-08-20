@@ -32,38 +32,41 @@ setInterval(() => {
     mnVal = day.getMinutes()
     scVal = day.getSeconds()
     
-    clockfaceSerifs[day.getSeconds()].style.height = `340px`;
-    clockfaceSerifs[day.getMinutes()].style.backgroundColor = 'red';
+    wrap[day.getSeconds()].style.paddingTop = `4px`;
+    wrap[day.getMinutes()].firstChild.style.backgroundColor = 'red';
 
     
     if(day.getHours() >= 12){
-        clockfaceNumbers[day.getHours() - hourCorrection].firstChild.style.color = 'red';
+        wrap[(day.getHours() - hourCorrection)*5].childNodes[2].style.color = 'red';
         // дублирование кода 
-        if ((day.getHours() - hourCorrection) === 0){
-            clockfaceNumbers[11].firstChild.style.color = 'bisque';
+        if (((day.getHours() - hourCorrection) * 5) === 0){
+            wrap[11 * 5].childNodes[2].style.color = 'bisque';
         }else {
-            clockfaceNumbers[day.getHours() - hourCorrection -1].firstChild.style.color = 'bisque';
+            wrap[(day.getHours() - hourCorrection -1) * 5].childNodes[2].style.color = 'bisque';
         }
     }else{
-        clockfaceNumbers[Math.round(day.getHours())].firstChild.style.color = 'red';
+        wrap[day.getHours()*5].firstChild.style.color = 'red';
         // Дублирование кода 
         if ((day.getHours()) === 0){
-            clockfaceNumbers[11].firstChild.style.color = 'bisque';
+            wrap[11*5].firstChild.style.color = 'bisque';
         }else {
-            clockfaceNumbers[day.getHours()-1].firstChild.style.color = 'bisque';
+            wrap[(day.getHours()-1)*5].firstChild.style.color = 'bisque';
         }
     }
 
+
+
+    // Обратная стрелка
     if (day.getMinutes()===0){
-        clockfaceSerifs[59].style.backgroundColor = 'bisque';
+        wrap[59].firstChild.style.backgroundColor = 'bisque';
     }else{
-        clockfaceSerifs[day.getMinutes()-1].style.backgroundColor = 'bisque';
+        wrap[day.getMinutes()-1].firstChild.style.backgroundColor = 'bisque';
     }
 
     if (day.getSeconds()===0){
-        clockfaceSerifs[59].style.height = `335px`;
+        wrap[59].style.paddingTop = `8px`;
     }else{
-        clockfaceSerifs[day.getSeconds()-1].style.height = `335px`;
+        wrap[day.getSeconds()-1].style.paddingTop = `8px`;
     }
     
     if(hrVal + mnVal + scVal === 0){
