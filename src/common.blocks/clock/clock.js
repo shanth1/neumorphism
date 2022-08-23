@@ -1,41 +1,37 @@
-let date = getDate()
-console.log(date.getHours())
+const { clockWork } = require('../clockwork/clockwork.js');
+const { clockFace } = require('../clockface/clockface.js');
 
-const hourCorrection = 12
-const deg = 6;
+let date = getDate()
 
 function getDate(){
     return new Date();
 }
 
 function getDateValues(date){
-    return dateValues = {
+    return {
         date: date.getDate(),
         day: date.getDay(),
 
         hrDeg: date.getHours() * 30,
         mnDeg: date.getHours() * 360 + date.getMinutes() * 6,
         scDeg: date.getMinutes() * 360 + date.getSeconds() * 6,
-    
+
         hrVal: date.getHours(),
         mnVal: date.getMinutes(),
         scVal: date.getSeconds(),
     }
 }
 
-setInterval(()=>{
+clockWork(getDateValues(date), false)
+let interval = setInterval(()=>{
     let date = getDate()
     let dateValues = getDateValues(date)
 
-    clockWork(dateValues)
+    clockWork(dateValues, true)
     clockFace(dateValues)
 })
 
-function createElement(className, tagName){
-    let element = document.createElement(tagName)
-    element.className = className
-    return element
-}
+export {interval}
 
 
 

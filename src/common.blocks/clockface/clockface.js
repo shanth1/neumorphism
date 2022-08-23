@@ -1,3 +1,6 @@
+const hourCorrection = 12
+const deg = 6;
+
 const daysOfWeek = [
     'Sun',
     'Mon',
@@ -101,6 +104,15 @@ function setIndicators(){
     dayMonth.innerHTML = dateValues.date
     dayWeek.innerHTML = daysOfWeek[dateValues.day]
 }
+
+function createElement(className, tagName){
+    let element = document.createElement(tagName)
+    element.className = className
+    return element
+}
+
+
+export {daysOfWeek, wrap, getColor, clockFace, setIndicators, createElement}
 
 
 

@@ -7,8 +7,8 @@ let iconOn = document.querySelector('.switchers__icon-on');
 let iconOff = document.querySelector('.switchers__icon-off');
 
 // Добавить обработчики ошибок на селектор
-let switchers = {
 
+let switchers = {
     leftTrigger: document.querySelector(".switchers__trigger").addEventListener('click', ()=>{
 
         switchUpper.classList.remove("switchers__switch-box_theme_light");
@@ -26,6 +26,7 @@ let switchers = {
         iconOn.className = 'switchers__icon-on switchers__icon-on_no-power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_power';
     }),
+
     rightTrigger: document.querySelector(".switchers__trigger.switchers__trigger_right").addEventListener('click', ()=>{
         switchUpper.classList.remove("switchers__switch-box_theme_dark");
         switchUpper.classList.add("switchers__switch-box_theme_light");
@@ -45,6 +46,3 @@ let switchers = {
 }
 
 export {switchers};
-
-
-
