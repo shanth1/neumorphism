@@ -1,0 +1,12 @@
+@import "./pagination__btn.css";
+@import "./pagination__box.css";
+@import "./pagination_theme_dark.css";
+@import "./pagination_theme_light.css";
+@import "./pagination__btn_status_active_dark.css";
+@import "./pagination__btn_status_active_light.css";
+@import "./pagination__btn_theme_light.css";
+@import "./pagination__btn_theme_dark.css";
+
+.pagination{
+    transition: var(--transition);
+}

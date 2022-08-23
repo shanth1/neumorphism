@@ -12,3 +12,5 @@
 @import "./common.blocks/content/content.css";
 
 @import "./common.blocks/footer/footer.css";
+
+@import "./common.blocks/pagination/pagination.css"

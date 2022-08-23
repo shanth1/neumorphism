@@ -316,13 +316,19 @@
     transition: var(--transition);
 }
 
+.clock:hover{
+  width:360px;
+  height:360px;
+}
+
+
 .clock:before {
     content:'';
     width:15px;
     height:15px;
     background: #eb4d4b;
     border-radius: 50%;
-    z-index: 1000;
+    z-index: 99;
   }
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__indicators.css ***!
@@ -351,6 +357,7 @@
     height: 25px;
     background-color: #ffe;
     border-radius: 50%;
+    transition: var(--transition);
 }
 /*!********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__day-month.css ***!
@@ -405,11 +412,14 @@
     height: 100%;
     width: 100%;
     -webkit-mask-image: url(4883065f6dc7258f4329.svg);
-    mask-image: url(4883065f6dc7258f4329.svg);
+    /* -o-mask-image: url(./indicator.svg);
+    -ms-mask-image: url(./indicator.svg);
+    -moz-mask-image: url(./indicator.svg); */
+    /* mask-image: url(./indicator.svg); */
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     background-color: #ffe;
-    transition: 0.3s;
+    transition: inherit;
 }
 
 
@@ -508,7 +518,10 @@
 /*!*******************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__header.css ***!
   \*******************************************************************************************/
-
+.page__header{
+    position: fixed;
+    z-index: 100;
+}
 /*!********************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__content.css ***!
   \********************************************************************************************/
@@ -581,29 +594,38 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__clock.css ***!
   \************************************************************************************************/
 .content__clock {
-    margin: 50px;
     position: relative;
+    margin-top: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 /*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__pagination.css ***!
+  \*****************************************************************************************************/
+.content__pagination{
+    position: sticky;
+    top: 500px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+/*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_light.css ***!
   \*****************************************************************************************************/
 .content_theme_light{
-    background: var(--bg-light);
+    background: rgb(225, 227, 205);
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_dark.css ***!
   \****************************************************************************************************/
 .content_theme_dark{
-    background: var(--bg-dark);
+    background: #111;
 }
 /*!*****************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content.css ***!
   \*****************************************************************************************/
 .content {
-    height: 2000px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -613,7 +635,97 @@
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
   \***************************************************************************************/
+.footer{
+    background-color: red;
+    height: 100px;
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn.css ***!
+  \****************************************************************************************************/
+.pagination__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    margin: 0 5px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 18px;
+    transition: var(--transition);
+}
 
+.pagination__btn:first-child{
+    margin: 0 20px;
+}
+
+.pagination__btn:last-child{
+    margin: 0 20px;
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__box.css ***!
+  \****************************************************************************************************/
+.pagination__box{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination_theme_dark.css ***!
+  \**********************************************************************************************************/
+.pagination_theme_dark{
+    background: var(--bg-dark);
+    box-shadow: -3px -3px 7px #ffffff73,
+        3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+
+/*!***********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination_theme_light.css ***!
+  \***********************************************************************************************************/
+.pagination_theme_light{
+    background: var(--bg-light);
+    box-shadow: -3px -3px 7px #ffffff73,
+        3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_status_active_dark.css ***!
+  \***********************************************************************************************************************/
+.pagination__btn_status_active_dark{
+    background-color: red;
+    color: #eee;
+}
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_status_active_light.css ***!
+  \************************************************************************************************************************/
+.pagination__btn_status_active_light{
+    background-color: red;
+    color: #eee;
+}
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_theme_light.css ***!
+  \****************************************************************************************************************/
+.pagination__btn_theme_light{
+    background-color: #eee;
+    color: #111;
+    box-shadow: -3px -3px 7px #ffffff73,
+        3px 3px 5px rgba(94, 104, 121, 0.288);   
+}
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_theme_dark.css ***!
+  \***************************************************************************************************************/
+.pagination__btn_theme_dark{
+    background-color: #111;
+    color: #eee;
+    box-shadow: -3px -3px 7px #ffffff73,
+        3px 3px 5px rgba(94, 104, 121, 0.288);   
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination.css ***!
+  \***********************************************************************************************/
+.pagination{
+    transition: var(--transition);
+}
 /*!*****************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
   \*****************************************************************/

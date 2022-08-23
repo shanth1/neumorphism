@@ -11,6 +11,8 @@ const { themeSwitcher } = require('../../index.js');
 const clock = document.querySelector('.clock');
 const header = document.querySelector('.header');
 const content = document.querySelector('.content');
+const pagination = document.querySelector('.pagination');
+const paginationBtn = document.querySelectorAll('.pagination__btn');
 
 
 // Добавить обработчики ошибок на селектор
@@ -36,6 +38,10 @@ let switchers = {
         themeSwitcher(clock, 'dark')
         themeSwitcher(header, 'dark')
         themeSwitcher(content, 'dark')
+        themeSwitcher(pagination, 'dark')
+        paginationBtn.forEach(element => {
+            themeSwitcher(element, 'dark')
+        });
     }),
 
     rightTrigger: document.querySelector(".switchers__trigger.switchers__trigger_right").addEventListener('click', ()=>{
@@ -57,6 +63,11 @@ let switchers = {
         themeSwitcher(clock, 'light')
         themeSwitcher(header, 'light')
         themeSwitcher(content, 'light')
+        themeSwitcher(pagination, 'light')
+        paginationBtn.forEach(element => {
+            themeSwitcher(element, 'light')
+        });
+        
     })
 }
 

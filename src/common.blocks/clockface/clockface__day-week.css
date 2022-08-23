@@ -11,4 +11,5 @@
     height: 25px;
     background-color: #ffe;
     border-radius: 50%;
+    transition: var(--transition);
 }

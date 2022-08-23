@@ -3,10 +3,13 @@
     height: 100%;
     width: 100%;
     -webkit-mask-image: url(./indicator.svg);
-    mask-image: url(./indicator.svg);
+    /* -o-mask-image: url(./indicator.svg);
+    -ms-mask-image: url(./indicator.svg);
+    -moz-mask-image: url(./indicator.svg); */
+    /* mask-image: url(./indicator.svg); */
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     background-color: #ffe;
-    transition: 0.3s;
+    transition: inherit;
 }
 

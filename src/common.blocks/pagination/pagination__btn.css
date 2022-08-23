@@ -1,0 +1,20 @@
+.pagination__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    margin: 0 5px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.pagination__btn:first-child{
+    margin: 0 20px;
+}
+
+.pagination__btn:last-child{
+    margin: 0 20px;
+}
