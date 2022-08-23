@@ -1,3 +1,13 @@
+const daysOfWeek = [
+    'Sun',
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat'
+];
+
 let wrap =[]
 for (let i = 0; i < 60; i++) {
     let wrapElement = createElement('clockface__wrap', 'div')
@@ -33,9 +43,15 @@ function getColor(){
             (85 + 10*Math.random()) + '%)'
 }
 
-function clockFace(day){
-    wrap[day.getSeconds()].style.paddingTop = `6px`;
-    wrap[day.getMinutes()].firstChild.style.backgroundColor = 'red';
+function clockFace(dateValues){
+
+    let dayMonth = document.querySelector('.clockface__day-month')
+    dayMonth.innerHTML = dateValues.date
+    let dayWeek = document.querySelector('.clockface__day-week')
+    dayWeek.innerHTML = daysOfWeek[dateValues.day]
+
+    wrap[dateValues.scVal].style.paddingTop = `6px`;
+    wrap[dateValues.mnVal].firstChild.style.backgroundColor = 'red';
 
     wrap[Math.round(59*Math.random())].childNodes[1].style.backgroundColor = getColor()
 
@@ -43,66 +59,47 @@ function clockFace(day){
         wrap[Math.round(59*Math.random())].childNodes[1].style.backgroundColor = 'red'
     }
     
-    if(day.getHours() >= 12){
-        wrap[(day.getHours() - hourCorrection)*5].childNodes[2].style.color = 'red';
+    if(dateValues.hrVal >= 12){
+        wrap[(dateValues.hrVal - hourCorrection)*5].childNodes[2].style.color = 'red';
         // дублирование кода 
-        if (((day.getHours() - hourCorrection) * 5) === 0){
+        if (((dateValues.hrVal - hourCorrection) * 5) === 0){
             wrap[11 * 5].childNodes[2].style.color = 'bisque';
         }else {
-            wrap[(day.getHours() - hourCorrection -1) * 5].childNodes[2].style.color = 'bisque';
+            wrap[(dateValues.hrVal - hourCorrection -1) * 5].childNodes[2].style.color = 'bisque';
         }
     }else{
-        wrap[day.getHours()*5].firstChild.style.color = 'red';
+        wrap[dateValues.hrVal*5].childNodes[2].style.color = 'red';
         // Дублирование кода 
-        if ((day.getHours()) === 0){
-            wrap[11*5].firstChild.style.color = 'bisque';
+        if ((dateValues.hrVal) === 0){
+            wrap[11*5].childNodes[2].style.color = 'bisque';
         }else {
-            wrap[(day.getHours()-1)*5].firstChild.style.color = 'bisque';
+            wrap[(dateValues.hrVal-1)*5].childNodes[2].style.color = 'bisque';
         }
     }
 
     // Обратная стрелка
-    if (day.getMinutes()===0){
+    if (dateValues.mnVal===0){
         wrap[59].firstChild.style.backgroundColor = 'bisque';
     }else{
-        wrap[day.getMinutes()-1].firstChild.style.backgroundColor = 'bisque';
+        wrap[dateValues.mnVal-1].firstChild.style.backgroundColor = 'bisque';
     }
 
-    if (day.getSeconds()===0){
+    if (dateValues.scVal===0){
         wrap[59].style.paddingTop = `8px`;
     }else{
-        wrap[day.getSeconds()-1].style.paddingTop = `8px`;
+        wrap[dateValues.scVal-1].style.paddingTop = `8px`;
     }
     
-    if(hrVal + mnVal + scVal === 0){
+    if(dateValues.hrVal + dateValues.mnVal + dateValues.scVal === 0){
         setIndicators();
     }
 }
 
-function createElement(className, tagName){
-    let element = document.createElement(tagName)
-    element.className = className
-    return element
-}
 
-let daysOfWeek = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat'
-];
-
-let dayMonth = document.querySelector('.clockface__day-month')
-dayMonth.innerHTML = date.getDate()
-let dayWeek = document.querySelector('.clockface__day-week')
-dayWeek.innerHTML = daysOfWeek[date.getDay()]
 
 function setIndicators(){
-    dayMonth.innerHTML = date.getDate()
-    dayWeek.innerHTML = daysOfWeek[date.getDay()]
+    dayMonth.innerHTML = dateValues.date
+    dayWeek.innerHTML = daysOfWeek[dateValues.day]
 }
 
 
