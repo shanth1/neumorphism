@@ -1,0 +1,599 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icons.css ***!
+  \****************************************************************************************************/
+.switchers__icons {
+    position: relative;
+    top: calc((var(--switch-box-height) - var(--switch-height))/2);
+    left: calc((var(--switch-box-width) - var(--switch-width))/2);
+    width: calc(var(--switch-width) - var(--switch-inner-shift));
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+    transition: var(--transition);
+}
+/*!*******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icons_position_right.css ***!
+  \*******************************************************************************************************************/
+.switchers__icons_position_right{ 
+    margin-left: var(--switch-inner-shift);
+}
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icon-on.css ***!
+  \******************************************************************************************************/
+.switchers__icon-on{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    width: var(--icon-on-width);
+    height: var(--icon-on-height);
+    transition: var(--transition);
+    border-radius: calc(var(--icon-on-height)/2);
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icon-on_power.css ***!
+  \************************************************************************************************************/
+.switchers__icon-on_power {
+    transform: translate(-50%, -50%);
+    background-color: var(--icon-on);
+    box-shadow: var(--shadow-light-icon-on-glow);
+}
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icon-on_no-power.css ***!
+  \***************************************************************************************************************/
+.switchers__icon-on_no-power {
+    transform: translate(-50%, -50%) rotate3d(0, 1, 0, 25deg);
+    background-color: var(--icon-no-power);
+    box-shadow: var(--shadow-dark-icon-on);
+}
+
+
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icon-off.css ***!
+  \*******************************************************************************************************/
+.switchers__icon-off {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    width: var(--icon-off-width);
+    height: var(--icon-off-height);
+    transition: var(--transition);
+    border-radius: 50%;
+}
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icon-off_power.css ***!
+  \*************************************************************************************************************/
+.switchers__icon-off_power {
+    transform: translate(calc((var(--icon-off-width)/2)*-1) , -50%);    
+    background: var(--icon-off-bg-dark);
+    border: var(--icon-off-border-power);
+    box-shadow: var(--shadow-dark-icon-off-glow);
+}
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icon-off_no-power.css ***!
+  \****************************************************************************************************************/
+.switchers__icon-off_no-power {
+    transform: translate(-45%, -50%) rotate3d(0, 1, 0, 25deg); 
+    border: var(--icon-off-border-no-power);
+    background: var(--icon-off-bg-light);
+    box-shadow: var(--shadow-light-icon-off);
+
+}
+
+
+/*!*******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__inner_position_right.css ***!
+  \*******************************************************************************************************************/
+.switchers__inner_position_right{
+    margin-left: var(--switch-inner-shift);
+}
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__inner_z_bottom.css ***!
+  \*************************************************************************************************************/
+.switchers__inner_z_bottom {
+    position: absolute;
+    top: 0;
+    width: calc(100% - var(--switch-inner-shift));
+    height: 100%;
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--inner-gradient-dark);
+    transition: var(--transition);
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__inner_z_upper.css ***!
+  \************************************************************************************************************/
+.switchers__inner_z_upper {
+    position: absolute;
+    width: calc(100% - var(--switch-inner-shift));
+    height: 100%;
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--inner-gradient-light);
+    transition: var(--transition);
+}
+
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch_z_bottom.css ***!
+  \**************************************************************************************************************/
+.switchers__switch_z_bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--switch-width);
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--gradient-dark-box);
+    box-shadow: var(--shadow-dark-switch);
+    transition: var(--transition);
+}
+
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch_z_upper.css ***!
+  \*************************************************************************************************************/
+.switchers__switch_z_upper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--switch-width);
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+    background: var(--gradient-light-box);
+    box-shadow: var(--shadow-light-switch);
+    transition: var(--transition);
+    background-color: aqua;
+}
+
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_theme_dark.css ***!
+  \********************************************************************************************************************/
+.switchers__switch-box_theme_dark{
+    opacity: 0;
+}
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_theme_light.css ***!
+  \*********************************************************************************************************************/
+.switchers__switch-box_theme_light{
+    opacity: 1;
+}
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_z_bottom.css ***!
+  \******************************************************************************************************************/
+.switchers__switch-box_z_bottom{
+    /* z-index: -100; */
+    background: var(--gradient-dark-box);
+    box-shadow: var(--shadow-dark-box);
+}
+/*!*****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box_z_upper.css ***!
+  \*****************************************************************************************************************/
+.switchers__switch-box_z_upper {
+    /* z-index: 100; */
+    background: var(--gradient-light-box);
+    box-shadow: var(--shadow-light-box);
+}
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icons.css (1) ***!
+  \********************************************************************************************************/
+.switchers__icons {
+    position: relative;
+    top: calc((var(--switch-box-height) - var(--switch-height))/2);
+    left: calc((var(--switch-box-width) - var(--switch-width))/2);
+    width: calc(var(--switch-width) - var(--switch-inner-shift));
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+    transition: var(--transition);
+}
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__trigger.css ***!
+  \******************************************************************************************************/
+.switchers__trigger {
+    cursor: pointer;
+    position: absolute;
+    top: calc((100% - var(--switch-height))/2);
+    left: calc((100% - var(--switch-width))/2);
+    width: calc(var(--switch-width)/2);
+    height: var(--switch-height);
+    border-radius: calc(var(--switch-height)/2);
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__trigger_right.css ***!
+  \************************************************************************************************************/
+.switchers__trigger_right {
+    left: 50%;
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__switch-box.css ***!
+  \*********************************************************************************************************/
+.switchers__switch-box {
+    position: absolute;
+    width: var(--switch-box-width);
+    height: var(--switch-box-height);
+    border-radius: calc(var(--switch-box-height)/2);
+    transition: var(--transition);
+}
+
+
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/swithers.css ***!
+  \********************************************************************************************/
+/* Import styles */
+
+
+/* Define vars for the root element */
+:root {
+    /* Animation */
+    --transition: 0.5s cubic-bezier(0.9, 0, 0, 1);
+
+    /* Sizes */
+    --switch-box-width: 110px;
+    --switch-box-height: 50px;
+
+    --switch-width: calc(var(--switch-box-width)*0.8);
+    --switch-height: calc(var(--switch-box-height)*0.7);;
+
+    --icon-on-width: calc(var(--icon-on-height)*0.2);
+    --icon-on-height: calc(var(--switch-box-height)*0.28);
+    --icon-off-width: calc(var(--icon-on-height) - var(--icon-on-height)*0.1);
+    --icon-off-height: var(--icon-off-width);
+    --icon-off-border: calc(var(--icon-on-height)*0.15);
+    --icon-on: #a1f1f2;
+    --icon-off-border-power: calc(var(--icon-on-height)*0.15) solid #f2a2a1;
+    --icon-off-border-no-power: var(--icon-off-border) solid #2d2d30;
+    --icon-no-power: #2d2d30;
+    
+    --switch-inner-shift: 6%;
+    
+    /* Dark */
+    --bg-dark: #171719;
+    --icon-off-bg-dark: black;
+    
+    --gradient-dark-box: linear-gradient(30deg, #171719, #212123);
+    --inner-gradient-dark: linear-gradient(90deg, #171719 45%, #212123 55% );
+    
+    --shadow-dark-box: -2px -3px 2px rgba(255, 255, 255, 0.02), 
+    2px 3px 2px rgba(0, 0, 0, 0.2);
+    --shadow-dark-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
+    --shadow-dark-inner: ;
+    --shadow-dark-icon-on: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.9);
+    --shadow-dark-icon-off: ;
+    --shadow-dark-icon-off-glow: 0 0 calc(var(--icon-on-height)*0.3) rgba(242, 162, 161, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(242, 162, 161, 0.5);
+    
+    /* Light */
+    --bg-light: #ffd;
+    --icon-off-bg-light: #fff;
+
+    --gradient-light-box: linear-gradient(30deg, #fefef0, #d0d0c0);
+    --inner-gradient-light: linear-gradient(90deg, #fefef0 45%, #d0d0c0 55% );
+
+    --shadow-light-box: -2px -3px 2px rgba(0, 0, 0, 0.1), 
+    2px 3px 2px rgba(0, 0, 0, 0.1);
+    --shadow-light-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
+    --shadow-light-inner: ;
+    --shadow-light-icon-off: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(0, 0, 0, 0.5);
+    --shadow-light-icon-on: ;
+    --shadow-light-icon-on-glow: 0 0 calc(var(--icon-on-height)*0.3) calc(var(--icon-on-height)*0.2) rgba(161, 241, 248, 0.5);
+}
+
+.switchers {
+    position: relative;
+    width: var(--switch-box-width);
+    height: var(--switch-box-height);
+}
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock_theme_dark.css ***!
+  \************************************************************************************************/
+.clock_theme_dark{
+    
+}
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock_theme_light.css ***!
+  \*************************************************************************************************/
+.clock_theme_light{
+    
+}
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock.css ***!
+  \*************************************************************************************/
+.clock {
+    width:350px;
+    height:350px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #091921;
+    border: 4px solid #091921;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+                inset 0 -15px 15px rgba(255,255,255,0.05),
+                0 15px 15px rgba(0,0,0,0.3),
+                inset 0 15px 15px rgba(0,0,0,0.3);
+}
+
+.clock:before {
+    content:'';
+    width:15px;
+    height:15px;
+    background: #eb4d4b;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__indicators.css ***!
+  \*********************************************************************************************************/
+.clockface__indicators{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__day-week.css ***!
+  \*******************************************************************************************************/
+.clockface__day-week {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:x-small;
+    top: 25%;
+    left: 25%;
+    width: 25px;
+    height: 25px;
+    background-color: #ffe;
+    border-radius: 50%;
+}
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__day-month.css ***!
+  \********************************************************************************************************/
+.clockface__day-month {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    top: 70%;
+    left: 60%;
+    width: 35px;
+    height: 35px;
+    background-color: #ffe;
+    border-radius: 50%;
+}
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__number.css ***!
+  \*****************************************************************************************************/
+.clockface__number{
+    position: absolute;
+    top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    color: antiquewhite;
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__icon-serif.css ***!
+  \*********************************************************************************************************/
+.clockface__icon-serif{
+    fill: #fff;
+}
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__wrap.css ***!
+  \***************************************************************************************************/
+.clockface__wrap{
+    box-sizing: border-box;
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__serif.css ***!
+  \****************************************************************************************************/
+.clockface__serif{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-mask-image: url(4883065f6dc7258f4329.svg);
+    mask-image: url(4883065f6dc7258f4329.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-color: #ffe;
+    transition: 0.3s;
+}
+
+
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__light.css ***!
+  \****************************************************************************************************/
+.clockface__light{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: hsl(230, 45%, 53%);
+
+    transition: 0.3s;
+}
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface.css ***!
+  \*********************************************************************************************/
+.clockface{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockwork/clockwork__hour.css ***!
+  \***************************************************************************************************/
+.clockwork__hour{
+    position: absolute;
+    z-index: 1;
+    width:9px;
+    height:150px;
+    /* transition: 0.5s cubic-bezier(0.9, 0, 0, 1);
+    transform: rotate(360deg); */
+}
+
+.clockwork__hour::before{
+    content: '';
+    position: absolute;
+    width:9px;
+    height:75px;
+    background-color: #ffe;
+    border-radius: 6px 6px 0 0;
+}
+
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockwork/clockwork__minute.css ***!
+  \*****************************************************************************************************/
+.clockwork__minute{
+    position: absolute;
+    z-index: 2;
+    width:5px;
+    height:220px;
+}
+
+.clockwork__minute::before{
+    content: '';
+    position: absolute;
+    width:5px;
+    height:110px;
+    background-color: red;
+    border-radius: 6px 6px 0 0;
+}
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockwork/clockwork__second.css ***!
+  \*****************************************************************************************************/
+.clockwork__second{
+    position: absolute;
+    z-index: 3;
+    width:2px;
+    height:300px;
+}
+
+.clockwork__second::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height:150px;
+    background-color: aqua;
+    border-radius: 6px 6px 0 0;
+}
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockwork/clockwork.css ***!
+  \*********************************************************************************************/
+.clockwork{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__header.css ***!
+  \*******************************************************************************************/
+
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__content.css ***!
+  \********************************************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__footer.css ***!
+  \*******************************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page.css ***!
+  \***********************************************************************************/
+.page {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-light);
+    transition: var(--transition)
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__lights.css ***!
+  \***********************************************************************************************/
+.header__lights{
+    margin: 15px 40px;
+
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__switchers.css ***!
+  \**************************************************************************************************/
+.header__switchers{
+    padding: 15px 40px;
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_dark.css ***!
+  \**************************************************************************************************/
+
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_light.css ***!
+  \***************************************************************************************************/
+
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header.css ***!
+  \***************************************************************************************/
+.header {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-light);
+    transition: var(--transition)
+}
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights.css ***!
+  \***************************************************************************************/
+.lights{
+    height: 40px;
+    width: 150px;
+    background-color: red;
+}
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__clock.css ***!
+  \************************************************************************************************/
+.content__clock {
+    margin: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*!*****************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content.css ***!
+  \*****************************************************************************************/
+.content {
+    height: 2000px;
+    background: rgb(225, 167, 167);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* background: var(--bg-light); */
+    /* position: relative; */
+    transition: var(--transition);
+}
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
+  \***************************************************************************************/
+
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  \*****************************************************************/
+
