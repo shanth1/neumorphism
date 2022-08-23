@@ -1,12 +1,13 @@
 @import "./content__clock.css";
 
+@import "./content_theme_light.css";
+@import "./content_theme_dark.css   ";
+
 .content {
     height: 2000px;
-    background: rgb(225, 167, 167);
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    /* background: var(--bg-light); */
-    /* position: relative; */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     transition: var(--transition);
 }

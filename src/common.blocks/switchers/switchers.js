@@ -1,10 +1,17 @@
-let switchUpper = document.querySelector('.switchers__switch-box_z_upper');
-let switchBottom = document.querySelector('.switchers__switch-box_z_bottom');
+const switchUpper = document.querySelector('.switchers__switch-box_z_upper');
+const switchBottom = document.querySelector('.switchers__switch-box_z_bottom');
 
-let switchInner = document.querySelectorAll('.switchers__inner_z_bottom, .switchers__inner_z_upper');
-let icons = document.querySelector('.switchers__icons');
-let iconOn = document.querySelector('.switchers__icon-on');
-let iconOff = document.querySelector('.switchers__icon-off');
+const switchInner = document.querySelectorAll('.switchers__inner_z_bottom, .switchers__inner_z_upper');
+const icons = document.querySelector('.switchers__icons');
+const iconOn = document.querySelector('.switchers__icon-on');
+const iconOff = document.querySelector('.switchers__icon-off');
+
+const { themeSwitcher } = require('../../index.js');
+
+const clock = document.querySelector('.clock');
+const header = document.querySelector('.header');
+const content = document.querySelector('.content');
+
 
 // Добавить обработчики ошибок на селектор
 
@@ -25,6 +32,10 @@ let switchers = {
     
         iconOn.className = 'switchers__icon-on switchers__icon-on_no-power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_power';
+
+        themeSwitcher(clock, 'dark')
+        themeSwitcher(header, 'dark')
+        themeSwitcher(content, 'dark')
     }),
 
     rightTrigger: document.querySelector(".switchers__trigger.switchers__trigger_right").addEventListener('click', ()=>{
@@ -42,6 +53,10 @@ let switchers = {
     
         iconOn.className = 'switchers__icon-on switchers__icon-on_power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_no-power';
+
+        themeSwitcher(clock, 'light')
+        themeSwitcher(header, 'light')
+        themeSwitcher(content, 'light')
     })
 }
 

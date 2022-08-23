@@ -12,6 +12,5 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-light);
     transition: var(--transition)
 }
