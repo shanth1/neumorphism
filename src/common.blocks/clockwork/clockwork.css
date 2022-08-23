@@ -1,0 +1,10 @@
+@import "./clockwork__hour.css";
+@import "./clockwork__minute.css";
+@import "./clockwork__second.css";
+
+.clockwork{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

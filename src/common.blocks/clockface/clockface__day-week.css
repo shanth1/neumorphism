@@ -1,0 +1,14 @@
+.clockface__day-week {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:x-small;
+    top: 25%;
+    left: 25%;
+    width: 25px;
+    height: 25px;
+    background-color: #ffe;
+    border-radius: 50%;
+}

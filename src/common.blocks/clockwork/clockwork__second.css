@@ -1,0 +1,15 @@
+.clockwork__second{
+    position: absolute;
+    z-index: 3;
+    width:2px;
+    height:300px;
+}
+
+.clockwork__second::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height:150px;
+    background-color: aqua;
+    border-radius: 6px 6px 0 0;
+}

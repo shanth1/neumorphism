@@ -3,13 +3,12 @@
 @import "/src/common.blocks/page/page__footer.css";
 
 .page {
+    position: absolute;
+    width: 100%;
     margin: 0;
     padding: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* background: var(--bg-light); */
     background: var(--bg-light);
-    /* position: relative; */
     transition: var(--transition)
 }

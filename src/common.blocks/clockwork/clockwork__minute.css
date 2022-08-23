@@ -1,0 +1,15 @@
+.clockwork__minute{
+    position: absolute;
+    z-index: 2;
+    width:5px;
+    height:220px;
+}
+
+.clockwork__minute::before{
+    content: '';
+    position: absolute;
+    width:5px;
+    height:110px;
+    background-color: red;
+    border-radius: 6px 6px 0 0;
+}

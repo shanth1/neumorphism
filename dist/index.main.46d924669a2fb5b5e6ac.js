@@ -37,7 +37,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+<<<<<<<< HEAD:dist/index.main.46d924669a2fb5b5e6ac.js
 eval("__webpack_require__(/*! ./style.css */ \"./src/style.css\");\n__webpack_require__(/*! ./common.blocks/switchers/switchers.js */ \"./src/common.blocks/switchers/switchers.js\");\n\nconsole.log(123);\n\n//# sourceURL=webpack://neumorphism/./src/index.js?");
+========
+eval("__webpack_require__(/*! ./style.css */ \"./src/style.css\");\r\n__webpack_require__(/*! ./common.blocks/switchers/switchers.js */ \"./src/common.blocks/switchers/switchers.js\");\n\n//# sourceURL=webpack://neumorphism/./src/index.js?");
+>>>>>>>> feature_clock:dist/index.main.4979ef6b938cd80ae046.js
 
 /***/ })
 
