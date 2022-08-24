@@ -8,7 +8,7 @@ const iconOff = document.querySelector('.switchers__icon-off');
 
 const { themeSwitcher } = require('../../index.js');
 
-const clock = document.querySelector('.clock');
+const clockCase = document.querySelector('.clock__case');
 const header = document.querySelector('.header');
 const content = document.querySelector('.content');
 const pagination = document.querySelector('.pagination');
@@ -35,7 +35,7 @@ let switchers = {
         iconOn.className = 'switchers__icon-on switchers__icon-on_no-power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_power';
 
-        themeSwitcher(clock, 'dark')
+        themeSwitcher(clockCase, 'dark')
         themeSwitcher(header, 'dark')
         themeSwitcher(content, 'dark')
         themeSwitcher(pagination, 'dark')
@@ -60,7 +60,7 @@ let switchers = {
         iconOn.className = 'switchers__icon-on switchers__icon-on_power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_no-power';
 
-        themeSwitcher(clock, 'light')
+        themeSwitcher(clockCase, 'light')
         themeSwitcher(header, 'light')
         themeSwitcher(content, 'light')
         themeSwitcher(pagination, 'light')

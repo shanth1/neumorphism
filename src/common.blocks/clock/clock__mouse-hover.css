@@ -1,0 +1,9 @@
+.clock__mouse-hover{
+    position: absolute;
+    width: 355px;
+    height: 355px;
+    border-radius: 50%;
+    /* background-color: black; */
+    opacity: 0.1;
+    z-index: 1000;
+}

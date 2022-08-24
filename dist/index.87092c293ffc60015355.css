@@ -278,10 +278,10 @@
     width: var(--switch-box-width);
     height: var(--switch-box-height);
 }
-/*!************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock_theme_dark.css ***!
-  \************************************************************************************************/
-.clock_theme_dark{
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__case_theme_dark.css ***!
+  \******************************************************************************************************/
+.clock__case_theme_dark{
     background-color: #091921;
     border: 4px solid #1f4c63;
     border-radius: 50%;
@@ -291,10 +291,10 @@
                 inset 0 15px 15px rgba(0,0,0,0.3);
     
 }
-/*!*************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock_theme_light.css ***!
-  \*************************************************************************************************/
-.clock_theme_light{
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__case_theme_light.css ***!
+  \*******************************************************************************************************/
+.clock__case_theme_light{
     background-color: #75b4d3;
     border: 4px solid #2d3134;
     border-radius: 50%;
@@ -304,32 +304,75 @@
                 inset 0 15px 15px rgba(0,0,0,0.3);
     
 }
-/*!*************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock.css ***!
-  \*************************************************************************************/
-.clock {
-    width:350px;
-    height:350px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__back.css ***!
+  \*******************************************************************************************/
+.clock__back{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color: #eb4d4b;
     transition: var(--transition);
 }
 
-.clock:hover{
+
+.clock__back::before{
+    width: 500px;
+    height: 500px;
+}
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__case.css ***!
+  \*******************************************************************************************/
+.clock__case {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:350px;
+    height:350px;
+    transition: var(--transition);
+}
+
+.clock__case:hover{
   width:360px;
   height:360px;
 }
 
 
-.clock:before {
+.clock__case::before {
     content:'';
     width:15px;
     height:15px;
     background: #eb4d4b;
     border-radius: 50%;
     z-index: 99;
-  }
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__mouse-hover.css ***!
+  \**************************************************************************************************/
+.clock__mouse-hover{
+    position: absolute;
+    width: 355px;
+    height: 355px;
+    border-radius: 50%;
+    /* background-color: black; */
+    opacity: 0.1;
+    z-index: 1000;
+}
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock.css ***!
+  \*************************************************************************************/
+.clock{
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  /* background-color: antiquewhite; */
+  /* display:flex;
+  justify-content: center;
+  align-items: center; */
+}
+
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__indicators.css ***!
   \*********************************************************************************************************/
@@ -588,7 +631,7 @@
 .lights{
     height: 40px;
     width: 150px;
-    background-color: red;
+    background-color: #eb4d4b;
 }
 /*!************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__clock.css ***!
@@ -626,7 +669,9 @@
   \*****************************************************************************************/
 .content {
     height: 1000px;
+    position: relative;
     display: flex;
+    z-index: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -636,7 +681,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
   \***************************************************************************************/
 .footer{
-    background-color: red;
+    background-color: #eb4d4b;
     height: 100px;
 }
 /*!****************************************************************************************************!*\

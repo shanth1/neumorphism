@@ -1,6 +1,23 @@
 const { clockWork } = require('../clockwork/clockwork.js');
 const { clockFace } = require('../clockface/clockface.js');
 
+const mouseHover = document.querySelector('.clock__mouse-hover')
+const clock = document.querySelector('.clock')
+const clockCase = document.querySelector('.clock__case')
+const clockBack = document.querySelector('.clock__back')
+
+console.log(clockCase.clientHeight)
+console.log(clockCase.clientWidth)
+
+mouseHover.addEventListener('mouseover', ()=>{
+    clockCase.setAttribute('style', `width: ${clockCase.clientWidth+20}px; height: ${clockCase.clientHeight+20}px;`)
+    clockBack.setAttribute('style', `width: ${clockCase.clientWidth+50}px; height: ${clockCase.clientHeight+50}px;`)
+})
+mouseHover.addEventListener('mouseout', ()=>{
+    clockCase.setAttribute('style', '' )
+    clockBack.setAttribute('style', '' )
+})
+
 let date = getDate()
 
 function getDate(){

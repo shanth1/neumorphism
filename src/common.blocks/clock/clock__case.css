@@ -1,0 +1,24 @@
+.clock__case {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:350px;
+    height:350px;
+    transition: var(--transition);
+}
+
+.clock__case:hover{
+  width:360px;
+  height:360px;
+}
+
+
+.clock__case::before {
+    content:'';
+    width:15px;
+    height:15px;
+    background: #eb4d4b;
+    border-radius: 50%;
+    z-index: 99;
+}

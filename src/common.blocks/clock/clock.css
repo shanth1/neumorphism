@@ -1,26 +1,16 @@
-@import "./clock_theme_dark.css";
-@import "./clock_theme_light.css";
+@import "./clock__case_theme_dark.css";
+@import "./clock__case_theme_light.css";
+@import "./clock__back.css";
+@import "./clock__case.css";
+@import "./clock__mouse-hover.css";
 
-.clock {
-    width:350px;
-    height:350px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    transition: var(--transition);
+
+.clock{
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  /* background-color: antiquewhite; */
+  /* display:flex;
+  justify-content: center;
+  align-items: center; */
 }
-
-.clock:hover{
-  width:360px;
-  height:360px;
-}
-
-
-.clock:before {
-    content:'';
-    width:15px;
-    height:15px;
-    background: #eb4d4b;
-    border-radius: 50%;
-    z-index: 99;
-  }
