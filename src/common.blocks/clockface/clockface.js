@@ -40,7 +40,8 @@ for (let i = 0; i < 60; i++) {
 
      
 
-    wrap[i].style.rotate = `${i*6}deg`
+    // wrap[i].style.rotate = `${i*6}deg`
+    wrap[i].style.cssText = `transform: rotate(${i*6}deg);`;
     document.querySelector('.clockface').append(wrap[i])
 }
 
