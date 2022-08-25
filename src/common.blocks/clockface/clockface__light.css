@@ -1,9 +1,9 @@
 .clockface__light{
     position: absolute;
-    width: 2px;
-    height: 2px;
+    top: -2px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: hsl(230, 45%, 53%);
-
     transition: 0.3s;
 }

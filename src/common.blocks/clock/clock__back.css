@@ -1,7 +1,7 @@
 .clock__back{
     position: absolute;
-    width: 0px;
-    height: 0px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background-color: #eb4d4b;
     transition: var(--transition);

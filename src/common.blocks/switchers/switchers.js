@@ -13,6 +13,7 @@ const header = document.querySelector('.header');
 const content = document.querySelector('.content');
 const pagination = document.querySelector('.pagination');
 const paginationBtn = document.querySelectorAll('.pagination__btn');
+const serifs = document.querySelectorAll('.clockface__serif');
 
 
 // Добавить обработчики ошибок на селектор
@@ -39,6 +40,9 @@ let switchers = {
         themeSwitcher(header, 'dark')
         themeSwitcher(content, 'dark')
         themeSwitcher(pagination, 'dark')
+        serifs.forEach(element => {
+            themeSwitcher(element, 'dark')
+        });
         paginationBtn.forEach(element => {
             themeSwitcher(element, 'dark')
         });
@@ -64,6 +68,9 @@ let switchers = {
         themeSwitcher(header, 'light')
         themeSwitcher(content, 'light')
         themeSwitcher(pagination, 'light')
+        serifs.forEach(element => {
+            themeSwitcher(element, 'light')
+        });
         paginationBtn.forEach(element => {
             themeSwitcher(element, 'light')
         });

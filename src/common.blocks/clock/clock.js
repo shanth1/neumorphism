@@ -2,20 +2,74 @@ const { clockWork } = require('../clockwork/clockwork.js');
 const { clockFace } = require('../clockface/clockface.js');
 
 const mouseHover = document.querySelector('.clock__mouse-hover')
-const clock = document.querySelector('.clock')
-const clockCase = document.querySelector('.clock__case')
-const clockBack = document.querySelector('.clock__back')
+const clockEl = document.querySelector('.clock')
+const clockCaseEl = document.querySelector('.clock__case')
+const clockBackEl = document.querySelector('.clock__back')
+const clockFaceEl = document.querySelector('.clockface')
+const clockWorkEl = document.querySelector('.clockwork')
+const clockDayMonthEl = document.querySelector('.clockface__day-month')
+const clockDayWeekEl = document.querySelector('.clockface__day-week')
 
-console.log(clockCase.clientHeight)
-console.log(clockCase.clientWidth)
+const serifs = document.querySelectorAll('.clockface__serif')
+
+console.log(clockCaseEl.clientHeight)
+console.log(clockCaseEl.clientWidth)
 
 mouseHover.addEventListener('mouseover', ()=>{
-    clockCase.setAttribute('style', `width: ${clockCase.clientWidth+20}px; height: ${clockCase.clientHeight+20}px;`)
-    clockBack.setAttribute('style', `width: ${clockCase.clientWidth+50}px; height: ${clockCase.clientHeight+50}px;`)
+
+    clockEl.setAttribute('style', `transform: scale(105%)`)
+    clockWorkEl.setAttribute('style', `transform: scale(90%)`)
+    clockDayMonthEl.setAttribute('style', `transform: scale(130%)`)
+    clockDayWeekEl.setAttribute('style', `transform: scale(130%)`)
+    clockFaceEl.setAttribute('style', `width: ${clockFaceEl.clientWidth+30}px; height: ${clockFaceEl.clientHeight+30}px;`)
+    clockCaseEl.setAttribute('style', `width: ${clockCaseEl.clientWidth+30}px; height: ${clockCaseEl.clientHeight+30}px;`)
+    clockBackEl.setAttribute('style', `width: ${clockCaseEl.clientWidth+60}px; height: ${clockCaseEl.clientHeight+60}px;`)
+
+    if(Array.from(serifs[0].classList).find(el => el.match(/theme/)).endsWith('light')){
+        serifs.forEach((el, index)=>{
+            if (index % 5 === 0){
+                el.className = 'clockface__serif clockface__serif_3d_large_theme_light'
+            }else{
+                el.className = 'clockface__serif clockface__serif_3d_small_theme_light'
+            }
+        })
+    }else{
+        serifs.forEach((el, index)=>{
+            if (index % 5 === 0){
+                el.className = 'clockface__serif clockface__serif_3d_large_theme_dark'
+            }else{
+                el.className = 'clockface__serif clockface__serif_3d_small_theme_dark'
+            }
+        })
+    }
 })
+
 mouseHover.addEventListener('mouseout', ()=>{
-    clockCase.setAttribute('style', '' )
-    clockBack.setAttribute('style', '' )
+    clockEl.setAttribute('style', '' )
+    clockDayMonthEl.setAttribute('style', '' )
+    clockDayWeekEl.setAttribute('style', '' )
+    clockWorkEl.setAttribute('style', '' )
+    clockFaceEl.setAttribute('style', '' )
+    clockCaseEl.setAttribute('style', '' )
+    clockBackEl.setAttribute('style', '' )
+
+    if(Array.from(serifs[0].classList).find(el => el.match(/theme/)).endsWith('light')){
+        serifs.forEach((el, index)=>{
+            if (index % 5 === 0){
+                el.className = 'clockface__serif clockface__serif_2d_large_theme_light'
+            }else{
+                el.className = 'clockface__serif clockface__serif_2d_small_theme_light'
+            }
+        })
+    }else{
+        serifs.forEach((el, index)=>{
+            if (index % 5 === 0){
+                el.className = 'clockface__serif clockface__serif_2d_large_theme_dark'
+            }else{
+                el.className = 'clockface__serif clockface__serif_2d_small_theme_dark'
+            }
+        })
+    }
 })
 
 let date = getDate()

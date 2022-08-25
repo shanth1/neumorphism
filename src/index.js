@@ -1,7 +1,7 @@
-require('./common.blocks/switchers/switchers.js');
 require('./style.css');
 require('./common.blocks/clock/clock.js');
 require('./common.blocks/pagination/pagination.js');
+require('./common.blocks/switchers/switchers.js');
 
 function themeSwitcher(element, theme){
     let className = Array.from(element.classList).find(el => el.match(/theme/))

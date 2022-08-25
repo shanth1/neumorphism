@@ -11,21 +11,21 @@ const daysOfWeek = [
     'Sat'
 ];
 
+
 let wrap =[]
 for (let i = 0; i < 60; i++) {
     let wrapElement = createElement('clockface__wrap', 'div')
     let serif = createElement('clockface__serif', 'div')
     let light = createElement('clockface__light', 'div')
-    
+
     wrapElement.append(serif) //childNodes[0], firstChild
     wrapElement.append(light) //childNodes[1]
 
     wrap.push(wrapElement)
-    wrap[i].style.rotate = `${i*6}deg` 
     
     if (i%5===0){
-        wrap[i].firstChild.style.width = `10px`
-
+        serif.classList.add('clockface__serif_2d_large_theme_light')
+        
         let number = createElement('clockface__number', 'div')
         wrapElement.append(number) //childNodes[2], lastChild
         if(i===0){
@@ -34,11 +34,17 @@ for (let i = 0; i < 60; i++) {
             number.innerHTML = i/5
         }
         number.style.rotate=`${i/5*-30}deg`
+    }else{
+        serif.classList.add('clockface__serif_2d_small_theme_light')
     }
+
+     
 
     wrap[i].style.rotate = `${i*6}deg`
     document.querySelector('.clockface').append(wrap[i])
 }
+
+
 
 function getColor(){
     return 'hsl(' + 360*Math.random() + ', ' +
@@ -66,25 +72,25 @@ function clockFace(dateValues){
         wrap[(dateValues.hrVal - hourCorrection)*5].childNodes[2].style.color = 'red';
         // дублирование кода 
         if (((dateValues.hrVal - hourCorrection) * 5) === 0){
-            wrap[11 * 5].childNodes[2].style.color = 'bisque';
+            wrap[11 * 5].childNodes[2].style.color = '';
         }else {
-            wrap[(dateValues.hrVal - hourCorrection -1) * 5].childNodes[2].style.color = 'bisque';
+            wrap[(dateValues.hrVal - hourCorrection -1) * 5].childNodes[2].style.color = '';
         }
     }else{
         wrap[dateValues.hrVal*5].childNodes[2].style.color = 'red';
         // Дублирование кода 
         if ((dateValues.hrVal) === 0){
-            wrap[11*5].childNodes[2].style.color = 'bisque';
+            wrap[11*5].childNodes[2].style.color = '';
         }else {
-            wrap[(dateValues.hrVal-1)*5].childNodes[2].style.color = 'bisque';
+            wrap[(dateValues.hrVal-1)*5].childNodes[2].style.color = '';
         }
     }
 
     // Обратная стрелка
     if (dateValues.mnVal===0){
-        wrap[59].firstChild.style.backgroundColor = 'bisque';
+        wrap[59].firstChild.style.backgroundColor = '';
     }else{
-        wrap[dateValues.mnVal-1].firstChild.style.backgroundColor = 'bisque';
+        wrap[dateValues.mnVal-1].firstChild.style.backgroundColor = '';
     }
 
     if (dateValues.scVal===0){

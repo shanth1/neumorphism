@@ -10,6 +10,19 @@
 @import "./clockface__serif.css";
 @import "./clockface__light.css";
 
+@import "./clockface__serif_2d_small_theme_dark.css";
+@import "./clockface__serif_2d_small_theme_light.css";
+
+@import "./clockface__serif_2d_large_theme_dark.css";
+@import "./clockface__serif_2d_large_theme_light.css";
+
+@import "./clockface__serif_3d_small_theme_dark.css";
+@import "./clockface__serif_3d_small_theme_light.css";
+
+@import "./clockface__serif_3d_large_theme_dark.css";
+@import "./clockface__serif_3d_large_theme_light.css";
+
+
 .clockface{
     position: absolute;
     display: flex;
@@ -18,4 +31,6 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    overflow: hidden;
+    transition: var(--transition);
 }
