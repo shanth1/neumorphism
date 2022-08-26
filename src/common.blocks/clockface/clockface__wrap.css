@@ -4,15 +4,5 @@
     justify-content: center;
     width: 20px;
     height: 350px;
-    padding-top: 10px;
-    /* background-color: aqua; */
-
-    /* box-sizing: border-box; */
-    /* position: absolute; */
-    /* width: 6px; */
-    /* height: 100%; */
-    /* padding-top: 8px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* transition: 0.3s; */
+    padding-top: 0px;
 }

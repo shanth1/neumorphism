@@ -17,4 +17,14 @@ function themeSwitcher(element, theme){
     }
 }
 
-export {themeSwitcher}
+function createElement(className, tagName){
+    let element = document.createElement(tagName)
+    element.className = className
+    return element
+}
+
+function getDate(){
+    return new Date();
+}
+
+export {themeSwitcher, createElement, getDate}

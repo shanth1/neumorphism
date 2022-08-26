@@ -15,10 +15,4 @@ function clockWork(dateValues, transition){
     second.style.cssText = `transform: rotate(${dateValues.scDeg}deg);  ${transition}`;
 }
 
-function rotateClockwork(dateValues, transition){
-    hour.style.cssText = `transform: rotate(${(dateValues.hrDeg)+(dateValues.mnVal/2)}deg); ${transition}`;
-    minute.style.cssText = `transform: rotate(${dateValues.mnDeg + dateValues.scVal/10}deg); ${transition}`;
-    second.style.cssText = `transform: rotate(${dateValues.scDeg}deg);  ${transition}`;
-}
-
 export {clockWork}

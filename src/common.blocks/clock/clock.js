@@ -1,22 +1,51 @@
 const { clockWork } = require('../clockwork/clockwork.js');
-const { clockFace } = require('../clockface/clockface.js');
+const { getDate } = require('../../index.js');
+const { clockFace, renderClockfaceWrapElement } = require('../clockface/clockface.js');
 
-const mouseHover = document.querySelector('.clock__mouse-hover')
+renderClockfaceWrapElement()
+
 const clockEl = document.querySelector('.clock')
 const clockCaseEl = document.querySelector('.clock__case')
 const clockBackEl = document.querySelector('.clock__back')
+const mouseHover = document.querySelector('.clock__mouse-hover')
 const clockFaceEl = document.querySelector('.clockface')
-const clockWorkEl = document.querySelector('.clockwork')
-const clockDayMonthEl = document.querySelector('.clockface__day-month')
-const clockDayWeekEl = document.querySelector('.clockface__day-week')
-
 const serifs = document.querySelectorAll('.clockface__serif')
+const clockDayMonthEl = document.querySelector('.clock__day-month')
+const clockDayWeekEl = document.querySelector('.clock__day-week')
+const clockWorkEl = document.querySelector('.clockwork')
 
-console.log(clockCaseEl.clientHeight)
-console.log(clockCaseEl.clientWidth)
+
+let date = getDate()
+
+clockWork(getDateValues(date), false)
+setInterval(()=>{
+    let date = getDate()
+    let dateValues = getDateValues(date)
+
+    clockWork(dateValues, true)
+    clockFace(dateValues)
+})
+
+
+function getDateValues(date){
+    return {
+        date: date.getDate(),
+        day: date.getDay(),
+
+        hrDeg: date.getHours() * 30,
+        mnDeg: date.getHours() * 360 + date.getMinutes() * 6,
+        scDeg: date.getMinutes() * 360 + date.getSeconds() * 6,
+
+        hrVal: date.getHours(),
+        mnVal: date.getMinutes(),
+        scVal: date.getSeconds(),
+    }
+}
+
 
 mouseHover.addEventListener('mouseover', ()=>{
 
+    console.log(clockEl.clientHeight * 0.3)
     clockEl.setAttribute('style', `transform: scale(105%)`)
     clockWorkEl.setAttribute('style', `transform: scale(90%)`)
     clockDayMonthEl.setAttribute('style', `transform: scale(130%)`)
@@ -71,38 +100,6 @@ mouseHover.addEventListener('mouseout', ()=>{
         })
     }
 })
-
-let date = getDate()
-
-function getDate(){
-    return new Date();
-}
-
-function getDateValues(date){
-    return {
-        date: date.getDate(),
-        day: date.getDay(),
-
-        hrDeg: date.getHours() * 30,
-        mnDeg: date.getHours() * 360 + date.getMinutes() * 6,
-        scDeg: date.getMinutes() * 360 + date.getSeconds() * 6,
-
-        hrVal: date.getHours(),
-        mnVal: date.getMinutes(),
-        scVal: date.getSeconds(),
-    }
-}
-
-clockWork(getDateValues(date), false)
-let interval = setInterval(()=>{
-    let date = getDate()
-    let dateValues = getDateValues(date)
-
-    clockWork(dateValues, true)
-    clockFace(dateValues)
-})
-
-export {interval}
 
 
 

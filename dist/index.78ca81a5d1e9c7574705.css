@@ -356,9 +356,53 @@
     width: 355px;
     height: 355px;
     border-radius: 50%;
-    /* background-color: black; */
-    opacity: 0.1;
     z-index: 1000;
+}
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__indicators.css ***!
+  \*************************************************************************************************/
+.clock__indicators{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__day-week.css ***!
+  \***********************************************************************************************/
+.clock__day-week {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:x-small;
+    top: 105px;
+    left: 25%;
+    width: 25px;
+    height: 25px;
+    background-color: #ffe;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__day-month.css ***!
+  \************************************************************************************************/
+.clock__day-month {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    top: 70%;
+    left: 60%;
+    width: 35px;
+    height: 35px;
+    background-color: #ffe;
+    border-radius: 50%;
+    transition: var(--transition);
 }
 /*!*************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock.css ***!
@@ -374,52 +418,6 @@
   align-items: center; */
 }
 
-/*!*********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__indicators.css ***!
-  \*********************************************************************************************************/
-.clockface__indicators{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-/*!*******************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__day-week.css ***!
-  \*******************************************************************************************************/
-.clockface__day-week {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:x-small;
-    top: 25%;
-    left: 25%;
-    width: 25px;
-    height: 25px;
-    background-color: #ffe;
-    border-radius: 50%;
-    transition: var(--transition);
-}
-/*!********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__day-month.css ***!
-  \********************************************************************************************************/
-.clockface__day-month {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    top: 70%;
-    left: 60%;
-    width: 35px;
-    height: 35px;
-    background-color: #ffe;
-    border-radius: 50%;
-    transition: var(--transition);
-}
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__number.css ***!
   \*****************************************************************************************************/
@@ -445,25 +443,15 @@
     justify-content: center;
     width: 20px;
     height: 350px;
-    padding-top: 10px;
-    /* background-color: aqua; */
-
-    /* box-sizing: border-box; */
-    /* position: absolute; */
-    /* width: 6px; */
-    /* height: 100%; */
-    /* padding-top: 8px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* transition: 0.3s; */
+    padding-top: 0px;
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clockface/clockface__serif.css ***!
   \****************************************************************************************************/
 .clockface__serif{
     position: absolute;
-    /* top: 10px; */
-    transition: var(--transition);
+    top: 10px;
+    transition: 0.3s;
 }
 
 
@@ -472,7 +460,7 @@
   \****************************************************************************************************/
 .clockface__light{
     position: absolute;
-    top: -2px;
+    top: -5px;
     width: 4px;
     height: 4px;
     border-radius: 50%;

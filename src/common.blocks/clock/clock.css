@@ -4,6 +4,10 @@
 @import "./clock__case.css";
 @import "./clock__mouse-hover.css";
 
+@import "./clock__indicators.css";
+@import "./clock__day-week.css";
+@import "./clock__day-month.css";
+
 
 .clock{
   position: absolute;
