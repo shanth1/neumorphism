@@ -1,3 +1,79 @@
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__header.css ***!
+  \*******************************************************************************************/
+.page__header{
+    position: fixed;
+    z-index: 100;
+}
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__content.css ***!
+  \********************************************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__footer.css ***!
+  \*******************************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page.css ***!
+  \***********************************************************************************/
+.page {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-light);
+    transition: var(--transition)
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__lights.css ***!
+  \***********************************************************************************************/
+.header__lights{
+    margin: 15px 40px;
+
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__switchers.css ***!
+  \**************************************************************************************************/
+.header__switchers{
+    padding: 15px 40px;
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_dark.css ***!
+  \**************************************************************************************************/
+.header_theme_dark{
+    background: var(--bg-dark);
+}
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_light.css ***!
+  \***************************************************************************************************/
+.header_theme_light{
+    background: var(--bg-light);
+}
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header.css ***!
+  \***************************************************************************************/
+.header {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    
+}
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights.css ***!
+  \***************************************************************************************/
+.lights{
+    height: 40px;
+    width: 150px;
+    background-color: #eb4d4b;
+}
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icons.css ***!
   \****************************************************************************************************/
@@ -278,6 +354,115 @@
     width: var(--switch-box-width);
     height: var(--switch-box-height);
 }
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_light.css ***!
+  \*****************************************************************************************************/
+.content_theme_light{
+    background: rgb(225, 227, 205);
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_dark.css ***!
+  \****************************************************************************************************/
+.content_theme_dark{
+    background: #111;
+}
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__slider.css ***!
+  \*************************************************************************************************/
+.content__slider{
+    margin-top: 50px;
+}
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__pagination.css ***!
+  \*****************************************************************************************************/
+.content__pagination{
+    position: sticky;
+    top: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__header.css ***!
+  \*************************************************************************************************/
+.content__header{
+    width: 100%;
+    height: 80px;
+    background-color: red;
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__generator.css ***!
+  \****************************************************************************************************/
+.content__generator{
+    margin-top: 50px;
+}
+/*!*****************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content.css ***!
+  \*****************************************************************************************/
+.content {
+    height: 1350px;
+
+    /* position: relative; */
+    display: flex;
+    z-index: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    transition: var(--transition);
+}
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/generator/generator_theme_dark.css ***!
+  \********************************************************************************************************/
+.generator_theme_dark{
+    background: var(--bg-dark);
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/generator/generator_theme_light.css ***!
+  \*********************************************************************************************************/
+.generator_theme_light{
+    background: var(--bg-light);
+}
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/generator/generator.css ***!
+  \*********************************************************************************************/
+.generator{
+    width: 90%;
+    height: 500px;
+    transition: var(--transition);
+}
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__clock.css ***!
+  \**********************************************************************************************/
+.slider__clock {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider_theme_dark.css ***!
+  \**************************************************************************************************/
+.slider_theme_dark{
+    background-color: var(--bg-light);
+}
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider_theme_light.css ***!
+  \***************************************************************************************************/
+.slider_theme_light{
+    background-color: var(--bg-dark);
+}
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider.css ***!
+  \***************************************************************************************/
+.slider{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
 /*!******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__case_theme_dark.css ***!
   \******************************************************************************************************/
@@ -408,14 +593,9 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock.css ***!
   \*************************************************************************************/
 .clock{
-  position: absolute;
   width: 350px;
   height: 350px;
   transition: var(--transition);
-  /* background-color: antiquewhite; */
-  /* display:flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 /*!*****************************************************************************************************!*\
@@ -618,132 +798,6 @@
     align-items: center;
     transition: var(--transition)
 }
-/*!*******************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__header.css ***!
-  \*******************************************************************************************/
-.page__header{
-    position: fixed;
-    z-index: 100;
-}
-/*!********************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__content.css ***!
-  \********************************************************************************************/
-
-/*!*******************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__footer.css ***!
-  \*******************************************************************************************/
-
-/*!***********************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page.css ***!
-  \***********************************************************************************/
-.page {
-    position: absolute;
-    width: 100%;
-    margin: 0;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-light);
-    transition: var(--transition)
-}
-/*!***********************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__lights.css ***!
-  \***********************************************************************************************/
-.header__lights{
-    margin: 15px 40px;
-
-}
-/*!**************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__switchers.css ***!
-  \**************************************************************************************************/
-.header__switchers{
-    padding: 15px 40px;
-}
-/*!**************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_dark.css ***!
-  \**************************************************************************************************/
-.header_theme_dark{
-    background: var(--bg-dark);
-}
-/*!***************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_light.css ***!
-  \***************************************************************************************************/
-.header_theme_light{
-    background: var(--bg-light);
-}
-/*!***************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header.css ***!
-  \***************************************************************************************/
-.header {
-    width: 100%;
-    height: 80px;
-    margin: 0;
-    padding: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    transition: var(--transition)
-}
-/*!***************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights.css ***!
-  \***************************************************************************************/
-.lights{
-    height: 40px;
-    width: 150px;
-    background-color: #eb4d4b;
-}
-/*!************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__clock.css ***!
-  \************************************************************************************************/
-.content__clock {
-    position: relative;
-    margin-top: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/*!*****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__pagination.css ***!
-  \*****************************************************************************************************/
-.content__pagination{
-    position: sticky;
-    top: 500px;
-    margin-top: 70px;
-    margin-bottom: 50px;
-}
-/*!*****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_light.css ***!
-  \*****************************************************************************************************/
-.content_theme_light{
-    background: rgb(225, 227, 205);
-}
-/*!****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_dark.css ***!
-  \****************************************************************************************************/
-.content_theme_dark{
-    background: #111;
-}
-/*!*****************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content.css ***!
-  \*****************************************************************************************/
-.content {
-    height: 1000px;
-    position: relative;
-    display: flex;
-    z-index: 0;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    transition: var(--transition);
-}
-/*!***************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
-  \***************************************************************************************/
-.footer{
-    background-color: #eb4d4b;
-    height: 100px;
-}
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn.css ***!
   \****************************************************************************************************/
@@ -831,7 +885,19 @@
 .pagination{
     transition: var(--transition);
 }
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
+  \***************************************************************************************/
+.footer{
+    background-color: #eb4d4b;
+    height: 100px;
+}
 /*!*****************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
   \*****************************************************************/
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+
 

@@ -1,6 +1,5 @@
-.content__clock {
-    position: relative;
-    margin-top: 300px;
+.slider__clock {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,15 +1,19 @@
-@import "./content__clock.css";
-@import "./content__pagination.css";
 @import "./content_theme_light.css";
-@import "./content_theme_dark.css   ";
+@import "./content_theme_dark.css";
+@import "./content__slider.css";
+@import "./content__pagination.css";
+@import "./content__header.css";
+@import "./content__generator.css";
+
 
 .content {
-    height: 1000px;
-    position: relative;
+    height: 1350px;
+
+    /* position: relative; */
     display: flex;
     z-index: 0;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center; 
     transition: var(--transition);
 }

@@ -9,8 +9,10 @@ const iconOff = document.querySelector('.switchers__icon-off');
 const { themeSwitcher } = require('../../index.js');
 
 const clockCase = document.querySelector('.clock__case');
+const generator = document.querySelector('.generator');
 const header = document.querySelector('.header');
 const content = document.querySelector('.content');
+const slider = document.querySelector('.slider');
 const pagination = document.querySelector('.pagination');
 const paginationBtn = document.querySelectorAll('.pagination__btn');
 const serifs = document.querySelectorAll('.clockface__serif');
@@ -40,6 +42,8 @@ let switchers = {
         themeSwitcher(header, 'dark')
         themeSwitcher(content, 'dark')
         themeSwitcher(pagination, 'dark')
+        themeSwitcher(generator, 'dark')
+        themeSwitcher(slider, 'dark')
         serifs.forEach(element => {
             themeSwitcher(element, 'dark')
         });
@@ -68,6 +72,8 @@ let switchers = {
         themeSwitcher(header, 'light')
         themeSwitcher(content, 'light')
         themeSwitcher(pagination, 'light')
+        themeSwitcher(generator, 'light')
+        themeSwitcher(slider, 'light')
         serifs.forEach(element => {
             themeSwitcher(element, 'light')
         });
