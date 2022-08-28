@@ -1,62 +1,111 @@
-const listenerPrev = function(){
-    let arr = this.arr
+const transition = '500ms'
 
-    let currentEl = document.querySelector('.current')
-    let prevEl = document.querySelector('.prev')
-    let backEL = document.querySelector('.back')
+const listenerPrev = function(){
+    //обнуление при переходе. Можно убрать
     let nextEL = document.querySelector('.next')
-    currentEl.className = 'slide next'
-    nextEL.className = 'slide back'
-    prevEl.className = 'slide current'
-    backEL.className = 'slide back'
+    if(nextEL){
+        nextEL.className = 'slide'
+    }
+
+    let arr = this.arr
+    let currentEl = document.querySelector('.current');
+    currentEl.style.transition = transition;
+    
+    arr.forEach((el, index)=>{
+        if (el.className.endsWith('current')){
+            currentIndex = index;
+            if (currentIndex === 0){
+                arr[arr.length - 1].className = 'slide prev'
+            }else{
+                arr[currentIndex - 1].className = 'slide prev'
+            }
+        }
+    })
+    
+    let prevEL = document.querySelector('.prev');
+    prevEL.classList.add('prev')
+    prevEL.style.transition = transition;
+    
     setTimeout(()=>{
-        let currentIndex
+        currentEl.className = 'slide next';
+        prevEL.className = 'slide current';
+    }) 
+    setTimeout(()=>{
+        let arr = this.arr;
+        let currentIndex = 0;
+        currentEl.style.transition = '';
+        
         arr.forEach((el, index)=>{
             if (el.className.endsWith('current')){
-                currentIndex = index
+                currentIndex = index;
+                if (currentIndex === 0){
+                    arr[arr.length - 1].className = 'slide prev'
+                }else{
+                    arr[currentIndex - 1].className = 'slide prev'
+                }
+                document.querySelector('.prev-btn').addEventListener('click', {handleEvent: listenerPrev, arr: slidesArr}, {once: true});
             }
         })
-        if (currentIndex === 0){
-            arr[arr.length - 1].className = 'slide prev'
-        }else{
-            arr[currentIndex - 1].className = 'slide prev'
-        }
-        document.querySelector('.prev-btn').addEventListener('click', {handleEvent: listenerPrev, arr: slidesArr}, {once: true})
-    }, document.querySelector('.slide').style.transitionDuration.replace('ms', ''))
+        currentEl.className = 'slide'
+    }, transition.replace('ms', ''))
 }
 
 const listenerPages = function(){
     console.log('pag')
 }
 
+
 const listenerNext = function(){
     let arr = this.arr
-    let currentEl = document.querySelector('.current')
-    let prevEl = document.querySelector('.prev')
-    let backEL = document.querySelector('.back')
-    let nextEL = document.querySelector('.next')
-    currentEl.className = 'slide prev'
-    nextEL.className = 'slide current'
-    prevEl.className = 'slide back'
-    backEL.className = 'slide back'
-    setTimeout(()=>{
-        let currentIndex
+    let currentEl = document.querySelector('.current');
+    currentEl.style.transition = transition;
+    
+    //обнуление при переходе
+    let prevEL = document.querySelector('.prev')
+    if(prevEL){
+        prevEL.className = 'slide'
+    }
 
+    arr.forEach((el, index)=>{
+        if (el.className.endsWith('current')){
+            currentIndex = index;
+            if (currentIndex === arr.length - 1){
+                arr[0].className = 'slide next';
+            }else{
+                arr[currentIndex + 1].className = 'slide next';
+            }
+        }
+    })
+
+    let nextEL = document.querySelector('.next');
+    nextEL.style.transition = transition;
+    
+    setTimeout(()=>{
+        nextEL.className = 'slide current';
+        currentEl.className = 'slide prev';
+    }) 
+    setTimeout(()=>{
+        let arr = this.arr;
+        let currentIndex = 0;
+        currentEl.style.transition = '';
+        
         arr.forEach((el, index)=>{
             if (el.className.endsWith('current')){
-                currentIndex = index
+                currentIndex = index;
+                if (currentIndex === arr.length - 1){
+                    arr[0].className = 'slide next';
+                }else{
+                    arr[currentIndex + 1].className = 'slide next';
+                }
+                document.querySelector('.next-btn').addEventListener('click', {handleEvent: listenerNext, arr: slidesArr}, {once: true});
             }
         })
-        if (currentIndex === arr.length - 1){
-            arr[0].className = 'slide next'
-        }else{
-            arr[currentIndex + 1].className = 'slide next'
-        }
-        document.querySelector('.next-btn').addEventListener('click', {handleEvent: listenerNext, arr: slidesArr}, {once: true})
-    }, document.querySelector('.slide').style.transitionDuration.replace('ms', ''))
+        currentEl.className = 'slide';
+    }, transition.replace('ms', ''))
 }
 
 //Создание кнопок
+const slidesParent = document.querySelector('.slides')
 const slidesArr = document.querySelectorAll('.slide')
 for (let index = 1; index < slidesArr.length; index++) {
     let pagPage = document.createElement('div')
@@ -67,22 +116,11 @@ for (let index = 1; index < slidesArr.length; index++) {
 
 //возможен слайдер
 if (slidesArr.length>1){
-    slidesArr.forEach((el, i, arr)=>{
-        el.style.transition = '1000ms'
-        if (i===0){
-            el.className = 'slide current'
-        }else if(i===1){
-            el.className = 'slide next'
-        }else if(i === arr.length-1){
-            el.className = 'slide prev'
-        }else{
-            el.className = 'slide back'
-        }
-    })
+    slidesArr[0].classList.add('current')
     
     document.querySelector('.prev-btn').addEventListener('click', {handleEvent: listenerPrev, arr: slidesArr}, {once: true})
     document.querySelector('.next-btn').addEventListener('click', {handleEvent: listenerNext, arr: slidesArr}, {once: true})
-
+    
 }else{
     console.log('Мало элементов для слайдер')
 }
