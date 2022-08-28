@@ -1,4 +1,4 @@
-const transition = '500ms'
+const transition = '1000ms'
 
 const listenerPrev = function(){
     //обнуление при переходе. Можно убрать
@@ -25,7 +25,7 @@ const listenerPrev = function(){
     let prevEL = document.querySelector('.prev');
     prevEL.classList.add('prev')
     prevEL.style.transition = transition;
-    
+
     setTimeout(()=>{
         currentEl.className = 'slide next';
         prevEL.className = 'slide current';
@@ -47,11 +47,108 @@ const listenerPrev = function(){
             }
         })
         currentEl.className = 'slide'
+        document.querySelector('.prev').className = 'slide'
     }, transition.replace('ms', ''))
 }
 
 const listenerPages = function(){
-    console.log('pag')
+    let index = this.index
+    let arr = this.arr
+    let currentIndex
+
+    arr.forEach((el, index)=>{
+        if (el.className.endsWith('current')){
+            currentIndex = index;
+        }
+    })
+
+    if (index > currentIndex){
+        //Next
+
+        //обнуление при переходе
+        let prevEL = document.querySelector('.prev')
+        if(prevEL){
+            prevEL.className = 'slide'
+        }
+        
+        let currentEl = arr[currentIndex];
+        currentEl.style.transition = transition;
+
+        
+        if (currentIndex === arr.length - 1){
+            arr[0].className = 'slide next';
+        }else{
+            arr[index].className = 'slide next';
+        }
+        
+
+        let nextEL = arr[index];
+        nextEL.classList.add('next')
+        nextEL.style.transition = transition;
+
+        setTimeout(()=>{
+            nextEL.className = 'slide current';
+            currentEl.className = 'slide prev';
+        }) 
+        setTimeout(()=>{
+            let arr = this.arr;
+            let currentIndex = 0;
+            currentEl.style.transition = '';
+            
+            arr.forEach((el, index)=>{
+                if (el.className.endsWith('current')){
+                    currentIndex = index;
+                    if (currentIndex === arr.length - 1){
+                        arr[0].className = 'slide next';
+                    }else{
+                        arr[currentIndex + 1].className = 'slide next';
+                    }
+                }
+            })
+            currentEl.className = 'slide';
+            document.querySelector('.next').className = 'slide'
+        }, transition.replace('ms', ''))
+    }else if(index === currentIndex){
+        console.log('та же кнопка')
+    }else{
+        //Prev
+        //обнуление при переходе. Можно убрать
+        let nextEL = document.querySelector('.next')
+        if(nextEL){
+            nextEL.className = 'slide'
+        }
+
+        let currentEl = arr[currentIndex];
+        currentEl.style.transition = transition;
+        
+        let prevEL = arr[index];
+        prevEL.classList.add('prev')
+        prevEL.style.transition = transition;
+
+        setTimeout(()=>{
+            currentEl.className = 'slide next';
+            prevEL.className = 'slide current';
+        }) 
+        setTimeout(()=>{
+            let arr = this.arr;
+            let currentIndex = 0;
+            currentEl.style.transition = '';
+            
+            arr.forEach((el, index)=>{
+                if (el.className.endsWith('current')){
+                    currentIndex = index;
+                    if (currentIndex === 0){
+                        arr[arr.length - 1].className = 'slide prev'
+                    }else{
+                        arr[currentIndex - 1].className = 'slide prev'
+                    }
+                    document.querySelector('.prev-btn').addEventListener('click', {handleEvent: listenerPrev, arr: slidesArr}, {once: true});
+                }
+            })
+            currentEl.className = 'slide'
+            document.querySelector('.prev').className = 'slide'
+        }, transition.replace('ms', ''))
+    }
 }
 
 
@@ -101,6 +198,7 @@ const listenerNext = function(){
             }
         })
         currentEl.className = 'slide';
+        document.querySelector('.next').className = 'slide'
     }, transition.replace('ms', ''))
 }
 
@@ -125,6 +223,6 @@ if (slidesArr.length>1){
     console.log('Мало элементов для слайдер')
 }
 
-document.querySelectorAll('.pag').forEach((item, index, arr)=>{
-    item.addEventListener('click', {handleEvent: listenerPages, arr: arr, item: item, index: index})
+document.querySelectorAll('.pag').forEach((el, index)=>{
+    el.addEventListener('click', {handleEvent: listenerPages, arr: slidesArr, index: index})
 })
