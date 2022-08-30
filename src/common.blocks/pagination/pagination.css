@@ -1,5 +1,6 @@
 @import "./pagination__btn.css";
-@import "./pagination__box.css";
+@import "./pagination__btn-next.css";
+@import "./pagination__btn-prev.css";
 @import "./pagination_theme_dark.css";
 @import "./pagination_theme_light.css";
 @import "./pagination__btn_status_active_dark.css";
@@ -8,5 +9,9 @@
 @import "./pagination__btn_theme_dark.css";
 
 .pagination{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
     transition: var(--transition);
+    padding: 20px;
 }

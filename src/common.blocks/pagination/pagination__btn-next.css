@@ -1,4 +1,4 @@
-.pagination__btn{
+.pagination__btn-next{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,4 +9,5 @@
     /* font-family: 'Courier New', Courier, monospace; */
     font-size: 18px;
     transition: var(--transition);
+    margin: 0 20px;
 }

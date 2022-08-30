@@ -1,0 +1,5 @@
+.slider_previous{
+    position: absolute;
+    z-index: 20;
+    left: -100%;
+}
