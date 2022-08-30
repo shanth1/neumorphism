@@ -97,6 +97,33 @@ const listenerPages = function(){
     let index = this.index
     let currentIndex = getCurrentIndex()
 
+    console.log(slidesArr[index].className)
+
+    //Активная кнопка пагинации и темы
+    if(Array.from(paginationArr[index].classList).find(el => el.match(/theme/)).endsWith('light')){
+        paginationArr.forEach((el, elIndex)=>{
+            if (elIndex !== index){
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_light')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_light')
+                paginationArr[index].addEventListener('click', this, {once: true})
+            }
+        })
+
+        paginationArr[index].classList.remove('pagination__btn_theme_light')
+        paginationArr[index].classList.add('pagination__btn_status_active_light')
+    }else {
+        paginationArr.forEach((el, elIndex)=>{
+            if (elIndex !== index){
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_dark')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_dark')
+                paginationArr[index].addEventListener('click', this, {once: true})
+            }
+        })
+
+        paginationArr[index].classList.remove('pagination__btn_theme_dark')
+        paginationArr[index].classList.add('pagination__btn_status_active_dark')
+    }
+
     if (index > currentIndex){
         //Next
         timeoutSequence(defineElement(currentClass), defineElement(nextClass, index), nextClass, false)
@@ -131,14 +158,19 @@ if (slidesArr.length>1){
     console.log('Мало элементов для слайдера')
 }
 
-//Создание кнопок пагинации
+let paginationArr = [document.querySelector('.pagination__btn')]
+
 for (let index = 1; index < slidesArr.length; index++) {
     let pagPage = document.createElement('div')
     pagPage.classList.add(paginationClass)
     pagPage.classList.add('pagination__btn_theme_light')
     pagPage.innerHTML = index + 1
+
+    paginationArr.push(pagPage)
     document.querySelector(`.${nextBtnClass}`).before(pagPage)
 }
 document.querySelectorAll(`.${paginationClass}`).forEach((el, index)=>{
     el.addEventListener('click', {handleEvent: listenerPages, index: index})
 })
+
+// export {slidesArr, listenerPages}

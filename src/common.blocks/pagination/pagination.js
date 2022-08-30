@@ -1,4 +1,21 @@
-const paginationBox = document.querySelector('.pagination__box')
+const { slidesArr, listenerPages } = require('../slider/slider.js');
+
+const prevBtnClass = 'pagination__btn-prev'
+const paginationClass = 'pagination__btn'
+const nextBtnClass = 'pagination__btn-next'
+
+//Создание кнопок пагинации
+// for (let index = 1; index < slidesArr.length; index++) {
+//     let pagPage = document.createElement('div')
+//     pagPage.classList.add(paginationClass)
+//     pagPage.classList.add('pagination__btn_theme_light')
+//     pagPage.innerHTML = index + 1
+//     document.querySelector(`.${nextBtnClass}`).before(pagPage)
+// }
+// document.querySelectorAll(`.${paginationClass}`).forEach((el, index)=>{
+//     el.addEventListener('click', {handleEvent: listenerPages, index: index})
+// })
+
 
 
 
@@ -6,8 +23,6 @@ const paginationBox = document.querySelector('.pagination__box')
 //     let arr = this.arr
 //     let item = this.item
 //     let index = this.index
-    
-//     console.log('hi')
 
 //     if(Array.from(event.target.classList).find(el => el.match(/theme/)).endsWith('light')){
 //         arr.forEach((el, elIndex)=>{
@@ -27,19 +42,8 @@ const paginationBox = document.querySelector('.pagination__box')
     
 // }
 
-// const listenerNext = function(){
 
-// }
 
-// document.querySelectorAll('.pagination__btn').forEach((item, index, arr)=>{
-//     if (index === 0){
-//         item.addEventListener('click', listenerPrev)
-//     }else if (index === arr.length - 1){
-//         item.addEventListener('click', listenerNext)
-//     }else{
-//         item.addEventListener('click', {handleEvent: listenerPages, arr: arr, item: item, index: index}, {once: true})
-//     }
-// })
 
 
 // const listener = function (event){
