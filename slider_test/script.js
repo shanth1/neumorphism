@@ -1,228 +1,139 @@
-const transition = '1000ms'
+const transition = '500ms'
 
-const listenerPrev = function(){
-    //обнуление при переходе. Можно убрать
-    let nextEL = document.querySelector('.next')
-    if(nextEL){
-        nextEL.className = 'slide'
+const slideClass = 'slide'
+
+const currentClass = 'current'
+const previousClass = 'prev'
+const nextClass = 'next'
+
+const prevBtnClass = 'prev-btn'
+const paginationClass = 'pag'
+const nextBtnClass = 'next-btn'
+
+const RegPrevNext = new RegExp(`${previousClass}|${nextClass}`, '');
+const RegFull = new RegExp(`${nextClass}|${currentClass}|${previousClass}`, '');
+
+const defineElement = function(className, index){
+    let element
+    if (index !== undefined){
+        element = slidesArr[index];
+        element.classList.add(className)
+    }else{
+        element = document.querySelector(`.${className}`);
+    }
+    element.style.transition = transition;
+
+    return element
+}
+
+const shiftElements = function(currentEl, anotherEl, directionReverse){
+    currentEl.className = currentEl.className.replace(currentClass, directionReverse)
+    anotherEl.className = anotherEl.className.replace(anotherEl.className.match(RegPrevNext), currentClass)
+}
+
+const removeClass = function(element){
+    element.classList.remove(element.className.match(RegFull))
+}
+
+const getCurrentIndex = function(){
+    let index = 0
+    let currentIndex = index
+
+    while(!slidesArr[index].className.endsWith(currentClass)){
+        index++
+        currentIndex = index
+    }
+    
+    return currentIndex
+}
+
+const updateStatus = function(direction){
+    let correctionIndex 
+    if (direction === previousClass){
+        correctionIndex = -1
+    }else if (direction === nextClass){
+        correctionIndex = 1
+    }else {
+        alert('wrong direction')
     }
 
-    let arr = this.arr
-    let currentEl = document.querySelector('.current');
-    currentEl.style.transition = transition;
-    
-    arr.forEach((el, index)=>{
-        if (el.className.endsWith('current')){
-            currentIndex = index;
-            if (currentIndex === 0){
-                arr[arr.length - 1].className = 'slide prev'
-            }else{
-                arr[currentIndex - 1].className = 'slide prev'
-            }
-        }
-    })
-    
-    let prevEL = document.querySelector('.prev');
-    prevEL.classList.add('prev')
-    prevEL.style.transition = transition;
+    let currentIndex = getCurrentIndex()
+
+    if (direction === previousClass && currentIndex === 0){
+        removeClass(slidesArr[slidesArr.length - 1])
+        slidesArr[slidesArr.length - 1].classList.add(previousClass)
+    }else if (direction === nextClass && currentIndex === slidesArr.length - 1){
+        removeClass(slidesArr[0])
+        slidesArr[0].classList.add(nextClass)
+    }else{
+        removeClass(slidesArr[currentIndex + correctionIndex])
+        slidesArr[currentIndex + correctionIndex].classList.add(direction)
+    }
+}
+
+const timeoutSequence = function(currentEl, anotherEl, direction, btnStatus){
+    let directionReverse = (direction === nextClass) ? previousClass : nextClass
+    let listener = (direction === nextClass) ? listenerNext : listenerPrev
 
     setTimeout(()=>{
-        currentEl.className = 'slide next';
-        prevEL.className = 'slide current';
+        shiftElements(currentEl, anotherEl, directionReverse)
     }) 
     setTimeout(()=>{
-        let arr = this.arr;
-        let currentIndex = 0;
-        currentEl.style.transition = '';
-        
-        arr.forEach((el, index)=>{
-            if (el.className.endsWith('current')){
-                currentIndex = index;
-                if (currentIndex === 0){
-                    arr[arr.length - 1].className = 'slide prev'
-                }else{
-                    arr[currentIndex - 1].className = 'slide prev'
-                }
-                document.querySelector('.prev-btn').addEventListener('click', {handleEvent: listenerPrev, arr: slidesArr}, {once: true});
-            }
-        })
-        currentEl.className = 'slide'
-        document.querySelector('.prev').className = 'slide'
+        removeClass(currentEl)
+        if(btnStatus){
+            document.querySelector(`.${btnStatus}`).addEventListener('click', listener, {once: true});
+        }
     }, transition.replace('ms', ''))
+}
+
+const listenerPrev = function(){
+    updateStatus(previousClass)
+    timeoutSequence(defineElement(currentClass), defineElement(previousClass), previousClass, prevBtnClass)
 }
 
 const listenerPages = function(){
     let index = this.index
-    let arr = this.arr
-    let currentIndex
-
-    arr.forEach((el, index)=>{
-        if (el.className.endsWith('current')){
-            currentIndex = index;
-        }
-    })
+    let currentIndex = getCurrentIndex()
 
     if (index > currentIndex){
         //Next
-
-        //обнуление при переходе
-        let prevEL = document.querySelector('.prev')
-        if(prevEL){
-            prevEL.className = 'slide'
-        }
-        
-        let currentEl = arr[currentIndex];
-        currentEl.style.transition = transition;
-
-        
-        if (currentIndex === arr.length - 1){
-            arr[0].className = 'slide next';
-        }else{
-            arr[index].className = 'slide next';
-        }
-        
-
-        let nextEL = arr[index];
-        nextEL.classList.add('next')
-        nextEL.style.transition = transition;
-
-        setTimeout(()=>{
-            nextEL.className = 'slide current';
-            currentEl.className = 'slide prev';
-        }) 
-        setTimeout(()=>{
-            let arr = this.arr;
-            let currentIndex = 0;
-            currentEl.style.transition = '';
-            
-            arr.forEach((el, index)=>{
-                if (el.className.endsWith('current')){
-                    currentIndex = index;
-                    if (currentIndex === arr.length - 1){
-                        arr[0].className = 'slide next';
-                    }else{
-                        arr[currentIndex + 1].className = 'slide next';
-                    }
-                }
-            })
-            currentEl.className = 'slide';
-            document.querySelector('.next').className = 'slide'
-        }, transition.replace('ms', ''))
+        timeoutSequence(defineElement(currentClass), defineElement(nextClass, index), nextClass, false)
     }else if(index === currentIndex){
         console.log('та же кнопка')
-    }else{
+    }else if(index < currentIndex){
         //Prev
-        //обнуление при переходе. Можно убрать
-        let nextEL = document.querySelector('.next')
-        if(nextEL){
-            nextEL.className = 'slide'
-        }
-
-        let currentEl = arr[currentIndex];
-        currentEl.style.transition = transition;
-        
-        let prevEL = arr[index];
-        prevEL.classList.add('prev')
-        prevEL.style.transition = transition;
-
-        setTimeout(()=>{
-            currentEl.className = 'slide next';
-            prevEL.className = 'slide current';
-        }) 
-        setTimeout(()=>{
-            let arr = this.arr;
-            let currentIndex = 0;
-            currentEl.style.transition = '';
-            
-            arr.forEach((el, index)=>{
-                if (el.className.endsWith('current')){
-                    currentIndex = index;
-                    if (currentIndex === 0){
-                        arr[arr.length - 1].className = 'slide prev'
-                    }else{
-                        arr[currentIndex - 1].className = 'slide prev'
-                    }
-                    document.querySelector('.prev-btn').addEventListener('click', {handleEvent: listenerPrev, arr: slidesArr}, {once: true});
-                }
-            })
-            currentEl.className = 'slide'
-            document.querySelector('.prev').className = 'slide'
-        }, transition.replace('ms', ''))
+        timeoutSequence(defineElement(currentClass), defineElement(previousClass, index), previousClass, false)
+    }else{
+        alert('Ошибка')
     }
 }
 
 
 const listenerNext = function(){
-    let arr = this.arr
-    let currentEl = document.querySelector('.current');
-    currentEl.style.transition = transition;
-    
-    //обнуление при переходе
-    let prevEL = document.querySelector('.prev')
-    if(prevEL){
-        prevEL.className = 'slide'
-    }
-
-    arr.forEach((el, index)=>{
-        if (el.className.endsWith('current')){
-            currentIndex = index;
-            if (currentIndex === arr.length - 1){
-                arr[0].className = 'slide next';
-            }else{
-                arr[currentIndex + 1].className = 'slide next';
-            }
-        }
-    })
-
-    let nextEL = document.querySelector('.next');
-    nextEL.style.transition = transition;
-    
-    setTimeout(()=>{
-        nextEL.className = 'slide current';
-        currentEl.className = 'slide prev';
-    }) 
-    setTimeout(()=>{
-        let arr = this.arr;
-        let currentIndex = 0;
-        currentEl.style.transition = '';
-        
-        arr.forEach((el, index)=>{
-            if (el.className.endsWith('current')){
-                currentIndex = index;
-                if (currentIndex === arr.length - 1){
-                    arr[0].className = 'slide next';
-                }else{
-                    arr[currentIndex + 1].className = 'slide next';
-                }
-                document.querySelector('.next-btn').addEventListener('click', {handleEvent: listenerNext, arr: slidesArr}, {once: true});
-            }
-        })
-        currentEl.className = 'slide';
-        document.querySelector('.next').className = 'slide'
-    }, transition.replace('ms', ''))
+    updateStatus(nextClass)
+    timeoutSequence(defineElement(currentClass), defineElement(nextClass), nextClass, nextBtnClass)
 }
 
-//Создание кнопок
-const slidesParent = document.querySelector('.slides')
+//Получение массива слайдов
 const slidesArr = document.querySelectorAll('.slide')
-for (let index = 1; index < slidesArr.length; index++) {
-    let pagPage = document.createElement('div')
-    pagPage.classList.add('pag')
-    pagPage.innerHTML = index + 1
-    document.querySelector('.next-btn').before(pagPage)
-}
 
-//возможен слайдер
+//Проверка вохможности слайдера 
 if (slidesArr.length>1){
-    slidesArr[0].classList.add('current')
-    
-    document.querySelector('.prev-btn').addEventListener('click', {handleEvent: listenerPrev, arr: slidesArr}, {once: true})
-    document.querySelector('.next-btn').addEventListener('click', {handleEvent: listenerNext, arr: slidesArr}, {once: true})
+    slidesArr[0].classList.add(currentClass)
+    document.querySelector(`.${prevBtnClass}`).addEventListener('click', listenerPrev, {once: true})
+    document.querySelector(`.${nextBtnClass}`).addEventListener('click', listenerNext, {once: true})
     
 }else{
-    console.log('Мало элементов для слайдер')
+    console.log('Мало элементов для слайдера')
 }
 
-document.querySelectorAll('.pag').forEach((el, index)=>{
-    el.addEventListener('click', {handleEvent: listenerPages, arr: slidesArr, index: index})
+//Создание кнопок пагинации
+for (let index = 1; index < slidesArr.length; index++) {
+    let pagPage = document.createElement('div')
+    pagPage.classList.add(paginationClass)
+    pagPage.innerHTML = index + 1
+    document.querySelector(`.${nextBtnClass}`).before(pagPage)
+}
+document.querySelectorAll(`.${paginationClass}`).forEach((el, index)=>{
+    el.addEventListener('click', {handleEvent: listenerPages, index: index})
 })
