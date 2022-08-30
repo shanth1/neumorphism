@@ -370,16 +370,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__slider.css ***!
   \*************************************************************************************************/
 .content__slider{
-    margin-top: 50px;
-}
-/*!*****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__pagination.css ***!
-  \*****************************************************************************************************/
-.content__pagination{
-    position: sticky;
-    top: 500px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    /* margin-top: 50px; */
 }
 /*!*************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__header.css ***!
@@ -394,6 +385,15 @@
   \****************************************************************************************************/
 .content__generator{
     margin-top: 50px;
+}
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__pagination.css ***!
+  \*****************************************************************************************************/
+.content__pagination{
+    position: sticky;
+    top: 500px;
+    /* margin-top: 50px; */
+    margin-bottom: 50px;
 }
 /*!*****************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content.css ***!
@@ -429,39 +429,77 @@
     height: 500px;
     transition: var(--transition);
 }
-/*!**********************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__clock.css ***!
-  \**********************************************************************************************/
-.slider__clock {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/*!**************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider_theme_dark.css ***!
-  \**************************************************************************************************/
-.slider_theme_dark{
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__slide_theme_dark.css ***!
+  \*********************************************************************************************************/
+.slider__slide_theme_dark{
     background-color: var(--bg-light);
 }
-/*!***************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider_theme_light.css ***!
-  \***************************************************************************************************/
-.slider_theme_light{
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__slide_theme_light.css ***!
+  \**********************************************************************************************************/
+.slider__slide_theme_light{
     background-color: var(--bg-dark);
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__slides.css ***!
+  \***********************************************************************************************/
+.slider__slides{
+    position: relative;
+    
+    width: 100%;
+    height: 50%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__slide.css ***!
+  \**********************************************************************************************/
+.slider__slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider_current.css ***!
+  \***********************************************************************************************/
+.slider_current{
+    position: absolute;
+    z-index: 20;
+    left: 0;
+}
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider_next.css ***!
+  \********************************************************************************************/
+.slider_next{
+    position: absolute;
+    z-index: 20;
+    left: 100%;
+}
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider_previous.css ***!
+  \************************************************************************************************/
+.slider_previous{
+    position: absolute;
+    z-index: 20;
+    left: -100%;
 }
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider.css ***!
   \***************************************************************************************/
+
 .slider{
-    width: 100%;
-    height: 400px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 0;
+    width: 100%;
+    height: 460px;
     overflow: hidden;
-    transition: var(--transition);
+    /* border-top: 2px solid red;
+    border-bottom: 2px solid red; */
 }
 /*!******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock__case_theme_dark.css ***!
@@ -593,6 +631,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/clock/clock.css ***!
   \*************************************************************************************/
 .clock{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 350px;
   height: 350px;
   transition: var(--transition);
@@ -813,22 +855,37 @@
     font-size: 18px;
     transition: var(--transition);
 }
-
-.pagination__btn:first-child{
-    margin: 0 20px;
-}
-
-.pagination__btn:last-child{
-    margin: 0 20px;
-}
-/*!****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__box.css ***!
-  \****************************************************************************************************/
-.pagination__box{
-    padding: 0;
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn-next.css ***!
+  \*********************************************************************************************************/
+.pagination__btn-next{
     display: flex;
-    flex-direction: row;
-    list-style: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    margin: 0 5px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 18px;
+    transition: var(--transition);
+    margin: 0 20px;
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn-prev.css ***!
+  \*********************************************************************************************************/
+.pagination__btn-prev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    margin: 0 5px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 18px;
+    transition: var(--transition);
+    margin: 0 20px;
 }
 /*!**********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination_theme_dark.css ***!
@@ -883,7 +940,11 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination.css ***!
   \***********************************************************************************************/
 .pagination{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
     transition: var(--transition);
+    padding: 20px;
 }
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
@@ -900,4 +961,36 @@
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.content1{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+.content2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: red;
+    width: 100%;
+    height: 100%;
+}
+
+.content3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: red;
+    width: 100%;
+    height: 100%;
+}

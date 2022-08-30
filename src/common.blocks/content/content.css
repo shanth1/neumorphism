@@ -1,9 +1,9 @@
 @import "./content_theme_light.css";
 @import "./content_theme_dark.css";
 @import "./content__slider.css";
-@import "./content__pagination.css";
 @import "./content__header.css";
 @import "./content__generator.css";
+@import "./content__pagination.css";
 
 
 .content {

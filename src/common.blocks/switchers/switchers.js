@@ -12,9 +12,10 @@ const clockCase = document.querySelector('.clock__case');
 const generator = document.querySelector('.generator');
 const header = document.querySelector('.header');
 const content = document.querySelector('.content');
-const slider = document.querySelector('.slider');
+const slide = document.querySelectorAll('.slider__slide');
+console.log(slide)
 const pagination = document.querySelector('.pagination');
-const paginationBtn = document.querySelectorAll('.pagination__btn');
+// const paginationBtn = document.querySelectorAll('.pagination__btn');
 const serifs = document.querySelectorAll('.clockface__serif');
 
 
@@ -43,13 +44,15 @@ let switchers = {
         themeSwitcher(content, 'dark')
         themeSwitcher(pagination, 'dark')
         themeSwitcher(generator, 'dark')
-        themeSwitcher(slider, 'dark')
+        slide.forEach(element => {
+            themeSwitcher(element, 'dark')
+        });
         serifs.forEach(element => {
             themeSwitcher(element, 'dark')
         });
-        paginationBtn.forEach(element => {
-            themeSwitcher(element, 'dark')
-        });
+        // paginationBtn.forEach(element => {
+        //     themeSwitcher(element, 'dark')
+        // });
     }),
 
     rightTrigger: document.querySelector(".switchers__trigger.switchers__trigger_right").addEventListener('click', ()=>{
@@ -73,13 +76,15 @@ let switchers = {
         themeSwitcher(content, 'light')
         themeSwitcher(pagination, 'light')
         themeSwitcher(generator, 'light')
-        themeSwitcher(slider, 'light')
+        slide.forEach(element => {
+            themeSwitcher(element, 'light')
+        });
         serifs.forEach(element => {
             themeSwitcher(element, 'light')
         });
-        paginationBtn.forEach(element => {
-            themeSwitcher(element, 'light')
-        });
+        // paginationBtn.forEach(element => {
+        //     themeSwitcher(element, 'light')
+        // });
         
     })
 }

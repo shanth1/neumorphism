@@ -22,7 +22,7 @@ const defineElement = function(className, index){
         element = document.querySelector(`.${className}`);
     }
     element.style.transition = transition;
-
+    element.style.display = '';
     return element
 }
 
@@ -33,6 +33,7 @@ const shiftElements = function(currentEl, anotherEl, directionReverse){
 
 const removeClass = function(element){
     element.classList.remove(element.className.match(RegFull))
+    element.style.display = 'none'
 }
 
 const getCurrentIndex = function(){
