@@ -13,9 +13,10 @@ const generator = document.querySelector('.generator');
 const header = document.querySelector('.header');
 const content = document.querySelector('.content');
 const slide = document.querySelectorAll('.slider__slide');
-console.log(slide)
 const pagination = document.querySelector('.pagination');
 const paginationBtn = document.querySelectorAll('.pagination__btn');
+const paginationBtnPrev = document.querySelector('.pagination__btn-prev');
+const paginationBtnNext = document.querySelector('.pagination__btn-next');
 const serifs = document.querySelectorAll('.clockface__serif');
 
 
@@ -43,6 +44,8 @@ let switchers = {
         themeSwitcher(header, 'dark')
         themeSwitcher(content, 'dark')
         themeSwitcher(pagination, 'dark')
+        themeSwitcher(paginationBtnPrev, 'dark')
+        themeSwitcher(paginationBtnNext, 'dark')
         themeSwitcher(generator, 'dark')
         slide.forEach(element => {
             themeSwitcher(element, 'dark')
@@ -75,6 +78,8 @@ let switchers = {
         themeSwitcher(header, 'light')
         themeSwitcher(content, 'light')
         themeSwitcher(pagination, 'light')
+        themeSwitcher(paginationBtnPrev, 'light')
+        themeSwitcher(paginationBtnNext, 'light')
         themeSwitcher(generator, 'light')
         slide.forEach(element => {
             themeSwitcher(element, 'light')

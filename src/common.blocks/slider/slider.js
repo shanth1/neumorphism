@@ -63,12 +63,72 @@ const updateStatus = function(direction){
 
     if (direction === previousClass && currentIndex === 0){
         removeClass(slidesArr[slidesArr.length - 1])
+        //Pagination
+        if(Array.from(paginationArr[currentIndex].classList).find(el => el.match(/active/)).endsWith('light')){
+            paginationArr.forEach((el, elIndex)=>{
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_light')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_light')
+            })
+    
+            paginationArr[slidesArr.length - 1].classList.remove('pagination__btn_theme_light')
+            paginationArr[slidesArr.length - 1].classList.add('pagination__btn_status_active_light')
+        }else {
+            paginationArr.forEach((el, elIndex)=>{
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_dark')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_dark')
+                
+            })
+    
+            paginationArr[slidesArr.length - 1].classList.remove('pagination__btn_theme_dark')
+            paginationArr[slidesArr.length - 1].classList.add('pagination__btn_status_active_dark')
+        }
+
         slidesArr[slidesArr.length - 1].classList.add(previousClass)
     }else if (direction === nextClass && currentIndex === slidesArr.length - 1){
         removeClass(slidesArr[0])
+        //Pagination
+        if(Array.from(paginationArr[currentIndex].classList).find(el => el.match(/active/)).endsWith('light')){
+            paginationArr.forEach((el, elIndex)=>{
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_light')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_light')
+            })
+    
+            paginationArr[0].classList.remove('pagination__btn_theme_light')
+            paginationArr[0].classList.add('pagination__btn_status_active_light')
+        }else {
+            paginationArr.forEach((el, elIndex)=>{
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_dark')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_dark')
+                
+            })
+    
+            paginationArr[0].classList.remove('pagination__btn_theme_dark')
+            paginationArr[0].classList.add('pagination__btn_status_active_dark')
+        }
+
         slidesArr[0].classList.add(nextClass)
     }else{
         removeClass(slidesArr[currentIndex + correctionIndex])
+        //Pagination
+        if(Array.from(paginationArr[currentIndex].classList).find(el => el.match(/active/)).endsWith('light')){
+            paginationArr.forEach((el, elIndex)=>{
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_light')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_light')
+                
+            })
+    
+            paginationArr[currentIndex + correctionIndex].classList.remove('pagination__btn_theme_light')
+            paginationArr[currentIndex + correctionIndex].classList.add('pagination__btn_status_active_light')
+        }else {
+            paginationArr.forEach((el, elIndex)=>{
+                paginationArr[elIndex].classList.remove('pagination__btn_status_active_dark')
+                paginationArr[elIndex].classList.add('pagination__btn_theme_dark')
+            })
+    
+            paginationArr[currentIndex + correctionIndex].classList.remove('pagination__btn_theme_dark')
+            paginationArr[currentIndex + correctionIndex].classList.add('pagination__btn_status_active_dark')
+        }
+
         slidesArr[currentIndex + correctionIndex].classList.add(direction)
     }
 }
@@ -89,6 +149,7 @@ const timeoutSequence = function(currentEl, anotherEl, direction, btnStatus){
 }
 
 const listenerPrev = function(){
+
     updateStatus(previousClass)
     timeoutSequence(defineElement(currentClass), defineElement(previousClass), previousClass, prevBtnClass)
 }
@@ -105,7 +166,6 @@ const listenerPages = function(){
             if (elIndex !== index){
                 paginationArr[elIndex].classList.remove('pagination__btn_status_active_light')
                 paginationArr[elIndex].classList.add('pagination__btn_theme_light')
-                paginationArr[index].addEventListener('click', this, {once: true})
             }
         })
 
@@ -116,7 +176,6 @@ const listenerPages = function(){
             if (elIndex !== index){
                 paginationArr[elIndex].classList.remove('pagination__btn_status_active_dark')
                 paginationArr[elIndex].classList.add('pagination__btn_theme_dark')
-                paginationArr[index].addEventListener('click', this, {once: true})
             }
         })
 

@@ -5,7 +5,7 @@ require('./common.blocks/clock/clock.js');
 require('./common.blocks/switchers/switchers.js');
 
 function themeSwitcher(element, theme){
-    let className = Array.from(element.classList).find(el => el.match(/theme/))
+    let className = Array.from(element.classList).find(el => el.match(/theme|active/))
     //Проверка на наличие класса с темой
     if(className){
         if (theme === 'light'){
