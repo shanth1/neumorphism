@@ -1,0 +1,8 @@
+@import "./generator_theme_dark.css";
+@import "./generator_theme_light.css";
+
+.generator{
+    width: 90%;
+    height: 500px;
+    transition: var(--transition);
+}

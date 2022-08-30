@@ -44,8 +44,7 @@ function getDateValues(date){
 
 
 mouseHover.addEventListener('mouseover', ()=>{
-
-    console.log(clockEl.clientHeight * 0.3)
+    
     clockEl.setAttribute('style', `transform: scale(105%)`)
     clockWorkEl.setAttribute('style', `transform: scale(90%)`)
     clockDayMonthEl.setAttribute('style', `transform: scale(130%)`)

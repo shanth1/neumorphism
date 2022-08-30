@@ -1,0 +1,14 @@
+@import './slider__clock.css';
+@import './slider_theme_dark.css';
+@import './slider_theme_light.css';
+
+.slider{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}

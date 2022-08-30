@@ -10,12 +10,7 @@
 
 
 .clock{
-  position: absolute;
   width: 350px;
   height: 350px;
   transition: var(--transition);
-  /* background-color: antiquewhite; */
-  /* display:flex;
-  justify-content: center;
-  align-items: center; */
 }
