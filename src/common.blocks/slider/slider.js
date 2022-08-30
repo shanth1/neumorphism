@@ -10,6 +10,7 @@ const prevBtnClass = 'pagination__btn-prev'
 const paginationClass = 'pagination__btn'
 const nextBtnClass = 'pagination__btn-next'
 
+const RegCurrent = new RegExp(`${currentClass}`, '')
 const RegPrevNext = new RegExp(`${previousClass}|${nextClass}`, '');
 const RegFull = new RegExp(`${nextClass}|${currentClass}|${previousClass}`, '');
 
@@ -40,7 +41,7 @@ const getCurrentIndex = function(){
     let index = 0
     let currentIndex = index
 
-    while(!slidesArr[index].className.endsWith(currentClass)){
+    while(!slidesArr[index].className.match(RegCurrent)){
         index++
         currentIndex = index
     }
