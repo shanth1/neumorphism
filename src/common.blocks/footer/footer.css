@@ -1,5 +1,8 @@
+@import "./footer_theme_dark.css";
+@import "./footer_theme_light.css";
+
 .footer{
-    background-color: #eb4d4b;
     height: 150px;
     width: 100%;
+    transition: var(--transition);
 }

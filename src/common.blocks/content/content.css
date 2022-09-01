@@ -7,8 +7,8 @@
 
 
 .content {
-    height: 1350px;
-
+    /* height: 1350px; */
+    height: clamp(1350px, 100vh, 100vh);
     /* position: relative; */
     display: flex;
     z-index: 0;
