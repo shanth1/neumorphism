@@ -1,0 +1,12 @@
+.social-links__link_icon_github{
+    mask: url('./github.svg') no-repeat;
+    -webkit-mask:  url('./github.svg') no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: 35px;
+    -webkit-mask-size: 35px;
+}
+
+.social-links__link_icon_github:hover{
+    background-color: red;
+}

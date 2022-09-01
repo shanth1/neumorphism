@@ -17,6 +17,8 @@
 /* ---------------------------------------------------------- */
 @import "./common.blocks/footer/footer.css";
 
+@import "./common.blocks/social-links/social-links.css";
+
 .wrapper{
     width: 100%;
     height: 100%;

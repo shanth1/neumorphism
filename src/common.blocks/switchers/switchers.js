@@ -19,6 +19,8 @@ const paginationBtnPrev = document.querySelector('.pagination__btn-prev');
 const paginationBtnNext = document.querySelector('.pagination__btn-next');
 const serifs = document.querySelectorAll('.clockface__serif');
 
+const socialLinksBtn = document.querySelectorAll('.social-links__btn');
+const socialLinksLink = document.querySelectorAll('.social-links__link');
 
 // Добавить обработчики ошибок на селектор
 
@@ -56,6 +58,12 @@ let switchers = {
         paginationBtn.forEach(element => {
             themeSwitcher(element, 'dark')
         });
+        socialLinksBtn.forEach(element => {
+            themeSwitcher(element, 'dark')
+        });
+        socialLinksLink.forEach(element => {
+            themeSwitcher(element, 'dark')
+        });
     }),
 
     rightTrigger: document.querySelector(".switchers__trigger.switchers__trigger_right").addEventListener('click', ()=>{
@@ -90,7 +98,12 @@ let switchers = {
         paginationBtn.forEach(element => {
             themeSwitcher(element, 'light')
         });
-        
+        socialLinksBtn.forEach(element => {
+            themeSwitcher(element, 'light')
+        });
+        socialLinksLink.forEach(element => {
+            themeSwitcher(element, 'light')
+        });
     })
 }
 

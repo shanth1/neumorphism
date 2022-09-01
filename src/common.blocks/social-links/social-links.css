@@ -1,0 +1,23 @@
+@import "./social-links__btn.css";
+@import "./social-links__link_icon_github.css";
+@import "./social-links__link_icon_behance.css";
+@import "./social-links__link_icon_telegram.css";
+@import "./social-links__container.css";
+@import "./social-links__link.css";
+
+@import "./social__links__btn_theme_dark.css";
+@import "./social__links__btn_theme_light.css";
+
+@import "./social-links__link_theme_light.css";
+@import "./social-links__link_theme_dark.css";
+
+
+.social-links{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
