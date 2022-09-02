@@ -1,0 +1,10 @@
+.light__reflections{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 90;
+    perspective: 70px;
+    opacity: 0.8;
+}

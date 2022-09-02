@@ -1,0 +1,11 @@
+.light__glare_type_round_1{
+    height: 55%;
+    width: 30%;
+    top: 15%;
+    left: 55%;
+    border-radius: 50%;
+    /* background-color: red; */
+    box-shadow: 3px -2px 0 -1px rgba(255, 255, 255, 1);
+    filter: blur(0.7px);
+    transform: rotate(-17deg); 
+}

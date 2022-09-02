@@ -6,6 +6,13 @@
 @import "./light_wolfram_duplicate.css";
 @import "./light__glass.css";
 
+@import "./light__reflections.css";
+@import "./light__glare.css";
+@import "./light__glare_type_round_1.css";
+@import "./light__glare_type_round_2.css";
+@import "./light__glare_type_radial_1.css";
+@import "./light__glare_type_radial_2.css";
+
 .light{
     height: 60px;
     width: 60px;
@@ -13,9 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    transition: var(--transition);
 }
 
 .light:hover{
-    transform: scale(95%);
+    transform: scale(95%) rotate(20deg);
 }

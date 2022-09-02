@@ -1263,6 +1263,82 @@
     transform: translate(-50%, -50%);
 }
 
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__reflections.css ***!
+  \**************************************************************************************************/
+.light__reflections{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 90;
+    perspective: 70px;
+    opacity: 0.8;
+}
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare.css ***!
+  \********************************************************************************************/
+.light__glare{
+    position: absolute;
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_round_1.css ***!
+  \*********************************************************************************************************/
+.light__glare_type_round_1{
+    height: 55%;
+    width: 30%;
+    top: 15%;
+    left: 55%;
+    border-radius: 50%;
+    /* background-color: red; */
+    box-shadow: 3px -2px 0 -1px rgba(255, 255, 255, 1);
+    filter: blur(0.7px);
+    transform: rotate(-17deg); 
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_round_2.css ***!
+  \*********************************************************************************************************/
+.light__glare_type_round_2{
+    height: 80%;
+    width: 70%;
+    bottom: 12%;
+    left: 13%;
+    border-radius: 50%;
+    /* background-color: red; */
+    box-shadow: -3px 1px 0 0px rgba(255, 255, 255, 1);
+    filter: blur(0.8px);
+    transform: rotate(-10deg); 
+}
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_radial_1.css ***!
+  \**********************************************************************************************************/
+.light__glare_type_radial_1{
+    bottom: 0;
+    right: 0;
+    border-radius: 30% 0 0 50%;
+    height: 20%;
+    width: 60%;
+    filter: blur(2px);
+    background-image: linear-gradient(to right, transparent, rgba(255, 2555, 255, 0.7));
+    transform: rotate(60deg);
+}
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_radial_2.css ***!
+  \**********************************************************************************************************/
+.light__glare_type_radial_2{
+    top: -20%;
+    left: 0%;
+    height: 70%;
+    width: 50%;
+    /* background-color: red; */
+    border-radius: 0 0 40% 30% / 0 0 60% 40%;
+    transform:  rotate(-30deg) skewY(20deg);
+    filter: blur(0.9px);
+    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.7));
+    
+   
+}
 /*!*************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light.css ***!
   \*************************************************************************************/
@@ -1273,11 +1349,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    transition: var(--transition);
 }
 
 .light:hover{
-    transform: scale(95%);
+    transform: scale(95%) rotate(20deg);
 }
 /*!*****************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
