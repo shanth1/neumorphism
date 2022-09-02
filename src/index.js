@@ -10,10 +10,10 @@ function themeSwitcher(element, theme){
     if(className){
         if (theme === 'light'){
             element.classList.remove(className)
-            element.classList.add(className.replace('dark', 'light'))
+            element.classList.add(className.replace('_dark', '_light'))
         }else if (theme === 'dark'){
             element.classList.remove(className)    
-            element.classList.add(className.replace('light', 'dark'))
+            element.classList.add(className.replace('_light', '_dark'))
         }
     }
 }

@@ -1,0 +1,21 @@
+@import "./light_pos_left.css";
+@import "./light_pos_center.css";
+@import "./light_pos_right.css";
+@import "./light__bulb.css";
+@import "./light_wolfram.css";
+@import "./light_wolfram_duplicate.css";
+@import "./light__glass.css";
+
+.light{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.light:hover{
+    transform: scale(95%);
+}

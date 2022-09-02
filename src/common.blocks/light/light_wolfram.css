@@ -1,0 +1,43 @@
+.light_wolfram{
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /* background-color: black; */
+    top: 50%;
+    left: 50%;   
+    overflow: hidden;
+    transform: translate(-50%, -50%)
+         rotate(-45deg);
+}
+
+.light_wolfram::before{
+    content: "";
+    display: block;
+    height: 20%;
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid gray;
+    position: absolute;
+    transition: 0.5s;
+    top: -4px;
+    left: 0;
+    transform: rotate(-20deg);
+    filter: blur(0.2px);
+}
+
+.light_wolfram::after{
+    content: "";
+    display: block;
+    height: 20%;
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid gray;
+    position: absolute;
+    transition: 0.5s;
+    top: -4px;
+    left: 40%;
+    filter: blur(0.2px);
+}
+

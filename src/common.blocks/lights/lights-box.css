@@ -1,0 +1,13 @@
+@import "./lights-box_theme_dark.css";
+@import "./lights-box_theme_light.css";
+
+.lights-box{
+    display: flex;
+    position: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    transition: var(--transition);
+    border-radius: calc(var(--switch-box-height)/2);;
+}

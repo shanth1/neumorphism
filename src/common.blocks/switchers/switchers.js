@@ -17,6 +17,7 @@ const pagination = document.querySelector('.pagination');
 const paginationBtn = document.querySelectorAll('.pagination__btn');
 const paginationBtnPrev = document.querySelector('.pagination__btn-prev');
 const paginationBtnNext = document.querySelector('.pagination__btn-next');
+const lightsBox = document.querySelector('.lights-box');
 const serifs = document.querySelectorAll('.clockface__serif');
 const footer = document.querySelector('.footer');
 
@@ -51,6 +52,7 @@ let switchers = {
         themeSwitcher(paginationBtnNext, 'dark')
         themeSwitcher(generator, 'dark')
         themeSwitcher(footer, 'dark')
+        themeSwitcher(lightsBox, 'dark')
         slide.forEach(element => {
             themeSwitcher(element, 'dark')
         });
@@ -92,6 +94,7 @@ let switchers = {
         themeSwitcher(paginationBtnNext, 'light')
         themeSwitcher(generator, 'light')
         themeSwitcher(footer, 'light')
+        themeSwitcher(lightsBox, 'light')
         slide.forEach(element => {
             themeSwitcher(element, 'light')
         });
