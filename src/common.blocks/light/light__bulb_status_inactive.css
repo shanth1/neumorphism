@@ -1,0 +1,46 @@
+.light__bulb_status_inactive{
+    position: absolute;
+    display: block;
+    height: 36px;
+    width: 36px;
+    background-color: rgb(50, 47, 47);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transition: 0.5s;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        inset 0 0 0px 3px #1f1e23;
+}
+
+.light__bulb_status_inactive::before{
+    content: "";
+    display: block;
+    height: 14px;
+    width: 14px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 50%;
+    position: absolute;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 3px 4px #222;
+}
+
+.light__bulb_status_inactive::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-radius: 20%;
+    box-shadow: 0 0 0 0 transparent;
+    background-color: transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid gray;
+}

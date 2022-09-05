@@ -6,7 +6,7 @@ const icons = document.querySelector('.switchers__icons');
 const iconOn = document.querySelector('.switchers__icon-on');
 const iconOff = document.querySelector('.switchers__icon-off');
 
-const { themeSwitcher } = require('../../index.js');
+const { themeSwitcher, statusSwitcher } = require('../../index.js');
 
 const clockCase = document.querySelector('.clock__case');
 const generator = document.querySelector('.generator');
@@ -23,6 +23,14 @@ const footer = document.querySelector('.footer');
 
 const socialLinksBtn = document.querySelectorAll('.social-links__btn');
 const socialLinksLink = document.querySelectorAll('.social-links__link');
+
+
+//ТЕст лампочек
+// const lightTest = document.querySelector('.light');
+// const glassTest = document.querySelector('.light__glass')
+const lightTheme = document.querySelector('.light_theme_light')
+
+
 
 // Добавить обработчики ошибок на селектор
 
@@ -43,6 +51,11 @@ let switchers = {
     
         iconOn.className = 'switchers__icon-on switchers__icon-on_no-power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_power';
+
+        // statusSwitcher(lightTest, 'inactive')
+        // statusSwitcher(glassTest, 'inactive')
+        themeSwitcher(lightTheme, 'dark')
+        console.log(lightTheme)
 
         themeSwitcher(clockCase, 'dark')
         themeSwitcher(header, 'dark')
@@ -85,6 +98,11 @@ let switchers = {
     
         iconOn.className = 'switchers__icon-on switchers__icon-on_power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_no-power';
+
+        // statusSwitcher(lightTest, 'active')
+        // statusSwitcher(glassTest, 'active')
+        themeSwitcher(lightTheme, 'light')
+        console.log(lightTheme)
 
         themeSwitcher(clockCase, 'light')
         themeSwitcher(header, 'light')

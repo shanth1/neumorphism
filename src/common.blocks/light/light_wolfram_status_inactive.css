@@ -1,4 +1,4 @@
-.light_wolfram{
+.light_wolfram_status_inactive{
     position: absolute;
     display: block;
     height: 100%;
@@ -12,7 +12,7 @@
          rotate(-45deg);
 }
 
-/* .light_wolfram::before{
+.light_wolfram_status_inactive::before{
     content: "";
     display: block;
     height: 20%;
@@ -27,7 +27,7 @@
     filter: blur(0.2px);
 }
 
-.light_wolfram::after{
+.light_wolfram_status_inactive::after{
     content: "";
     display: block;
     height: 20%;
@@ -39,5 +39,5 @@
     top: -4px;
     left: 40%;
     filter: blur(0.2px);
-} */
+}
 

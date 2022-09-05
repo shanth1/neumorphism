@@ -1,4 +1,4 @@
-.light_wolfram{
+.light_wolfram_status_active{
     position: absolute;
     display: block;
     height: 100%;
@@ -12,13 +12,13 @@
          rotate(-45deg);
 }
 
-/* .light_wolfram::before{
+.light_wolfram_status_active::before{
     content: "";
     display: block;
     height: 20%;
     width: 40%;
     border-radius: 50%;
-    border: 2px solid gray;
+    border: 2px solid white;
     position: absolute;
     transition: 0.5s;
     top: -4px;
@@ -27,17 +27,17 @@
     filter: blur(0.2px);
 }
 
-.light_wolfram::after{
+.light_wolfram_status_active::after{
     content: "";
     display: block;
     height: 20%;
     width: 40%;
     border-radius: 50%;
-    border: 2px solid gray;
+    border: 2px solid white;
     position: absolute;
     transition: 0.5s;
     top: -4px;
     left: 40%;
     filter: blur(0.2px);
-} */
+}
 
