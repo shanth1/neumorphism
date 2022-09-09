@@ -17,12 +17,20 @@
 
 @import "./light_theme_light.css";
 @import "./light_theme_dark.css";
-@import "./light__bulb_status_on.css";
+/* @import "./light__bulb_status_on.css"; */
 @import "./light_wolfram_status_on.css";
 @import "./light_wolfram_status_off.css";
 @import "./light__glass_status_active.css";
 
 @import "./light_wolfram_duplicate.css";
+
+
+@import "./light__glow.css";
+@import "./light__glow_center.css";
+@import "./light__glow_middle.css";
+@import "./light__glow_external.css";
+
+@import "./light__triangle.css";
 
 .light{
     cursor: pointer;
@@ -32,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transition: var(--transition); */
+    transition: 0.2s;
 }
 
 .light:hover{

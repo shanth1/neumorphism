@@ -52,11 +52,7 @@ let switchers = {
         iconOn.className = 'switchers__icon-on switchers__icon-on_no-power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_power';
 
-        // statusSwitcher(lightTest, 'inactive')
-        // statusSwitcher(glassTest, 'inactive')
-        themeSwitcher(lightTheme, 'dark')
-        console.log(lightTheme)
-
+        
         themeSwitcher(clockCase, 'dark')
         themeSwitcher(header, 'dark')
         themeSwitcher(content, 'dark')
@@ -99,11 +95,7 @@ let switchers = {
         iconOn.className = 'switchers__icon-on switchers__icon-on_power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_no-power';
 
-        // statusSwitcher(lightTest, 'active')
-        // statusSwitcher(glassTest, 'active')
-        themeSwitcher(lightTheme, 'light')
-        console.log(lightTheme)
-
+        
         themeSwitcher(clockCase, 'light')
         themeSwitcher(header, 'light')
         themeSwitcher(content, 'light')

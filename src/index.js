@@ -8,8 +8,8 @@ require('./common.blocks/lights/lights.js');
 
 
 function themeSwitcher(element, theme){
-    let className = Array.from(element.classList).find(el => el.match(/theme/))
-    // let className = Array.from(element.classList).find(el => el.match(/theme|active/))
+    // let className = Array.from(element.classList).find(el => el.match(/theme/))
+    let className = Array.from(element.classList).find(el => el.match(/theme|active/))
     console.log(className)
     //Проверка на наличие класса с темой
     if(className){

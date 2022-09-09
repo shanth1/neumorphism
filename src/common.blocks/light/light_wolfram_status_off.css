@@ -1,8 +1,8 @@
 .light_wolfram_status_off{
     position: absolute;
     display: block;
-    height: 100%;
-    width: 100%;
+    height: 36px;
+    width: 36px;
     border-radius: 50%;
     /* background-color: black; */
     top: 50%;
@@ -24,7 +24,7 @@
     top: -4px;
     left: 0;
     transform: rotate(-20deg);
-    filter: blur(0.2px);
+    /* filter: blur(0.2px); */
 }
 
 .light_wolfram_status_off::after{
@@ -38,6 +38,6 @@
     transition: 0.5s;
     top: -4px;
     left: 40%;
-    filter: blur(0.2px);
+    /* filter: blur(0.2px); */
 }
 
