@@ -3,7 +3,7 @@
 @import "./light_pos_right.css";
 
 @import "./light__bulb";
-@import "./light__bulb_status_inactive.css";
+@import "./light__bulb_status_off.css";
 
 @import "./light_wolfram.css";
 @import "./light__glass.css";
@@ -17,9 +17,9 @@
 
 @import "./light_theme_light.css";
 @import "./light_theme_dark.css";
-@import "./light__bulb_status_active.css";
-@import "./light_wolfram_status_active.css";
-@import "./light_wolfram_status_inactive.css";
+@import "./light__bulb_status_on.css";
+@import "./light_wolfram_status_on.css";
+@import "./light_wolfram_status_off.css";
 @import "./light__glass_status_active.css";
 
 @import "./light_wolfram_duplicate.css";

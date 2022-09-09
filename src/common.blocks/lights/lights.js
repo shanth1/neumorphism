@@ -1,3 +1,5 @@
+const lightsBulbArr = document.querySelectorAll('.light__bulb_status_on');
+const lightsBulbOffArr = document.querySelectorAll('.light__bulb_status_off');
 const lightsArr = document.querySelectorAll('.light');
 const sliderEl = document.querySelector('.slider');
 
@@ -43,15 +45,15 @@ const getOpacity = function(currentY, minY, maxY){
 }
 
 const switchLights = function(){
-    lightsArr[0].style.opacity = 1 - getOpacity(window.scrollY, 0, sliderCoords, 1)
+    lightsBulbArr[0].style.opacity = 1 - getOpacity(window.scrollY, 0, sliderCoords, 1)
     if (window.scrollY > sliderCoords){
-        lightsArr[1].style.opacity =1 - getOpacity(window.scrollY, sliderCoords, (bottomCoords))
+        lightsBulbArr[1].style.opacity =1 - getOpacity(window.scrollY, sliderCoords, (bottomCoords))
     }else if (window.scrollY < sliderCoords){
-        lightsArr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords)
+        lightsBulbArr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords)
     }else{
-        lightsArr[1].style.opacity = 1
+        lightsBulbArr[1].style.opacity = 1
     }
-    lightsArr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords))
+    lightsBulbArr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords))
 }
 
 switchLights()
