@@ -1,15 +1,9 @@
 .light__bulb_status_off{
-    position: absolute;
-    display: block;
-    height: 36px;
-    width: 36px;
     background-color: rgb(50, 47, 47);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: 
         inset 0 0 0px 3px #1f1e23;
+
+    opacity: 1;
 }
 
 .light__bulb_status_off::before{

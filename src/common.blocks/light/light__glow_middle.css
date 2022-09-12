@@ -1,7 +1,7 @@
 .light__glow_middle{
-    height: 36px;
-    width: 36px;
     background-color: rgba(255, 255, 78);
     box-shadow:
         0 0 2px 2px rgb(249, 245, 5);
+
+    opacity: 0;
 }

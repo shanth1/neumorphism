@@ -1,9 +1,8 @@
 
-
 @import "./light__bulb";
 @import "./light__bulb_status_off.css";
 
-@import "./light_wolfram.css";
+@import "./light__wolfram.css";
 @import "./light__glass.css";
 
 @import "./light__reflections.css";
@@ -15,10 +14,10 @@
 
 @import "./light_theme_light.css";
 @import "./light_theme_dark.css";
-@import "./light_wolfram_status_on.css";
-@import "./light_wolfram_status_off.css";
+@import "./light__wolfram_power_on.css";
+@import "./light__wolfram_power_off.css";
 
-@import "./light_wolfram_duplicate.css";
+@import "./light__wolfram_duplicate.css";
 
 
 @import "./light__glow.css";

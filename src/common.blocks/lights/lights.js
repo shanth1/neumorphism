@@ -1,55 +1,42 @@
-
-const glowExternalArr = document.querySelectorAll('.light__glow_external');
-const glowMiddleArr = document.querySelectorAll('.light__glow_middle');
-const glowCenterArr = document.querySelectorAll('.light__glow_center');
+const lightsArr = document.querySelectorAll('.light');
+const sliderEl = document.querySelector('.slider');
 
 const shineCenterArr = document.querySelectorAll('.light__shine_position_center');
 const shineRightArr = document.querySelectorAll('.light__shine_position_right');
 const shineLeftArr = document.querySelectorAll('.light__shine_position_left');
 
-const wolframArr = document.querySelectorAll('.light__wolfram_power_on');
-const triangleArr = document.querySelectorAll('.light__triangle');
+const increase = 'increase';
+const decrease = 'decrease';
 
-const shineArr = [
-    shineLeftArr,
-    shineCenterArr,
-    shineRightArr
-]
+const shineSpeed = 1;
+const elementsObject = {
+    wolfram: {
+        arr: document.querySelectorAll('.light__wolfram_on'), // Фантомный класс,
+        speed: 4
+    },
+    triangle: {
+        arr: document.querySelectorAll('.light__triangle'),
+        speed: 4
+    },  
+    glowCenter: {
+        arr: document.querySelectorAll('.light__glow_center'),
+        speed: 3
+    },
+    glowMiddle: {
+        arr: document.querySelectorAll('.light__glow_middle'),
+        speed: 2
+    },  
+    glowExternal: {
+        arr: document.querySelectorAll('.light__glow_external'),
+        speed: 1
+    }, 
+    shineCenter: {
+        arr: shineCenterArr,
+        speed: shineSpeed
+    }
+};
 
-const elementsArr = [
-    [wolframArr, 4],
-    [glowCenterArr, 4],
-    [glowMiddleArr, 2],
-    [glowExternalArr, 1],
-    [triangleArr, 4]
-]
-console.log(glowExternalArr)
-const lightsArr = document.querySelectorAll('.light');
-const sliderEl = document.querySelector('.slider');
-
-lightsArr[0].addEventListener('click', ()=>{
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })
-})
-
-lightsArr[1].addEventListener('click', ()=>{
-    sliderEl.scrollIntoView({
-        block: "center", 
-        behavior: "smooth"
-    });
-})
-
-lightsArr[2].addEventListener('click', ()=>{
-    window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-    })
-})
-
-
-function getCoords(elem) {
+const getElementCoords = function(elem) {
     let box = elem.getBoundingClientRect();
   
     return {
@@ -58,79 +45,98 @@ function getCoords(elem) {
       bottom: box.bottom + window.pageYOffset,
       left: box.left + window.pageXOffset
     };
-}
+};
 
-let sliderCoords = getCoords(sliderEl).top + (document.querySelector('.slider').clientHeight /2) - (document.documentElement.clientHeight/2)
-let bottomCoords = document.body.scrollHeight-document.documentElement.clientHeight
+const getSliderCenterCoords = function(){
+    return getElementCoords(sliderEl).top + (document.querySelector('.slider').clientHeight /2) - (document.documentElement.clientHeight/2)
+};
 
-const getOpacity = function(currentY, minY, maxY, speed, reverse){
+const getBottomCoords = function(){
+    return document.body.scrollHeight-document.documentElement.clientHeight
+};
+
+const addEventListenerOnLights = function(){
+    lightsArr[0].addEventListener('click', ()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    lightsArr[1].addEventListener('click', ()=>{
+        sliderEl.scrollIntoView({
+            block: "center", 
+            behavior: "smooth"
+        });
+    });
+    
+    lightsArr[2].addEventListener('click', ()=>{
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+};
+
+const getOpacity = function(currentY, minY, maxY, speed, brightness){
     // opacity = y - min / max - min
-    if (!speed){
-        speed = 1
-    }
-    let opacity
-
-    if(reverse){
-        opacity = speed - ((currentY - minY) * speed)/ (maxY - minY)
+    if(brightness === 'increase'){
+        // появление
+        return ((currentY - minY) * speed)/ (maxY - minY);
+    }else if (brightness === 'decrease'){
+        // угасание 
+        return speed - ((currentY - minY) * speed)/ (maxY - minY);
     }else{
-        opacity = ((currentY - minY) * speed)/ (maxY - minY)
-    }
+        alert('error of direction light');
+    };
+};
 
-    return opacity
-}
-
+// направления увеличения яркости: сверху вниз
 const switchLights = function(){
+    if (window.scrollY < sliderCoords){ //выше центра
+        for (const elementKey in elementsObject) {
+            let element = elementsObject[elementKey];
+            
+            let arr = element.arr;
+            let speed = element.speed;
 
+            arr[0].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, speed, decrease);
+            arr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, speed, increase);
+            arr[2].style.opacity = 0            
+        };
+        shineRightArr[0].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, shineSpeed, increase);
+        shineLeftArr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, shineSpeed, decrease);
+        shineLeftArr[2].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, shineSpeed, increase);
 
-    elementsArr.forEach((el, index)=>{
-        el[0][0].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, el[1], true)
-    })
-    shineCenterArr[0].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, true)
-    shineRightArr[0].style.opacity =  getOpacity(window.scrollY, 0, sliderCoords, 1, false)
-    shineLeftArr[0].style.opacity =  0
+    }else{ // ниже центра
+        for (const elementKey in elementsObject) {
+            let element = elementsObject[elementKey];
+            
+            let arr = element.arr;
+            let speed = element.speed;
     
-    elementsArr.forEach((el, index)=>{
-        el[0][2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), el[1], false)
-        shineCenterArr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, false)
-        shineLeftArr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, true)
-        shineRightArr[2].style.opacity = 0
-        
-    })
+            arr[0].style.opacity = 0; 
+            arr[1].style.opacity = getOpacity(window.scrollY, sliderCoords, bottomCoords, speed, decrease);
+            arr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, bottomCoords, speed, increase);
+        } 
+        shineRightArr[0].style.opacity = getOpacity(window.scrollY, sliderCoords, bottomCoords, shineSpeed, decrease);
+        shineRightArr[1].style.opacity = getOpacity(window.scrollY, sliderCoords, bottomCoords, shineSpeed, increase);
+        shineLeftArr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, bottomCoords, shineSpeed, decrease);
+    };
+};
 
-    if (window.scrollY > sliderCoords){ //ниже
-        elementsArr.forEach((el, index)=>{
-            el[0][1].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), el[1], true)
-        })
-        shineRightArr[0].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, true)
-        shineRightArr[1].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, false)
-        shineCenterArr[1].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, true)
-        
-        
-    }else if (window.scrollY < sliderCoords){ // выше
-        elementsArr.forEach((el, index)=>{
-            el[0][1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, el[1], false)
-        })
-        shineLeftArr[2].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, false)
-        shineLeftArr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, true)
-        shineCenterArr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, false)
-        shineRightArr[1].style.opacity = 0
+//Код
+let sliderCoords = getSliderCenterCoords();
+let bottomCoords = getBottomCoords();
 
-    }else{
-        elementsArr.forEach((el, index)=>{
-            el[0][1].style.opacity = 1
-        })
-        shineCenterArr[1].style.opacity = 1
-    }
-    
-}
-
-switchLights()
+addEventListenerOnLights();
+switchLights();
 
 window.addEventListener('scroll', ()=>{
-    switchLights()
-})
+    switchLights();
+});
 
 window.addEventListener('resize', ()=>{
-    sliderCoords = getCoords(sliderEl).top + (document.querySelector('.slider').clientHeight /2) - (document.documentElement.clientHeight/2)
-    bottomCoords = document.body.scrollHeight-document.documentElement.clientHeight
+    sliderCoords = getSliderCenterCoords();
+    bottomCoords = getBottomCoords();
 })

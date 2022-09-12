@@ -1,43 +1,41 @@
-.light_wolfram{
-    /* position: absolute;
-    display: block;
-    height: 36px;
-    width: 36px;
-    border-radius: 50%; */
-    /* background-color: black; */
-    /* top: 50%;
+.light__wolfram_power_on{
+    top: 50%;
     left: 50%;   
     overflow: hidden;
     transform: translate(-50%, -50%)
-         rotate(-45deg); */
+         rotate(-45deg);
 }
 
-/* .light_wolfram::before{
+.light__wolfram_power_on::before{
     content: "";
     display: block;
     height: 20%;
     width: 40%;
     border-radius: 50%;
-    border: 2px solid gray;
+    border: 2px solid white;
     position: absolute;
     transition: 0.5s;
     top: -4px;
     left: 0;
     transform: rotate(-20deg);
     filter: blur(0.2px);
+    box-shadow: 0 0 1px 0.5px white,
+        inset 0 0 1px 0.5px white;
 }
 
-.light_wolfram::after{
+.light__wolfram_power_on::after{
     content: "";
     display: block;
     height: 20%;
     width: 40%;
     border-radius: 50%;
-    border: 2px solid gray;
+    border: 2px solid white;
     position: absolute;
     transition: 0.5s;
     top: -4px;
     left: 40%;
     filter: blur(0.2px);
-} */
+    box-shadow: 0 0 1px 0.5px white,
+        inset 0 0 1px 0.5px white;
+}
 
