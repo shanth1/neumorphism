@@ -1,0 +1,6 @@
+.light__shine_position_right{
+    background-color: transparent;
+    box-shadow:
+        inset -8px 0 6px 7px rgba(255, 200, 0, 0.5);
+    opacity: 0;
+}

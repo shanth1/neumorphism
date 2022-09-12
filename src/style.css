@@ -3,7 +3,7 @@
 /* ---------------------------------------------------------- */
 @import "./common.blocks/header/header.css";
 
-@import "./common.blocks/lights/lights.css";
+@import "./common.blocks/lights/lights-box.css";
 @import "./common.blocks/switchers/swithers.css";
 /* ---------------------------------------------------------- */
 @import "./common.blocks/content/content.css";
@@ -18,6 +18,8 @@
 @import "./common.blocks/footer/footer.css";
 
 @import "./common.blocks/social-links/social-links.css";
+
+@import "./common.blocks/light/light.css";
 
 .wrapper{
     width: 100%;

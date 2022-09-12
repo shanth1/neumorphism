@@ -1,0 +1,13 @@
+.light__glare_type_radial_2{
+    top: -20%;
+    left: 0%;
+    height: 70%;
+    width: 50%;
+    /* background-color: red; */
+    border-radius: 0 0 40% 30% / 0 0 60% 40%;
+    transform:  rotate(-30deg) skewY(20deg);
+    filter: blur(0.9px);
+    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.7));
+    
+   
+}

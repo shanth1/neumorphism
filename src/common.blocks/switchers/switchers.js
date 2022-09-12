@@ -6,7 +6,7 @@ const icons = document.querySelector('.switchers__icons');
 const iconOn = document.querySelector('.switchers__icon-on');
 const iconOff = document.querySelector('.switchers__icon-off');
 
-const { themeSwitcher } = require('../../index.js');
+const { themeSwitcher, statusSwitcher } = require('../../index.js');
 
 const clockCase = document.querySelector('.clock__case');
 const generator = document.querySelector('.generator');
@@ -17,11 +17,20 @@ const pagination = document.querySelector('.pagination');
 const paginationBtn = document.querySelectorAll('.pagination__btn');
 const paginationBtnPrev = document.querySelector('.pagination__btn-prev');
 const paginationBtnNext = document.querySelector('.pagination__btn-next');
+const lightsBox = document.querySelector('.lights-box');
 const serifs = document.querySelectorAll('.clockface__serif');
 const footer = document.querySelector('.footer');
 
 const socialLinksBtn = document.querySelectorAll('.social-links__btn');
 const socialLinksLink = document.querySelectorAll('.social-links__link');
+
+
+//ТЕст лампочек
+// const lightTest = document.querySelector('.light');
+// const glassTest = document.querySelector('.light__glass')
+const lightTheme = document.querySelector('.light_theme_light')
+
+
 
 // Добавить обработчики ошибок на селектор
 
@@ -43,6 +52,7 @@ let switchers = {
         iconOn.className = 'switchers__icon-on switchers__icon-on_no-power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_power';
 
+        
         themeSwitcher(clockCase, 'dark')
         themeSwitcher(header, 'dark')
         themeSwitcher(content, 'dark')
@@ -51,6 +61,7 @@ let switchers = {
         themeSwitcher(paginationBtnNext, 'dark')
         themeSwitcher(generator, 'dark')
         themeSwitcher(footer, 'dark')
+        themeSwitcher(lightsBox, 'dark')
         slide.forEach(element => {
             themeSwitcher(element, 'dark')
         });
@@ -84,6 +95,7 @@ let switchers = {
         iconOn.className = 'switchers__icon-on switchers__icon-on_power';
         iconOff.className = 'switchers__icon-off switchers__icon-off_no-power';
 
+        
         themeSwitcher(clockCase, 'light')
         themeSwitcher(header, 'light')
         themeSwitcher(content, 'light')
@@ -92,6 +104,7 @@ let switchers = {
         themeSwitcher(paginationBtnNext, 'light')
         themeSwitcher(generator, 'light')
         themeSwitcher(footer, 'light')
+        themeSwitcher(lightsBox, 'light')
         slide.forEach(element => {
             themeSwitcher(element, 'light')
         });

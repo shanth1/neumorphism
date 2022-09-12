@@ -1,0 +1,49 @@
+
+@import "./light__bulb";
+@import "./light__bulb_status_off.css";
+
+@import "./light__wolfram.css";
+@import "./light__glass.css";
+
+@import "./light__reflections.css";
+@import "./light__glare.css";
+@import "./light__glare_type_round_1.css";
+@import "./light__glare_type_round_2.css";
+@import "./light__glare_type_radial_1.css";
+@import "./light__glare_type_radial_2.css";
+
+@import "./light_theme_light.css";
+@import "./light_theme_dark.css";
+@import "./light__wolfram_power_on.css";
+@import "./light__wolfram_power_off.css";
+
+@import "./light__wolfram_duplicate.css";
+
+
+@import "./light__glow.css";
+@import "./light__glow_center.css";
+@import "./light__glow_middle.css";
+@import "./light__glow_external.css";
+
+@import "./light__triangle.css";
+
+@import "./light__shine.css";
+@import "./light__shine_position_center.css";
+@import "./light__shine_position_left.css";
+@import "./light__shine_position_right.css";
+
+
+.light{
+    position: relative;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.light:hover{
+    transform: scale(95%) rotate(20deg);
+}

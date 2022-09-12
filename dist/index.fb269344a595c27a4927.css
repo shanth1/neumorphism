@@ -29,10 +29,10 @@
     background: var(--bg-light);
     transition: var(--transition)
 }
-/*!***********************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__lights.css ***!
-  \***********************************************************************************************/
-.header__lights{
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__lights-box.css ***!
+  \***************************************************************************************************/
+.header__lights-box{
     margin: 15px 40px;
 
 }
@@ -69,13 +69,32 @@
     transition: var(--transition);
     
 }
-/*!***************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights.css ***!
-  \***************************************************************************************/
-.lights{
-    height: 40px;
-    width: 150px;
-    background-color: #eb4d4b;
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights-box_theme_dark.css ***!
+  \******************************************************************************************************/
+.lights-box_theme_dark{
+    background: #111;
+    box-shadow: var(--shadow-dark-box);
+}
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights-box_theme_light.css ***!
+  \*******************************************************************************************************/
+.lights-box_theme_light{
+    background: rgb(197, 198, 184);
+    box-shadow: var(--shadow-light-box);
+}
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights-box.css ***!
+  \*******************************************************************************************/
+.lights-box{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    transition: var(--transition);
+    border-radius: calc(var(--switch-box-height)/2);;
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/switchers/switchers__icons.css ***!
@@ -1105,6 +1124,414 @@
     width: 100%;
     height: 100%;
 
+}
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__bulb.css ***!
+  \*******************************************************************************************/
+.light__bulb{
+    position: absolute;
+    display: block;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 1;
+}
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__bulb_status_off.css ***!
+  \******************************************************************************************************/
+.light__bulb_status_off{
+    background-color: rgb(50, 47, 47);
+    box-shadow: 
+        inset 0 0 0px 3px #1f1e23;
+
+    opacity: 1;
+}
+
+.light__bulb_status_off::before{
+    content: "";
+    display: block;
+    height: 14px;
+    width: 14px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 3px 4px #222;
+}
+
+.light__bulb_status_off::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-radius: 20%;
+    box-shadow: 0 0 0 0 transparent;
+    background-color: transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid gray;
+}
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__wolfram.css ***!
+  \**********************************************************************************************/
+.light__wolfram{
+    position: absolute;
+    display: block;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+}
+
+
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glass.css ***!
+  \********************************************************************************************/
+.light__glass{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* background-color: #4a426b; */
+    border-radius: 50%;
+    /* display: block; */
+    transition: 0.5s;
+    filter: blur(0.3px);
+    box-shadow:
+        inset 0 0 2px 2px rgba(255, 255, 255, 0.3),
+        0 0 5px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.light__glass::after{
+    content: "";
+    display: block;
+    height: 75%;
+    width: 75%;
+    background-color: white;
+    opacity: 0.07;
+    filter: blur(2px);
+    border-radius: 50%;
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__reflections.css ***!
+  \**************************************************************************************************/
+.light__reflections{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 90;
+    perspective: 70px;
+    opacity: 0.8;
+}
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare.css ***!
+  \********************************************************************************************/
+.light__glare{
+    position: absolute;
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_round_1.css ***!
+  \*********************************************************************************************************/
+.light__glare_type_round_1{
+    height: 55%;
+    width: 30%;
+    top: 15%;
+    left: 55%;
+    border-radius: 50%;
+    /* background-color: red; */
+    box-shadow: 3px -2px 0 -1px rgba(255, 255, 255, 1);
+    filter: blur(0.7px);
+    transform: rotate(-17deg); 
+}
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_round_2.css ***!
+  \*********************************************************************************************************/
+.light__glare_type_round_2{
+    height: 80%;
+    width: 70%;
+    bottom: 12%;
+    left: 13%;
+    border-radius: 50%;
+    /* background-color: red; */
+    box-shadow: -3px 1px 0 0px rgba(255, 255, 255, 1);
+    filter: blur(0.8px);
+    transform: rotate(-10deg); 
+}
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_radial_1.css ***!
+  \**********************************************************************************************************/
+.light__glare_type_radial_1{
+    bottom: 0;
+    right: 0;
+    border-radius: 30% 0 0 50%;
+    height: 20%;
+    width: 60%;
+    filter: blur(2px);
+    background-image: linear-gradient(to right, transparent, rgba(255, 2555, 255, 0.7));
+    transform: rotate(60deg);
+}
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glare_type_radial_2.css ***!
+  \**********************************************************************************************************/
+.light__glare_type_radial_2{
+    top: -20%;
+    left: 0%;
+    height: 70%;
+    width: 50%;
+    /* background-color: red; */
+    border-radius: 0 0 40% 30% / 0 0 60% 40%;
+    transform:  rotate(-30deg) skewY(20deg);
+    filter: blur(0.9px);
+    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.7));
+    
+   
+}
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light_theme_light.css ***!
+  \*************************************************************************************************/
+.light_theme_light{
+}
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light_theme_dark.css ***!
+  \************************************************************************************************/
+.light_theme_dark{
+}
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__wolfram_power_on.css ***!
+  \*******************************************************************************************************/
+.light__wolfram_power_on{
+    top: 50%;
+    left: 50%;   
+    overflow: hidden;
+    transform: translate(-50%, -50%)
+         rotate(-45deg);
+}
+
+.light__wolfram_power_on::before{
+    content: "";
+    display: block;
+    height: 20%;
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    transition: 0.5s;
+    top: -4px;
+    left: 0;
+    transform: rotate(-20deg);
+    filter: blur(0.2px);
+    box-shadow: 0 0 1px 0.5px white,
+        inset 0 0 1px 0.5px white;
+}
+
+.light__wolfram_power_on::after{
+    content: "";
+    display: block;
+    height: 20%;
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    transition: 0.5s;
+    top: -4px;
+    left: 40%;
+    filter: blur(0.2px);
+    box-shadow: 0 0 1px 0.5px white,
+        inset 0 0 1px 0.5px white;
+}
+
+
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__wolfram_power_off.css ***!
+  \********************************************************************************************************/
+.light__wolfram_power_off{
+    top: 50%;
+    left: 50%;   
+    overflow: hidden;
+    transform: translate(-50%, -50%)
+         rotate(-45deg);
+}
+
+.light__wolfram_power_off::before{
+    content: "";
+    display: block;
+    height: 20%;
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid gray;
+    position: absolute;
+    transition: 0.5s;
+    top: -4px;
+    left: 0;
+    transform: rotate(-20deg);
+    /* filter: blur(0.2px); */
+}
+
+.light__wolfram_power_off::after{
+    content: "";
+    display: block;
+    height: 20%;
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid gray;
+    position: absolute;
+    transition: 0.5s;
+    top: -4px;
+    left: 40%;
+    /* filter: blur(0.2px); */
+}
+
+
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__wolfram_duplicate.css ***!
+  \********************************************************************************************************/
+.light__wolfram_duplicate{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glow.css ***!
+  \*******************************************************************************************/
+.light__glow{
+    position: absolute;
+    display: block;
+    
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glow_center.css ***!
+  \**************************************************************************************************/
+.light__glow_center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 14px;
+    width: 14px;
+    background-color: rgb(255, 255, 163);
+    box-shadow: 0 0 3px 4px rgb(255, 255, 160);
+
+    opacity: 0;
+}
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glow_middle.css ***!
+  \**************************************************************************************************/
+.light__glow_middle{
+    background-color: rgba(255, 255, 78);
+    box-shadow:
+        0 0 2px 2px rgb(249, 245, 5);
+
+    opacity: 0;
+}
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__glow_external.css ***!
+  \****************************************************************************************************/
+.light__glow_external{
+    background-color: rgba(255, 255, 78, 0);
+    box-shadow:
+        0 0 4px 6px rgba(255, 255, 0, 0.8),
+        0 0 10px 12px rgba(255, 200, 0, 0.9);
+
+    opacity: 0;
+}
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__triangle.css ***!
+  \***********************************************************************************************/
+.light__triangle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    height: 0;
+    width: 0;
+    border-radius: 20%;
+    box-shadow: 0 0 0 0 transparent;
+    background-color: transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid white;
+
+    opacity: 0;
+}
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__shine.css ***!
+  \********************************************************************************************/
+.light__shine{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    filter: blur(0.3px);
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__shine_position_center.css ***!
+  \************************************************************************************************************/
+.light__shine_position_center{
+    box-shadow:
+        inset 0 0 2px 2px rgba(255, 115, 0, 0.3),
+        0 0 5px 1px rgba(0, 0, 0, 0.2),
+        0 0 15px 5px rgba(255, 255, 255, 0.3),
+        0 0 30px 15px rgba(255, 227, 67, 0.4);
+    opacity: 0;
+}
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__shine_position_left.css ***!
+  \**********************************************************************************************************/
+.light__shine_position_left{
+    box-shadow:
+        inset 8px 0 6px 7px rgba(255, 200, 0, 0.5);
+    opacity: 0;
+}
+/*!***********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light__shine_position_right.css ***!
+  \***********************************************************************************************************/
+.light__shine_position_right{
+    background-color: transparent;
+    box-shadow:
+        inset -8px 0 6px 7px rgba(255, 200, 0, 0.5);
+    opacity: 0;
+}
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/light/light.css ***!
+  \*************************************************************************************/
+
+.light{
+    position: relative;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.light:hover{
+    transform: scale(95%) rotate(20deg);
 }
 /*!*****************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
