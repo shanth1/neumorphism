@@ -1,0 +1,11 @@
+.light__shine_position_left{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: #4a426b; */
+    border-radius: 50%;
+    /* display: block; */
+    filter: blur(0.3px);
+    box-shadow:
+        inset 8px 0 6px 7px rgba(255, 200, 0, 0.5);
+}

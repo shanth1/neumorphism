@@ -2,8 +2,19 @@
 const glowExternalArr = document.querySelectorAll('.light__glow_external');
 const glowMiddleArr = document.querySelectorAll('.light__glow_middle');
 const glowCenterArr = document.querySelectorAll('.light__glow_center');
+
+const shineCenterArr = document.querySelectorAll('.light__shine_position_center');
+const shineRightArr = document.querySelectorAll('.light__shine_position_right');
+const shineLeftArr = document.querySelectorAll('.light__shine_position_left');
+
 const wolframArr = document.querySelectorAll('.light__wolfram_power_on');
 const triangleArr = document.querySelectorAll('.light__triangle');
+
+const shineArr = [
+    shineLeftArr,
+    shineCenterArr,
+    shineRightArr
+]
 
 const elementsArr = [
     [wolframArr, 4],
@@ -69,25 +80,48 @@ const getOpacity = function(currentY, minY, maxY, speed, reverse){
 }
 
 const switchLights = function(){
+
+
     elementsArr.forEach((el, index)=>{
         el[0][0].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, el[1], true)
     })
-    if (window.scrollY > sliderCoords){
+    shineCenterArr[0].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, true)
+    shineRightArr[0].style.opacity =  getOpacity(window.scrollY, 0, sliderCoords, 1, false)
+    shineLeftArr[0].style.opacity =  0
+    
+    elementsArr.forEach((el, index)=>{
+        el[0][2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), el[1], false)
+        shineCenterArr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, false)
+        shineLeftArr[2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, true)
+        shineRightArr[2].style.opacity = 0
+        
+    })
+
+    if (window.scrollY > sliderCoords){ //ниже
         elementsArr.forEach((el, index)=>{
             el[0][1].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), el[1], true)
         })
-    }else if (window.scrollY < sliderCoords){
+        shineRightArr[0].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, true)
+        shineRightArr[1].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, false)
+        shineCenterArr[1].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), 1, true)
+        
+        
+    }else if (window.scrollY < sliderCoords){ // выше
         elementsArr.forEach((el, index)=>{
             el[0][1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, el[1], false)
         })
+        shineLeftArr[2].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, false)
+        shineLeftArr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, true)
+        shineCenterArr[1].style.opacity = getOpacity(window.scrollY, 0, sliderCoords, 1, false)
+        shineRightArr[1].style.opacity = 0
+
     }else{
         elementsArr.forEach((el, index)=>{
             el[0][1].style.opacity = 1
         })
+        shineCenterArr[1].style.opacity = 1
     }
-    elementsArr.forEach((el, index)=>{
-        el[0][2].style.opacity = getOpacity(window.scrollY, sliderCoords, (bottomCoords), el[1], false)
-    })
+    
 }
 
 switchLights()

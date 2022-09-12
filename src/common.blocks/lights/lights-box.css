@@ -3,7 +3,7 @@
 
 .lights-box{
     display: flex;
-    position: center;
+    position: relative;
     justify-content: space-around;
     align-items: center;
     height: 50px;

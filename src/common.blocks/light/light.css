@@ -1,6 +1,4 @@
-@import "./light_pos_left.css";
-@import "./light_pos_center.css";
-@import "./light_pos_right.css";
+
 
 @import "./light__bulb";
 @import "./light__bulb_status_off.css";
@@ -17,10 +15,8 @@
 
 @import "./light_theme_light.css";
 @import "./light_theme_dark.css";
-/* @import "./light__bulb_status_on.css"; */
 @import "./light_wolfram_status_on.css";
 @import "./light_wolfram_status_off.css";
-@import "./light__glass_status_active.css";
 
 @import "./light_wolfram_duplicate.css";
 
@@ -32,11 +28,17 @@
 
 @import "./light__triangle.css";
 
+@import "./light__shine.css";
+@import "./light__shine_position_center.css";
+@import "./light__shine_position_left.css";
+@import "./light__shine_position_right.css";
+
+
 .light{
+    position: relative;
     cursor: pointer;
     height: 60px;
     width: 60px;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
