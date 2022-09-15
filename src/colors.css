@@ -51,7 +51,6 @@
     --light-shadow-pagination-btn-dafault: 
         inset 2px 2px 2px var(--light-top-shadow-brighter),
         inset -2px -2px 2px var(--light-top-shadow-darker),
-        -1px -1px 1px 0 var(--light-middle-shadow-brighter),
         1px 1px 2px 0 var(--light-middle-shadow-darker);
         
     --light-shadow-pagination-btn-active: 
@@ -77,16 +76,18 @@
     --dark-shadow-pagination-btn-dafault: 
         inset 2px 2px 2px var(--dark-top-shadow-brighter),
         inset -2px -2px 2px var(--dark-top-shadow-darker),
-        -1px -1px 1px 0 var(--dark-middle-shadow-brighter),
         1px 1px 2px 0 var(--dark-middle-shadow-darker);
     --dark-shadow-pagination-btn-active: 
-        inset 2px 2px 2px var(--dark-top-shadow-brighter),
-        inset -2px -2px 2px var(--dark-top-shadow-darker);
+        inset -2px -2px 2px var(--dark-top-shadow-brighter),
+        inset 2px 2px 2px var(--dark-top-shadow-darker);
 
     --dark-shadow-block: 
         -6px -6px 3px var(--dark-middle-shadow-brighter),
-        6px 6px 3px var(--dark-middle-shadow-darker),
-        0 0 6px 3px var(--dark-middle);
+        7px 7px 3px var(--dark-middle-shadow-darker),
+        4px 1px 3px var(--dark-middle-shadow-darker),
+        1px 4px 3px var(--dark-middle-shadow-darker),
+        0 0 3px 5px var(--dark-middle-shadow-brighter);
+        
 
 
     /* Шрифты */
