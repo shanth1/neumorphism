@@ -5,4 +5,5 @@
     border-radius: calc(var(--switch-height)/2);
     background: var(--inner-gradient-light);
     transition: var(--transition);
+    box-shadow: var(--shadow-light-inner);
 }

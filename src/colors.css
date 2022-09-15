@@ -11,14 +11,19 @@
     SubItem – тип элемента (primary, secondary);
     State – состояние элемента (default, hover, active).
     */
-
+    
     /* Смена темы */
-    --light-hue: 53;
+    --light-hue: 253;
     --dark-hue: 234;
-
+    
     /* Палитра*/
     --light-150: hsl(60, 31%, 90%);
     --dark-150: hsl(0, 0%, 17%);
+    --color-neon-power-on: hsl(181, 76%, 79%);
+    --color-neon-power-off: hsl(1, 76%, 79%);
+    --color-light-neon-no-power: hsl(var(--light-hue), 10%, 25%);
+    --color-dark-neon-no-power: hsl(var(--dark-hue), 18%, 19%);
+
 
     --dark-top: hsl(var(--dark-hue), 18%, 13%);
     --dark-top-active: hsl(var(--dark-hue), 18%, 11%);
@@ -37,6 +42,11 @@
         --light-middle-shadow-brighter: hsl(var(--light-hue), 45%, 86%);
         --light-middle-shadow-darker: hsl(var(--light-hue), 19%, 73%);
     --light-bottom: hsl(var(--light-hue), 36%, 81%);
+        --light-bottom-shadow-brighter: hsl(var(--light-hue), 45%, 83%);
+        --light-bottom-shadow-darker: hsl(var(--light-hue), 19%, 50%);
+
+
+    
 
 
     /* Светлая тема */
@@ -82,14 +92,11 @@
         inset 2px 2px 2px var(--dark-top-shadow-darker);
 
     --dark-shadow-block: 
-        -6px -6px 3px var(--dark-middle-shadow-brighter),
-        7px 7px 3px var(--dark-middle-shadow-darker),
-        4px 1px 3px var(--dark-middle-shadow-darker),
-        1px 4px 3px var(--dark-middle-shadow-darker),
-        0 0 3px 5px var(--dark-middle-shadow-brighter);
+        -4px -4px 4px 1px var(--dark-middle-shadow-brighter),
+        4px 4px 4px 1px var(--dark-middle-shadow-darker),
+        0 0 1px 4px var(--dark-middle);
+
         
-
-
     /* Шрифты */
     --typo-xxl: 10px;
     --typo-xl: 10px;
@@ -128,40 +135,43 @@
     --icon-off-width: calc(var(--icon-on-height) - var(--icon-on-height)*0.1);
     --icon-off-height: var(--icon-off-width);
     --icon-off-border: calc(var(--icon-on-height)*0.15);
-    --icon-on: #a1f1f2;
-    --icon-off-border-power: calc(var(--icon-on-height)*0.15) solid #f2a2a1;
-    --icon-off-border-no-power: var(--icon-off-border) solid #2d2d30;
-    --icon-no-power: #2d2d30;
+    --icon-on: var(--color-neon-power-on);
+    --icon-off-border-power: calc(var(--icon-on-height)*0.15) solid var(--color-neon-power-off);
+    --icon-off-border-no-power: var(--icon-off-border) solid var(--color-light-neon-no-power);
     
     --switch-inner-shift: 6%;
     
     /* Dark */
-    --bg-dark: #171719;
-    --icon-off-bg-dark: black;
+    --icon-off-bg-dark: var(--dark-middle);
     
-    --gradient-dark-box: linear-gradient(30deg, #171719, #212123);
-    --inner-gradient-dark: linear-gradient(90deg, #171719 45%, #212123 55% );
+    --gradient-dark-box: linear-gradient(30deg, var(--dark-middle), var(--dark-top));
+    --inner-gradient-dark: linear-gradient(90deg, var(--dark-middle) 45%, var(--dark-top) 55% );
     
-    --shadow-dark-box: -2px -3px 2px rgba(255, 255, 255, 0.02), 
-    2px 3px 2px rgba(0, 0, 0, 0.2);
-    --shadow-dark-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
-    --shadow-dark-inner: ;
-    --shadow-dark-icon-on: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.9);
+    --shadow-dark-box: 
+        -2px -2px 2px var(--dark-top-shadow-brighter), 
+        3px 3px 2px var(--dark-top-shadow-darker),
+        0px 0px 1px 2px var(--dark-top-shadow-brighter);
+    --shadow-dark-switch: inset 0 0 calc(var(--icon-on-height)*0.3) var(--dark-top-shadow-darker);
+    --shadow-dark-inner: inset 0 0 1px 0px var(--dark-top-shadow-darker);
+    --shadow-dark-icon-on: 0 0 calc(var(--icon-on-height)*0.3) var(--dark-middle);
     --shadow-dark-icon-off: ;
-    --shadow-dark-icon-off-glow: 0 0 calc(var(--icon-on-height)*0.3) rgba(242, 162, 161, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(242, 162, 161, 0.5);
+    --shadow-dark-icon-off-glow: 0 0 calc(var(--icon-on-height)*0.3) var(--color-neon-power-off), inset 0 0 calc(var(--icon-on-height)*0.3) var(--color-neon-power-off);
     
     /* Light */
-    --bg-light: #ffd;
-    --icon-off-bg-light: #fff;
+    --icon-off-bg-light: var(--light-bottom);
 
-    --gradient-light-box: linear-gradient(30deg, #fefef0, #d0d0c0);
-    --inner-gradient-light: linear-gradient(90deg, #fefef0 45%, #d0d0c0 55% );
+    --gradient-light-box: linear-gradient(30deg, var(--light-middle), var(--light-top));
+    --inner-gradient-light: linear-gradient(90deg, var(--light-bottom) 45%, var(--light-middle) 55% );
 
-    --shadow-light-box: -2px -3px 2px rgba(0, 0, 0, 0.1), 
-    2px 3px 2px rgba(0, 0, 0, 0.1);
-    --shadow-light-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
-    --shadow-light-inner: ;
-    --shadow-light-icon-off: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(0, 0, 0, 0.5);
+    --shadow-light-box: 
+        -2px -2px 2px var(--light-top-shadow-brighter), 
+        3px 3px 2px var(--light-top-shadow-darker),
+        0px 0px 1px 2px var(--light-top-shadow-brighter);
+    --shadow-light-switch: inset 0 0 calc(var(--icon-on-height)*0.3) var(--light-top-shadow-darker);
+    --shadow-light-inner: inset 0 0 1px 0px var(--light-top-shadow-darker);
+    --shadow-light-icon-off: 
+        0 0 calc(var(--icon-on-height)*0.3) var(--light-bottom-shadow-darker), 
+        inset 0 0 calc(var(--icon-on-height)*0.3) var(--light-bottom-shadow-darker);
     --shadow-light-icon-on: ;
-    --shadow-light-icon-on-glow: 0 0 calc(var(--icon-on-height)*0.3) calc(var(--icon-on-height)*0.2) rgba(161, 241, 248, 0.5);
+    --shadow-light-icon-on-glow: 0 0 calc(var(--icon-on-height)*0.3) calc(var(--icon-on-height)*0.05) var(--color-neon-power-on);
 }

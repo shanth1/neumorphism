@@ -1,6 +1,6 @@
 .switchers__icon-on_no-power {
     transform: translate(-50%, -50%) rotate3d(0, 1, 0, 25deg);
-    background-color: var(--icon-no-power);
+    background-color: var(--color-dark-neon-no-power);
     box-shadow: var(--shadow-dark-icon-on);
 }
 
