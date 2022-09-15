@@ -1,3 +1,4 @@
 .content_theme_light{
-    background: rgb(225, 227, 205);
+    /* background: rgb(225, 227, 205); */
+    background: var(--light-color-bg-block-secondary);
 }

@@ -1,4 +1,5 @@
 .pagination__btn_status_active_dark{
-    background-color: green;
+    background-color: var(--dark-color-bg-btn-accent-active);
+    box-shadow: var(--dark-shadow-pagination-btn-active);
     color: #eee;
 }

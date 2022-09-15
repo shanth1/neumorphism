@@ -9,4 +9,5 @@
     /* font-family: 'Courier New', Courier, monospace; */
     font-size: 18px;
     transition: var(--transition);
+    border-radius: 2px;
 }

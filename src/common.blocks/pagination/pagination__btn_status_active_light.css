@@ -1,4 +1,5 @@
 .pagination__btn_status_active_light{
-    background-color: red;
-    color: #eee;
+    background-color: var(--light-color-bg-btn-accent-active);
+    box-shadow: var(--light-shadow-pagination-btn-active);
+    color: #111;
 }

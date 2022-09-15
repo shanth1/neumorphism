@@ -1,6 +1,5 @@
 .pagination__btn_theme_dark{
-    background-color: #111;
+    background-color: var(--dark-color-bg-btn-accent-default);
     color: #eee;
-    box-shadow: -3px -3px 7px #ffffff73,
-        3px 3px 5px rgba(94, 104, 121, 0.288);   
+    box-shadow: var(--dark-shadow-pagination-btn-dafault);
 }

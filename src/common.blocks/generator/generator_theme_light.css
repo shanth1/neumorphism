@@ -1,3 +1,4 @@
 .generator_theme_light{
-    background: var(--bg-light);
+    background: var(--light-color-bg-block-primary);
+    box-shadow: var(--light-shadow-block);
 }

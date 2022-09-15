@@ -1,3 +1,172 @@
+/*!******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/colors.css ***!
+  \******************************************************************/
+
+/* Define vars for the root element */
+:root {
+    /* дизайн токен
+    [Category]-[Type]-[Item]-[SubItem]-[State]
+    
+    Category – категория токена (color, font);
+    theme: dark/light
+    Type – тип токена (text, background, border);
+    Item – элемент (button, table, input);
+    SubItem – тип элемента (primary, secondary);
+    State – состояние элемента (default, hover, active).
+    */
+
+    /* Смена темы */
+    --light-hue: 53;
+    --dark-hue: 234;
+
+    /* Палитра*/
+    --light-150: hsl(60, 31%, 90%);
+    --dark-150: hsl(0, 0%, 17%);
+
+    --dark-top: hsl(var(--dark-hue), 18%, 13%);
+    --dark-top-active: hsl(var(--dark-hue), 18%, 11%);
+        --dark-top-shadow-brighter: hsl(var(--dark-hue), 25%, 15%);
+        --dark-top-shadow-darker: hsl(var(--dark-hue), 18%, 8%);
+    --dark-middle: hsl(var(--dark-hue), 18%, 10%);
+        --dark-middle-shadow-brighter: hsl(var(--dark-hue), 25%, 13%);
+        --dark-middle-shadow-darker: hsl(var(--dark-hue), 18%, 5%);
+    --dark-bottom: hsl(var(--dark-hue), 18%, 7%);
+
+    --light-top: hsl(var(--light-hue), 36%, 86%);
+    --light-top-active: hsl(var(--light-hue), 36%, 84%);
+        --light-top-shadow-brighter: hsl(var(--light-hue), 45%, 90%);
+        --light-top-shadow-darker: hsl(var(--light-hue), 19%, 70%);
+    --light-middle: hsl(var(--light-hue), 36%, 84%);
+        --light-middle-shadow-brighter: hsl(var(--light-hue), 45%, 86%);
+        --light-middle-shadow-darker: hsl(var(--light-hue), 19%, 73%);
+    --light-bottom: hsl(var(--light-hue), 36%, 81%);
+
+
+    /* Светлая тема */
+    --light-color-bg-block-primary: var(--light-middle);
+    --light-color-bg-block-secondary: var(--light-bottom);
+
+    --light-color-bg-belt-accent: var(--dark-150);
+
+    --light-color-bg-btn-accent-default: var(--light-top);
+    --light-color-bg-btn-accent-active: var(--light-top-active);
+    
+    --light-shadow-pagination-btn-dafault: 
+        inset 2px 2px 2px var(--light-top-shadow-brighter),
+        inset -2px -2px 2px var(--light-top-shadow-darker),
+        -1px -1px 1px 0 var(--light-middle-shadow-brighter),
+        1px 1px 2px 0 var(--light-middle-shadow-darker);
+        
+    --light-shadow-pagination-btn-active: 
+        inset -2px -2px 2px var(--light-top-shadow-brighter),
+        inset 2px 2px 2px var(--light-top-shadow-darker);
+        
+
+    --light-shadow-block: 
+        -4px -4px 4px 1px var(--light-middle-shadow-brighter),
+        4px 4px 4px 1px var(--light-middle-shadow-darker),
+        0 0 1px 4px var(--light-middle);
+
+
+    /* Темная тема */
+    --dark-color-bg-block-primary: var(--dark-middle);
+    --dark-color-bg-block-secondary: var(--dark-bottom);
+
+    --dark-color-bg-belt-accent: var(--light-150);
+
+    --dark-color-bg-btn-accent-default: var(--dark-top);
+    --dark-color-bg-btn-accent-active: var(--dark-top-active);
+
+    --dark-shadow-pagination-btn-dafault: 
+        inset 2px 2px 2px var(--dark-top-shadow-brighter),
+        inset -2px -2px 2px var(--dark-top-shadow-darker),
+        -1px -1px 1px 0 var(--dark-middle-shadow-brighter),
+        1px 1px 2px 0 var(--dark-middle-shadow-darker);
+    --dark-shadow-pagination-btn-active: 
+        inset 2px 2px 2px var(--dark-top-shadow-brighter),
+        inset -2px -2px 2px var(--dark-top-shadow-darker);
+
+    --dark-shadow-block: 
+        -6px -6px 3px var(--dark-middle-shadow-brighter),
+        6px 6px 3px var(--dark-middle-shadow-darker),
+        0 0 6px 3px var(--dark-middle);
+
+
+    /* Шрифты */
+    --typo-xxl: 10px;
+    --typo-xl: 10px;
+    --typo-l: 10px;
+    --typo-m: 10px;
+    --typo-s: 10px;
+
+    /* Скругление */
+
+    /* Тени */
+
+    /* Отступы */
+    --duplo-space-xxs: 10px;
+
+    /* Отступы */
+
+    /* Sizes */
+
+
+
+    /* Animation */
+    --transition: 0.5s cubic-bezier(0.9, 0, 0, 1);
+    --animation-transition-quick: 0.3s;
+    --animation-transition-smooth: 0.3s;
+
+
+    /* Sizes */
+    --switch-box-width: 110px;
+    --switch-box-height: 50px;
+
+    --switch-width: calc(var(--switch-box-width)*0.8);
+    --switch-height: calc(var(--switch-box-height)*0.7);;
+
+    --icon-on-width: calc(var(--icon-on-height)*0.2);
+    --icon-on-height: calc(var(--switch-box-height)*0.28);
+    --icon-off-width: calc(var(--icon-on-height) - var(--icon-on-height)*0.1);
+    --icon-off-height: var(--icon-off-width);
+    --icon-off-border: calc(var(--icon-on-height)*0.15);
+    --icon-on: #a1f1f2;
+    --icon-off-border-power: calc(var(--icon-on-height)*0.15) solid #f2a2a1;
+    --icon-off-border-no-power: var(--icon-off-border) solid #2d2d30;
+    --icon-no-power: #2d2d30;
+    
+    --switch-inner-shift: 6%;
+    
+    /* Dark */
+    --bg-dark: #171719;
+    --icon-off-bg-dark: black;
+    
+    --gradient-dark-box: linear-gradient(30deg, #171719, #212123);
+    --inner-gradient-dark: linear-gradient(90deg, #171719 45%, #212123 55% );
+    
+    --shadow-dark-box: -2px -3px 2px rgba(255, 255, 255, 0.02), 
+    2px 3px 2px rgba(0, 0, 0, 0.2);
+    --shadow-dark-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
+    --shadow-dark-inner: ;
+    --shadow-dark-icon-on: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.9);
+    --shadow-dark-icon-off: ;
+    --shadow-dark-icon-off-glow: 0 0 calc(var(--icon-on-height)*0.3) rgba(242, 162, 161, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(242, 162, 161, 0.5);
+    
+    /* Light */
+    --bg-light: #ffd;
+    --icon-off-bg-light: #fff;
+
+    --gradient-light-box: linear-gradient(30deg, #fefef0, #d0d0c0);
+    --inner-gradient-light: linear-gradient(90deg, #fefef0 45%, #d0d0c0 55% );
+
+    --shadow-light-box: -2px -3px 2px rgba(0, 0, 0, 0.1), 
+    2px 3px 2px rgba(0, 0, 0, 0.1);
+    --shadow-light-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
+    --shadow-light-inner: ;
+    --shadow-light-icon-off: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(0, 0, 0, 0.5);
+    --shadow-light-icon-on: ;
+    --shadow-light-icon-on-glow: 0 0 calc(var(--icon-on-height)*0.3) calc(var(--icon-on-height)*0.2) rgba(161, 241, 248, 0.5);
+}
 /*!*******************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/page/page__header.css ***!
   \*******************************************************************************************/
@@ -26,7 +195,7 @@
     padding: 0px;
     display: flex;
     flex-direction: column;
-    background: var(--bg-light);
+    /* background: var(--bg-light); */
     transition: var(--transition)
 }
 /*!***************************************************************************************************!*\
@@ -46,13 +215,15 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_dark.css ***!
   \**************************************************************************************************/
 .header_theme_dark{
-    background: var(--bg-dark);
+    background: var(--dark-color-bg-block-primary);
+    box-shadow: var(--dark-shadow-block-bottom);
 }
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_light.css ***!
   \***************************************************************************************************/
 .header_theme_light{
-    background: var(--bg-light);
+    background: var(--light-color-bg-block-primary);
+    box-shadow: var(--light-shadow-block-bottom);
 }
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header.css ***!
@@ -316,60 +487,7 @@
 /* Import styles */
 
 
-/* Define vars for the root element */
-:root {
-    /* Animation */
-    --transition: 0.5s cubic-bezier(0.9, 0, 0, 1);
 
-    /* Sizes */
-    --switch-box-width: 110px;
-    --switch-box-height: 50px;
-
-    --switch-width: calc(var(--switch-box-width)*0.8);
-    --switch-height: calc(var(--switch-box-height)*0.7);;
-
-    --icon-on-width: calc(var(--icon-on-height)*0.2);
-    --icon-on-height: calc(var(--switch-box-height)*0.28);
-    --icon-off-width: calc(var(--icon-on-height) - var(--icon-on-height)*0.1);
-    --icon-off-height: var(--icon-off-width);
-    --icon-off-border: calc(var(--icon-on-height)*0.15);
-    --icon-on: #a1f1f2;
-    --icon-off-border-power: calc(var(--icon-on-height)*0.15) solid #f2a2a1;
-    --icon-off-border-no-power: var(--icon-off-border) solid #2d2d30;
-    --icon-no-power: #2d2d30;
-    
-    --switch-inner-shift: 6%;
-    
-    /* Dark */
-    --bg-dark: #171719;
-    --icon-off-bg-dark: black;
-    
-    --gradient-dark-box: linear-gradient(30deg, #171719, #212123);
-    --inner-gradient-dark: linear-gradient(90deg, #171719 45%, #212123 55% );
-    
-    --shadow-dark-box: -2px -3px 2px rgba(255, 255, 255, 0.02), 
-    2px 3px 2px rgba(0, 0, 0, 0.2);
-    --shadow-dark-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
-    --shadow-dark-inner: ;
-    --shadow-dark-icon-on: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.9);
-    --shadow-dark-icon-off: ;
-    --shadow-dark-icon-off-glow: 0 0 calc(var(--icon-on-height)*0.3) rgba(242, 162, 161, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(242, 162, 161, 0.5);
-    
-    /* Light */
-    --bg-light: #ffd;
-    --icon-off-bg-light: #fff;
-
-    --gradient-light-box: linear-gradient(30deg, #fefef0, #d0d0c0);
-    --inner-gradient-light: linear-gradient(90deg, #fefef0 45%, #d0d0c0 55% );
-
-    --shadow-light-box: -2px -3px 2px rgba(0, 0, 0, 0.1), 
-    2px 3px 2px rgba(0, 0, 0, 0.1);
-    --shadow-light-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
-    --shadow-light-inner: ;
-    --shadow-light-icon-off: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(0, 0, 0, 0.5);
-    --shadow-light-icon-on: ;
-    --shadow-light-icon-on-glow: 0 0 calc(var(--icon-on-height)*0.3) calc(var(--icon-on-height)*0.2) rgba(161, 241, 248, 0.5);
-}
 
 .switchers {
     position: relative;
@@ -380,13 +498,14 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_light.css ***!
   \*****************************************************************************************************/
 .content_theme_light{
-    background: rgb(225, 227, 205);
+    /* background: rgb(225, 227, 205); */
+    background: var(--light-color-bg-block-secondary);
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content_theme_dark.css ***!
   \****************************************************************************************************/
 .content_theme_dark{
-    background: #111;
+    background: var(--dark-color-bg-block-secondary);
 }
 /*!*************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/content/content__slider.css ***!
@@ -435,13 +554,15 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/generator/generator_theme_dark.css ***!
   \********************************************************************************************************/
 .generator_theme_dark{
-    background: var(--bg-dark);
+    background: var(--dark-color-bg-block-primary);
+    box-shadow: var(--dark-shadow-block);
 }
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/generator/generator_theme_light.css ***!
   \*********************************************************************************************************/
 .generator_theme_light{
-    background: var(--bg-light);
+    background: var(--light-color-bg-block-primary);
+    box-shadow: var(--light-shadow-block);
 }
 /*!*********************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/generator/generator.css ***!
@@ -450,18 +571,19 @@
     width: 90%;
     height: 500px;
     transition: var(--transition);
+    border-radius: 4px;
 }
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__slide_theme_dark.css ***!
   \*********************************************************************************************************/
 .slider__slide_theme_dark{
-    background-color: var(--bg-light);
+    background-color: var(--dark-color-bg-belt-accent);
 }
 /*!**********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__slide_theme_light.css ***!
   \**********************************************************************************************************/
 .slider__slide_theme_light{
-    background-color: var(--bg-dark);
+    background-color: var(--light-color-bg-belt-accent);
 }
 /*!***********************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/slider/slider__slides.css ***!
@@ -876,6 +998,7 @@
     /* font-family: 'Courier New', Courier, monospace; */
     font-size: 18px;
     transition: var(--transition);
+    border-radius: 2px;
 }
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn-next.css ***!
@@ -892,6 +1015,7 @@
     font-size: 18px;
     transition: var(--transition);
     margin: 0 20px;
+    border-radius: 2px;
 }
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn-prev.css ***!
@@ -908,55 +1032,54 @@
     font-size: 18px;
     transition: var(--transition);
     margin: 0 20px;
+    border-radius: 2px;
 }
 /*!**********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination_theme_dark.css ***!
   \**********************************************************************************************************/
 .pagination_theme_dark{
-    background: var(--bg-dark);
-    box-shadow: -3px -3px 7px #ffffff73,
-        3px 3px 5px rgba(94, 104, 121, 0.288);
+    background: var(--dark-color-bg-block-primary);
+    box-shadow: var(--dark-shadow-block)
 }
 
 /*!***********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination_theme_light.css ***!
   \***********************************************************************************************************/
 .pagination_theme_light{
-    background: var(--bg-light);
-    box-shadow: -3px -3px 7px #ffffff73,
-        3px 3px 5px rgba(94, 104, 121, 0.288);
+    background: var(--light-color-bg-block-primary);
+    box-shadow: var(--light-shadow-block)
 }
 /*!***********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_status_active_dark.css ***!
   \***********************************************************************************************************************/
 .pagination__btn_status_active_dark{
-    background-color: green;
+    background-color: var(--dark-color-bg-btn-accent-active);
+    box-shadow: var(--dark-shadow-pagination-btn-active);
     color: #eee;
 }
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_status_active_light.css ***!
   \************************************************************************************************************************/
 .pagination__btn_status_active_light{
-    background-color: red;
-    color: #eee;
+    background-color: var(--light-color-bg-btn-accent-active);
+    box-shadow: var(--light-shadow-pagination-btn-active);
+    color: #111;
 }
 /*!****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_theme_light.css ***!
   \****************************************************************************************************************/
 .pagination__btn_theme_light{
-    background-color: #eee;
+    background-color: var(--light-color-bg-btn-accent-default);
     color: #111;
-    box-shadow: -3px -3px 7px #ffffff73,
-        3px 3px 5px rgba(94, 104, 121, 0.288);   
+    box-shadow: var(--light-shadow-pagination-btn-dafault);
 }
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination__btn_theme_dark.css ***!
   \***************************************************************************************************************/
 .pagination__btn_theme_dark{
-    background-color: #111;
+    background-color: var(--dark-color-bg-btn-accent-default);
     color: #eee;
-    box-shadow: -3px -3px 7px #ffffff73,
-        3px 3px 5px rgba(94, 104, 121, 0.288);   
+    box-shadow: var(--dark-shadow-pagination-btn-dafault);
 }
 /*!***********************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/pagination/pagination.css ***!
@@ -967,18 +1090,21 @@
     flex-direction: row;
     transition: var(--transition);
     padding: 20px;
+    border-radius: 4px;
 }
 /*!**************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer_theme_dark.css ***!
   \**************************************************************************************************/
 .footer_theme_dark{
-    background: var(--bg-dark);
+    background: var(--dark-color-bg-block-primary);
+    box-shadow: var(--dark-shadow-block-top);
 }
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer_theme_light.css ***!
   \***************************************************************************************************/
 .footer_theme_light{
-    background: var(--bg-light);
+    background: var(--light-color-bg-block-primary);
+    box-shadow: var(--light-shadow-block-top);
 }
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/footer/footer.css ***!
@@ -1086,9 +1212,8 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/social-links/social__links__btn_theme_dark.css ***!
   \********************************************************************************************************************/
 .social__links__btn_theme_dark{
-    background-color: darkcyan;
-    
-    border: 5px solid darkcyan;
+    background-color: var(--dark-color-bg-btn-accent-default);
+    border: 5px solid var(--dark-color-bg-btn-accent-default);
     box-shadow: 0 10px 15px rgba(0,0,0,0.3),
         0 10px 15px rgba(0,0,0,0.3) inset;
 }
@@ -1096,10 +1221,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/social-links/social__links__btn_theme_light.css ***!
   \*********************************************************************************************************************/
 .social__links__btn_theme_light{
-    background-color: aliceblue;
+    background-color: var(--light-color-bg-btn-accent-default);
     box-shadow: 0 10px 15px rgba(0,0,0,0.3),
         0 10px 15px rgba(0,0,0,0.3) inset;
-    border: 5px solid aliceblue
+    border: 5px solid var(--light-color-bg-btn-accent-default);
 }
 /*!*********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/social-links/social-links__link_theme_light.css ***!
@@ -1574,3 +1699,5 @@
     width: 100%;
     height: 100%;
 }
+
+

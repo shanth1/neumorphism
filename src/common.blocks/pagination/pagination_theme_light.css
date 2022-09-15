@@ -1,5 +1,4 @@
 .pagination_theme_light{
-    background: var(--bg-light);
-    box-shadow: -3px -3px 7px #ffffff73,
-        3px 3px 5px rgba(94, 104, 121, 0.288);
+    background: var(--light-color-bg-block-primary);
+    box-shadow: var(--light-shadow-block)
 }

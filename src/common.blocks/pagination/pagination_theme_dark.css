@@ -1,5 +1,4 @@
 .pagination_theme_dark{
-    background: var(--bg-dark);
-    box-shadow: -3px -3px 7px #ffffff73,
-        3px 3px 5px rgba(94, 104, 121, 0.288);
+    background: var(--dark-color-bg-block-primary);
+    box-shadow: var(--dark-shadow-block)
 }

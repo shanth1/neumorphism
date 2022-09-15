@@ -1,0 +1,166 @@
+
+/* Define vars for the root element */
+:root {
+    /* дизайн токен
+    [Category]-[Type]-[Item]-[SubItem]-[State]
+    
+    Category – категория токена (color, font);
+    theme: dark/light
+    Type – тип токена (text, background, border);
+    Item – элемент (button, table, input);
+    SubItem – тип элемента (primary, secondary);
+    State – состояние элемента (default, hover, active).
+    */
+
+    /* Смена темы */
+    --light-hue: 53;
+    --dark-hue: 234;
+
+    /* Палитра*/
+    --light-150: hsl(60, 31%, 90%);
+    --dark-150: hsl(0, 0%, 17%);
+
+    --dark-top: hsl(var(--dark-hue), 18%, 13%);
+    --dark-top-active: hsl(var(--dark-hue), 18%, 11%);
+        --dark-top-shadow-brighter: hsl(var(--dark-hue), 25%, 15%);
+        --dark-top-shadow-darker: hsl(var(--dark-hue), 18%, 8%);
+    --dark-middle: hsl(var(--dark-hue), 18%, 10%);
+        --dark-middle-shadow-brighter: hsl(var(--dark-hue), 25%, 13%);
+        --dark-middle-shadow-darker: hsl(var(--dark-hue), 18%, 5%);
+    --dark-bottom: hsl(var(--dark-hue), 18%, 7%);
+
+    --light-top: hsl(var(--light-hue), 36%, 86%);
+    --light-top-active: hsl(var(--light-hue), 36%, 84%);
+        --light-top-shadow-brighter: hsl(var(--light-hue), 45%, 90%);
+        --light-top-shadow-darker: hsl(var(--light-hue), 19%, 70%);
+    --light-middle: hsl(var(--light-hue), 36%, 84%);
+        --light-middle-shadow-brighter: hsl(var(--light-hue), 45%, 86%);
+        --light-middle-shadow-darker: hsl(var(--light-hue), 19%, 73%);
+    --light-bottom: hsl(var(--light-hue), 36%, 81%);
+
+
+    /* Светлая тема */
+    --light-color-bg-block-primary: var(--light-middle);
+    --light-color-bg-block-secondary: var(--light-bottom);
+
+    --light-color-bg-belt-accent: var(--dark-150);
+
+    --light-color-bg-btn-accent-default: var(--light-top);
+    --light-color-bg-btn-accent-active: var(--light-top-active);
+    
+    --light-shadow-pagination-btn-dafault: 
+        inset 2px 2px 2px var(--light-top-shadow-brighter),
+        inset -2px -2px 2px var(--light-top-shadow-darker),
+        -1px -1px 1px 0 var(--light-middle-shadow-brighter),
+        1px 1px 2px 0 var(--light-middle-shadow-darker);
+        
+    --light-shadow-pagination-btn-active: 
+        inset -2px -2px 2px var(--light-top-shadow-brighter),
+        inset 2px 2px 2px var(--light-top-shadow-darker);
+        
+
+    --light-shadow-block: 
+        -4px -4px 4px 1px var(--light-middle-shadow-brighter),
+        4px 4px 4px 1px var(--light-middle-shadow-darker),
+        0 0 1px 4px var(--light-middle);
+
+
+    /* Темная тема */
+    --dark-color-bg-block-primary: var(--dark-middle);
+    --dark-color-bg-block-secondary: var(--dark-bottom);
+
+    --dark-color-bg-belt-accent: var(--light-150);
+
+    --dark-color-bg-btn-accent-default: var(--dark-top);
+    --dark-color-bg-btn-accent-active: var(--dark-top-active);
+
+    --dark-shadow-pagination-btn-dafault: 
+        inset 2px 2px 2px var(--dark-top-shadow-brighter),
+        inset -2px -2px 2px var(--dark-top-shadow-darker),
+        -1px -1px 1px 0 var(--dark-middle-shadow-brighter),
+        1px 1px 2px 0 var(--dark-middle-shadow-darker);
+    --dark-shadow-pagination-btn-active: 
+        inset 2px 2px 2px var(--dark-top-shadow-brighter),
+        inset -2px -2px 2px var(--dark-top-shadow-darker);
+
+    --dark-shadow-block: 
+        -6px -6px 3px var(--dark-middle-shadow-brighter),
+        6px 6px 3px var(--dark-middle-shadow-darker),
+        0 0 6px 3px var(--dark-middle);
+
+
+    /* Шрифты */
+    --typo-xxl: 10px;
+    --typo-xl: 10px;
+    --typo-l: 10px;
+    --typo-m: 10px;
+    --typo-s: 10px;
+
+    /* Скругление */
+
+    /* Тени */
+
+    /* Отступы */
+    --duplo-space-xxs: 10px;
+
+    /* Отступы */
+
+    /* Sizes */
+
+
+
+    /* Animation */
+    --transition: 0.5s cubic-bezier(0.9, 0, 0, 1);
+    --animation-transition-quick: 0.3s;
+    --animation-transition-smooth: 0.3s;
+
+
+    /* Sizes */
+    --switch-box-width: 110px;
+    --switch-box-height: 50px;
+
+    --switch-width: calc(var(--switch-box-width)*0.8);
+    --switch-height: calc(var(--switch-box-height)*0.7);;
+
+    --icon-on-width: calc(var(--icon-on-height)*0.2);
+    --icon-on-height: calc(var(--switch-box-height)*0.28);
+    --icon-off-width: calc(var(--icon-on-height) - var(--icon-on-height)*0.1);
+    --icon-off-height: var(--icon-off-width);
+    --icon-off-border: calc(var(--icon-on-height)*0.15);
+    --icon-on: #a1f1f2;
+    --icon-off-border-power: calc(var(--icon-on-height)*0.15) solid #f2a2a1;
+    --icon-off-border-no-power: var(--icon-off-border) solid #2d2d30;
+    --icon-no-power: #2d2d30;
+    
+    --switch-inner-shift: 6%;
+    
+    /* Dark */
+    --bg-dark: #171719;
+    --icon-off-bg-dark: black;
+    
+    --gradient-dark-box: linear-gradient(30deg, #171719, #212123);
+    --inner-gradient-dark: linear-gradient(90deg, #171719 45%, #212123 55% );
+    
+    --shadow-dark-box: -2px -3px 2px rgba(255, 255, 255, 0.02), 
+    2px 3px 2px rgba(0, 0, 0, 0.2);
+    --shadow-dark-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
+    --shadow-dark-inner: ;
+    --shadow-dark-icon-on: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.9);
+    --shadow-dark-icon-off: ;
+    --shadow-dark-icon-off-glow: 0 0 calc(var(--icon-on-height)*0.3) rgba(242, 162, 161, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(242, 162, 161, 0.5);
+    
+    /* Light */
+    --bg-light: #ffd;
+    --icon-off-bg-light: #fff;
+
+    --gradient-light-box: linear-gradient(30deg, #fefef0, #d0d0c0);
+    --inner-gradient-light: linear-gradient(90deg, #fefef0 45%, #d0d0c0 55% );
+
+    --shadow-light-box: -2px -3px 2px rgba(0, 0, 0, 0.1), 
+    2px 3px 2px rgba(0, 0, 0, 0.1);
+    --shadow-light-switch: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.3) inset;
+    --shadow-light-inner: ;
+    --shadow-light-icon-off: 0 0 calc(var(--icon-on-height)*0.3) rgba(0, 0, 0, 0.8), inset 0 0 calc(var(--icon-on-height)*0.5) rgba(0, 0, 0, 0.5);
+    --shadow-light-icon-on: ;
+    --shadow-light-icon-on-glow: 0 0 calc(var(--icon-on-height)*0.3) calc(var(--icon-on-height)*0.2) rgba(161, 241, 248, 0.5);
+}

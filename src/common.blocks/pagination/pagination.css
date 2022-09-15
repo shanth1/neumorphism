@@ -14,4 +14,5 @@
     flex-direction: row;
     transition: var(--transition);
     padding: 20px;
+    border-radius: 4px;
 }

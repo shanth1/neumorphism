@@ -1,3 +1,4 @@
 .footer_theme_dark{
-    background: var(--bg-dark);
+    background: var(--dark-color-bg-block-primary);
+    box-shadow: var(--dark-shadow-block-top);
 }

@@ -1,6 +1,6 @@
 .social__links__btn_theme_light{
-    background-color: aliceblue;
+    background-color: var(--light-color-bg-btn-accent-default);
     box-shadow: 0 10px 15px rgba(0,0,0,0.3),
         0 10px 15px rgba(0,0,0,0.3) inset;
-    border: 5px solid aliceblue
+    border: 5px solid var(--light-color-bg-btn-accent-default);
 }
