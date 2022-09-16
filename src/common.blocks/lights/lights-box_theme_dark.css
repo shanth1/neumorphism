@@ -1,4 +1,4 @@
 .lights-box_theme_dark{
-    background: #111;
-    box-shadow: var(--shadow-dark-box);
+    background: var(--color-dark-gray);
+    box-shadow: var(--dark-shadow-block-inset);
 }

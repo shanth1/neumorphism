@@ -13,7 +13,7 @@
     */
     
     /* Смена темы */
-    --light-hue: 253;
+    --light-hue: 53;
     --dark-hue: 234;
     
     /* Палитра*/
@@ -23,6 +23,9 @@
     --color-neon-power-off: hsl(1, 76%, 79%);
     --color-light-neon-no-power: hsl(var(--light-hue), 10%, 25%);
     --color-dark-neon-no-power: hsl(var(--dark-hue), 18%, 19%);
+
+    --color-light-gray: hsl(var(--light-hue), 8%, 60%);
+    --color-dark-gray: hsl(var(--dark-hue), 18%, 9%);
 
 
     --dark-top: hsl(var(--dark-hue), 18%, 13%);
@@ -73,6 +76,11 @@
         4px 4px 4px 1px var(--light-middle-shadow-darker),
         0 0 1px 4px var(--light-middle);
 
+    --light-shadow-block-inset: 
+        inset -4px -4px 4px 1px var(--light-middle-shadow-brighter),
+        inset 4px 4px 4px 1px var(--light-middle-shadow-darker),
+        0 0 1px 4px var(--light-middle);
+
 
     /* Темная тема */
     --dark-color-bg-block-primary: var(--dark-middle);
@@ -94,6 +102,11 @@
     --dark-shadow-block: 
         -4px -4px 4px 1px var(--dark-middle-shadow-brighter),
         4px 4px 4px 1px var(--dark-middle-shadow-darker),
+        0 0 1px 4px var(--dark-middle);
+
+    --dark-shadow-block-inset: 
+        inset -4px -4px 4px 1px var(--dark-middle-shadow-brighter),
+        inset 4px 4px 4px 1px var(--dark-middle-shadow-darker),
         0 0 1px 4px var(--dark-middle);
 
         

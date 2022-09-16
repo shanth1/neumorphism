@@ -1,4 +1,4 @@
 .lights-box_theme_light{
-    background: rgb(197, 198, 184);
-    box-shadow: var(--shadow-light-box);
+    background: var(--color-light-gray);
+    box-shadow: var(--light-shadow-block-inset);
 }

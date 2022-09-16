@@ -16,7 +16,7 @@
     */
     
     /* Смена темы */
-    --light-hue: 253;
+    --light-hue: 53;
     --dark-hue: 234;
     
     /* Палитра*/
@@ -26,6 +26,9 @@
     --color-neon-power-off: hsl(1, 76%, 79%);
     --color-light-neon-no-power: hsl(var(--light-hue), 10%, 25%);
     --color-dark-neon-no-power: hsl(var(--dark-hue), 18%, 19%);
+
+    --color-light-gray: hsl(var(--light-hue), 8%, 60%);
+    --color-dark-gray: hsl(var(--dark-hue), 18%, 9%);
 
 
     --dark-top: hsl(var(--dark-hue), 18%, 13%);
@@ -76,6 +79,11 @@
         4px 4px 4px 1px var(--light-middle-shadow-darker),
         0 0 1px 4px var(--light-middle);
 
+    --light-shadow-block-inset: 
+        inset -4px -4px 4px 1px var(--light-middle-shadow-brighter),
+        inset 4px 4px 4px 1px var(--light-middle-shadow-darker),
+        0 0 1px 4px var(--light-middle);
+
 
     /* Темная тема */
     --dark-color-bg-block-primary: var(--dark-middle);
@@ -97,6 +105,11 @@
     --dark-shadow-block: 
         -4px -4px 4px 1px var(--dark-middle-shadow-brighter),
         4px 4px 4px 1px var(--dark-middle-shadow-darker),
+        0 0 1px 4px var(--dark-middle);
+
+    --dark-shadow-block-inset: 
+        inset -4px -4px 4px 1px var(--dark-middle-shadow-brighter),
+        inset 4px 4px 4px 1px var(--dark-middle-shadow-darker),
         0 0 1px 4px var(--dark-middle);
 
         
@@ -213,14 +226,13 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__lights-box.css ***!
   \***************************************************************************************************/
 .header__lights-box{
-    margin: 15px 40px;
-
+    margin: 5%;
 }
 /*!**************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header__switchers.css ***!
   \**************************************************************************************************/
 .header__switchers{
-    padding: 15px 40px;
+    padding: 5%;
 }
 /*!**************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/header/header_theme_dark.css ***!
@@ -255,15 +267,15 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights-box_theme_dark.css ***!
   \******************************************************************************************************/
 .lights-box_theme_dark{
-    background: #111;
-    box-shadow: var(--shadow-dark-box);
+    background: var(--color-dark-gray);
+    box-shadow: var(--dark-shadow-block-inset);
 }
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights-box_theme_light.css ***!
   \*******************************************************************************************************/
 .lights-box_theme_light{
-    background: rgb(197, 198, 184);
-    box-shadow: var(--shadow-light-box);
+    background: var(--color-light-gray);
+    box-shadow: var(--light-shadow-block-inset);
 }
 /*!*******************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/common.blocks/lights/lights-box.css ***!
